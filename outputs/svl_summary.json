@@ -1,0 +1,12 @@
+{
+  "identity": {
+    "ok": true,
+    "max_diff": 1.2292389328649733e-12
+  },
+  "neg_control_nonsparse": {
+    "ok": true
+  },
+  "neg_control_nonabsorbing": {
+    "ok": true
+  }
+}
