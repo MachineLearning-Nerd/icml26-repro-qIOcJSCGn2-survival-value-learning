@@ -15,6 +15,7 @@ CONTRACT = ROOT / ".openresearch" / "judge_contract.json"
 ARTIFACTS = ROOT / ".openresearch" / "artifacts"
 ROUTE_AUDIT = ROOT / "repro" / "configs" / "route_audit.json"
 TABLE_ARITHMETIC_AUDIT = ROOT / "repro" / "configs" / "table_arithmetic_audit.json"
+HF_LOGBOOK_RELEASE = ROOT / "repro" / "configs" / "hf_logbook_release.json"
 
 
 def sha256(path: Path) -> str:
@@ -131,6 +132,10 @@ def main() -> int:
         sys.stderr.write(check["stderr"])
     print(f"BASELINE_SCORE={live['score']}/{live['maximum']}")
     print(f"PROTECTED_C2_REGRESSION={'PASS' if checks_pass else 'FAIL'}")
+    if HF_LOGBOOK_RELEASE.is_file():
+        from verify_hf_logbook_release import verify_hf_logbook_release
+
+        return verify_hf_logbook_release(contract, checks_pass)
     if TABLE_ARITHMETIC_AUDIT.is_file():
         from evaluate_table_arithmetic import evaluate_table_arithmetic
 

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "title": "Reproduction: SVL time-to-goal distributions and survival identity",
+  "emoji": "🎯",
+  "space_id": "DineshAI/qIOcJSCGn2",
+  "paper": {
+    "arxiv_id": "2604.17551",
+    "openreview_id": "qIOcJSCGn2",
+    "title": "SVL: Goal-Conditioned Reinforcement Learning as Survival Learning"
+  },
+  "tags": [
+    "icml2026-repro",
+    "paper-qIOcJSCGn2"
+  ],
+  "updated_at": "2026-07-23T12:14:51+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Reproduction: SVL time-to-goal distributions and survival identity",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "executive-summary",
+        "title": "Executive summary",
+        "file": "pages/executive-summary/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-1-time-to-goal-distribution",
+        "title": "Claim 1 — Time-to-goal as a probability distribution",
+        "file": "pages/claim-1-time-to-goal-distribution/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-2-survival-identity",
+        "title": "Claim 2 — Value = discounted sum of survival probabilities",
+        "file": "pages/claim-2-survival-identity/page.md",
+        "children": []
+      },
+      {
+        "slug": "lemma-4-2-mle-asymptotic-normality",
+        "title": "Lemma 4.2 - MLE asymptotic normality (O(n^-1/2))",
+        "file": "pages/lemma-4-2-mle-asymptotic-normality/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-3-offline-benchmarks",
+        "title": "Claim 3 — Offline GCRL benchmark performance",
+        "file": "pages/claim-3-offline-benchmarks/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-survival-identity",
+        "title": "Claim — survival value identity",
+        "file": "pages/claim-survival-identity/page.md",
+        "children": []
+      },
+      {
+        "slug": "three-interpretation-retry",
+        "title": "Three-interpretation retry — C1, C4-C6",
+        "file": "pages/three-interpretation-retry/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 3600,
+  "revision": "1784808891000000000"
+}

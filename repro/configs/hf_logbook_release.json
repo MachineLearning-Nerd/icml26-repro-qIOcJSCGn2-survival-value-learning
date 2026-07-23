@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "space_id": "DineshAI/qIOcJSCGn2",
+  "base_revision": "db72d25f24ec51384021a3081e3aaad17f229572",
+  "head_verified_on": "2026-07-23",
+  "head_equal_to_base_before_candidate": true,
+  "release_kind": "human_approved_text_only_logbook",
+  "upload_allowlist": [
+    "logbook.json",
+    "pages/three-interpretation-retry/page.md"
+  ],
+  "delete_allowlist": [],
+  "candidate_root": "hf_release/space",
+  "new_node": {
+    "slug": "three-interpretation-retry",
+    "title": "Three-interpretation retry — C1, C4-C6",
+    "file": "pages/three-interpretation-retry/page.md",
+    "children": []
+  },
+  "base_logbook_metadata": {
+    "schema_version": 1,
+    "title": "Reproduction: SVL time-to-goal distributions and survival identity",
+    "emoji": "🎯",
+    "space_id": "DineshAI/qIOcJSCGn2",
+    "paper": {
+      "arxiv_id": "2604.17551",
+      "openreview_id": "qIOcJSCGn2",
+      "title": "SVL: Goal-Conditioned Reinforcement Learning as Survival Learning"
+    },
+    "tags": [
+      "icml2026-repro",
+      "paper-qIOcJSCGn2"
+    ],
+    "root_slug": "index",
+    "root_title": "Reproduction: SVL time-to-goal distributions and survival identity",
+    "root_file": "pages/index.md"
+  },
+  "base_root_children": [
+    {
+      "slug": "executive-summary",
+      "title": "Executive summary",
+      "file": "pages/executive-summary/page.md",
+      "children": []
+    },
+    {
+      "slug": "claim-1-time-to-goal-distribution",
+      "title": "Claim 1 — Time-to-goal as a probability distribution",
+      "file": "pages/claim-1-time-to-goal-distribution/page.md",
+      "children": []
+    },
+    {
+      "slug": "claim-2-survival-identity",
+      "title": "Claim 2 — Value = discounted sum of survival probabilities",
+      "file": "pages/claim-2-survival-identity/page.md",
+      "children": []
+    },
+    {
+      "slug": "lemma-4-2-mle-asymptotic-normality",
+      "title": "Lemma 4.2 - MLE asymptotic normality (O(n^-1/2))",
+      "file": "pages/lemma-4-2-mle-asymptotic-normality/page.md",
+      "children": []
+    },
+    {
+      "slug": "claim-3-offline-benchmarks",
+      "title": "Claim 3 — Offline GCRL benchmark performance",
+      "file": "pages/claim-3-offline-benchmarks/page.md",
+      "children": []
+    },
+    {
+      "slug": "conclusion",
+      "title": "Conclusion",
+      "file": "pages/conclusion/page.md",
+      "children": []
+    },
+    {
+      "slug": "claim-survival-identity",
+      "title": "Claim — survival value identity",
+      "file": "pages/claim-survival-identity/page.md",
+      "children": []
+    }
+  ],
+  "protected_sha256": {
+    "logbook.json": "1ac21286c205bacbfeab7d35ee3e0c8e304f8e585fc8b0d13530acab038cab0c",
+    "pages/claim-2-survival-identity/page.md": "ac130af15a3f1e82ef62310fb8596f63030f1cacf6cb1974d40c030052ec7951",
+    "repro/src/verify_survival.py": "0656fce46d2c579a1447b6e20280cb050ce66b23bdc30e1e0562f67f8d6351c4"
+  },
+  "judged_file_sha256": {
+    ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "README.md": "3fbfcc357b94ae62dec16f3c2e27dc1896641fda0750ae72bada56bcb64ce3da",
+    "bucket-icon.svg": "d1c28fc0a4e07f2688d013f576cf76ffc422d278d56a52a82989e0b93b3b3964",
+    "index.html": "68443360e0da5131465dfb719ffa72eef941b22063013d7e31954a56763372e4",
+    "logbook.css": "64e1de4358c79ec0d5f2697c56f98258c025e992c94ad7b3b7801739222ca41d",
+    "logbook.js": "69d73869184f936613668569980f31984be65229e77c4df4ba9604d3de70c02b",
+    "logbook.json": "1ac21286c205bacbfeab7d35ee3e0c8e304f8e585fc8b0d13530acab038cab0c",
+    "pages/claim-1-time-to-goal-distribution/page.md": "4812a4833027ea76f4e53a5b9112351cff53b45e2b79ba642c4df90636883893",
+    "pages/claim-2-survival-identity/page.md": "ac130af15a3f1e82ef62310fb8596f63030f1cacf6cb1974d40c030052ec7951",
+    "pages/claim-3-offline-benchmarks/page.md": "c797be5f514c5d9d48b350bbf85edc8d8520056906c6febc8d9fd2f8b66aae00",
+    "pages/claim-survival-identity/page.md": "1b7690e4a0f2246fd4930f70167a0480430ff25dc127f7a4a0f6b2b5ae14764a",
+    "pages/conclusion/page.md": "20513ffd1bbf0e625627a2b8c1fc51c0fbc89ee22f4e7b0c3a311b3a76881ef6",
+    "pages/executive-summary/page.md": "6453e10512657bba1048089c2aa81f85c02f1d039493440c201a90afcf2f2e21",
+    "pages/index.md": "5ea8646d9e463e6a79cb88a9478f4cfca0ab6fe62f4cd65c2a1f70ca668d2b6a",
+    "pages/lemma-4-2-mle-asymptotic-normality/page.md": "62f2beaa743006e072d7d3b817d3a1cc18c624a73953e24f80fe6b263026773b",
+    "poster_embed.html": "aedaf2df3d6e6cadb7fd870e59a6657226a6fcec3802945cbaf87c612f2f8485",
+    "repro/src/verify_lemma42.py": "9991d8e29a2bfa1dd0fb8a712a25634840ee6916d31a9c7bebc7476564ed7e2f",
+    "repro/src/verify_survival.py": "0656fce46d2c579a1447b6e20280cb050ce66b23bdc30e1e0562f67f8d6351c4",
+    "style.css": "789bfd541c9f06658ac410d968e9c39fa8c63a48a08643b36071b984c699a9f4",
+    "trackio-logo-light.png": "a6eb72253c0128ce79b526a86b7943eed37beec186b5f57ff6c1701d0e9ff596",
+    "trackio-logo.png": "3e3792061d4d095759da30d7cfe7f14b621901793cd4d677b61b2896f5bf472b",
+    "trackio-wordmark-dark.png": "71da94795855710d214801eb9b9b7b8898e9a8757abac0e22966a0531bbb2f4f"
+  },
+  "claim_recommendations": {
+    "C1": "toy",
+    "C2": "verified",
+    "C3": "toy",
+    "C4": "inconclusive",
+    "C5": "inconclusive",
+    "C6": "inconclusive"
+  },
+  "candidate_score": null,
+  "publication_authorized_by_user": true
+}
