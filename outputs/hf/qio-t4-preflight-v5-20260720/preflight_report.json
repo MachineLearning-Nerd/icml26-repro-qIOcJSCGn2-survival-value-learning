@@ -1,0 +1,486 @@
+{
+  "attempt_version": 5,
+  "campaign_estimate": {
+    "conservative_hsvl_four_seed_training_cost_usd": 70.30394782220053,
+    "conservative_hsvl_four_seed_training_hours": 175.7598695555013,
+    "conservative_one_seed_training_hours": 43.939967388875324,
+    "conservative_updates_per_second": 6.321756575725298,
+    "full_claim3_planning_assumptions": {
+      "comparator_throughput_assumed_no_faster_than_measured_hsvl": true,
+      "hsvl_seeds": 4,
+      "matched_comparator_seeds": 4,
+      "policy_success_and_comparator_scientific_outcomes_unmeasured": true,
+      "setup_and_evaluation_contingency_fraction": 0.25
+    },
+    "full_claim3_planning_cost_usd": 175.7598695555013,
+    "full_claim3_planning_estimate_fits_remaining_budget": false,
+    "full_claim3_planning_hours": 439.3996738887532,
+    "interpretation": "Measured throughput and memory establish execution feasibility only. The full campaign must not launch unless its centrally rechecked cost fits the shared ledger; policy evaluation and matched-comparator outcomes remain unmeasured scientific requirements.",
+    "median_steady_updates_per_second": 21.45173313579931,
+    "paper_scale_updates_per_seed": 1000000,
+    "remaining_campaign_budget_usd_at_submission": 39.49,
+    "reported_seed_count": 4,
+    "steady_trace_row_count": 8,
+    "steady_updates_per_second": [
+      17.582749606551666,
+      21.481112665103776,
+      21.42611689851558,
+      6.321756575725298,
+      21.604323681909705,
+      21.608315804775952,
+      21.477349373083037,
+      21.272397795416538
+    ]
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/local/bin/uv",
+        "sync",
+        "--frozen",
+        "--python",
+        "3.10",
+        "--project",
+        "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent/upstream"
+      ],
+      "cwd": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent",
+      "finished_at": "2026-07-20T07:27:42.847990+00:00",
+      "log": "uv_sync.log",
+      "log_bytes": 6020,
+      "log_sha256": "2da36f4c3769f37376c73347599b57fa78c5c7578d94a8b324f1b1ec9e6abcfc",
+      "returncode": 0,
+      "runtime_seconds": 58.68670043499969,
+      "stage": "uv_sync_frozen",
+      "started_at": "2026-07-20T07:26:44.161277+00:00",
+      "stream_errors": [],
+      "timed_out_for_evidence_finalization": false
+    },
+    {
+      "command": [
+        "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/author-environment/bin/python",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/derived_runtime_driver.py",
+        "--_derived-runner",
+        "--runner",
+        "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent/repro/colab/run_full_agent_probe_colab.py",
+        "--evidence",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/derived_runtime_config_patch.json",
+        "--inventory-evidence",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/derived_result_inventory_patch.json",
+        "--",
+        "--input-archive",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v1/inputs/qio-full-agent-colab-input-v1.tar.gz",
+        "--input-integrity",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v1/inputs/qio-full-agent-colab-input-v1.tar.gz.integrity.json",
+        "--seed",
+        "0",
+        "--log-interval",
+        "10",
+        "--output-dir",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0",
+        "--updates",
+        "10",
+        "--checkpoint-interval",
+        "10"
+      ],
+      "cwd": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent",
+      "finished_at": "2026-07-20T07:28:28.965600+00:00",
+      "log": "phase_10.log",
+      "log_bytes": 6703,
+      "log_sha256": "0e7ed2f1a28dd3026a069d1136a133afe0b2692ae193b5b808112ae6918f9ad7",
+      "returncode": 0,
+      "runtime_seconds": 46.0095656959993,
+      "stage": "phase_10_fresh_process",
+      "started_at": "2026-07-20T07:27:42.956015+00:00",
+      "stream_errors": [],
+      "timed_out_for_evidence_finalization": false
+    },
+    {
+      "command": [
+        "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/author-environment/bin/python",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/derived_runtime_driver.py",
+        "--_derived-runner",
+        "--runner",
+        "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent/repro/colab/run_full_agent_probe_colab.py",
+        "--evidence",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/derived_runtime_config_patch.json",
+        "--inventory-evidence",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/derived_result_inventory_patch.json",
+        "--",
+        "--input-archive",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v1/inputs/qio-full-agent-colab-input-v1.tar.gz",
+        "--input-integrity",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v1/inputs/qio-full-agent-colab-input-v1.tar.gz.integrity.json",
+        "--seed",
+        "0",
+        "--log-interval",
+        "10",
+        "--output-dir",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0",
+        "--updates",
+        "100",
+        "--checkpoint-interval",
+        "50"
+      ],
+      "cwd": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent",
+      "finished_at": "2026-07-20T07:29:14.368054+00:00",
+      "log": "phase_100.log",
+      "log_bytes": 14196,
+      "log_sha256": "9f030019dd8de3263a40d5ec58b48ac85598f938a43145b9816d01cd64fd5b30",
+      "returncode": 0,
+      "runtime_seconds": 45.1462086749998,
+      "stage": "phase_100_independent_resume_process",
+      "started_at": "2026-07-20T07:28:29.221826+00:00",
+      "stream_errors": [],
+      "timed_out_for_evidence_finalization": false
+    },
+    {
+      "command": [
+        "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/author-environment/bin/python",
+        "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent/repro/colab/package_colab_return.py",
+        "--output-dir",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0",
+        "--archive",
+        "/hf-bucket/hf-jobs/qio-t4-preflight-v5/runs/qio-t4-preflight-v5-20260720/qio-full-agent-t4-return-v1.tar.gz",
+        "--require-resume-evidence"
+      ],
+      "cwd": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent",
+      "finished_at": "2026-07-20T07:29:22.301372+00:00",
+      "log": "package_return.log",
+      "log_bytes": 290,
+      "log_sha256": "7b19f8cf80cced68e2fbc91235f53d603f1c1e176455515e5cd3e870dd551ab3",
+      "returncode": 0,
+      "runtime_seconds": 7.738848582999708,
+      "stage": "package_fail_closed_return",
+      "started_at": "2026-07-20T07:29:14.562505+00:00",
+      "stream_errors": [],
+      "timed_out_for_evidence_finalization": false
+    }
+  ],
+  "dependency_transport_contract": {
+    "bounds": {
+      "concurrent_downloads_at_most": 8,
+      "http_retries_at_most": 8,
+      "http_timeout_seconds_at_most": 600,
+      "overall_internal_deadline_seconds_at_most": 3300
+    },
+    "derived_runtime_tuple_shim_modified_from_attempt3": false,
+    "frozen_lock_dependency_resolution_disabled": true,
+    "official_source_files_modified": false,
+    "pinned_artifact": {
+      "name": "nvidia-cudnn-cu11",
+      "source": {
+        "registry": "https://pypi.nvidia.com/"
+      },
+      "version": "8.9.7.29",
+      "wheels": [
+        {
+          "hash": "sha256:ff7ec4a73b762ace4dc50850d16fe76d9519a7c2d56ac293955d611e900eba00",
+          "url": "https://pypi.nvidia.com/nvidia-cudnn-cu11/nvidia_cudnn_cu11-8.9.7.29-py3-none-manylinux1_x86_64.whl"
+        }
+      ]
+    },
+    "purpose": "attempt4_bounded_transport_hardening_for_pinned_cudnn_wheel",
+    "scientific_values_modified": false,
+    "settings": {
+      "UV_CONCURRENT_DOWNLOADS": "4",
+      "UV_HTTP_RETRIES": "5",
+      "UV_HTTP_TIMEOUT": "300"
+    },
+    "settings_sha256": "3b7a58d0814de2627b4e5cf9b9c4e3f77670c3fc80e65e1a1670cf915c7d07a2",
+    "uv_lock_sha256": "8b7c535e583ed86ef3966f9e5b52b07900a86d864fc5f3dc8c99b8fed235d069",
+    "uv_version": "uv 0.9.30"
+  },
+  "derived_runtime_patch_contract": {
+    "approved_fields": [
+      "actor_hidden_dims",
+      "value_hidden_dims"
+    ],
+    "json_semantics_must_remain_identical": true,
+    "official_colab_runner_sha256": "bed6a8f8bdf44a4c716beb1e0dca8d194faaaccfb10581f9950e4d038e4f2b32",
+    "official_source_files_may_be_modified": false,
+    "only_type_change": "built-in list to tuple",
+    "scientific_values_may_be_modified": false
+  },
+  "derived_runtime_patch_final": {
+    "evidence": "derived_runtime_config_patch.json",
+    "evidence_sha256": "63481be0a0d01574e35c6bd690dcee312816c953b725d8222185a1638d31c7ae",
+    "identical_across_fresh_and_resume_processes": true
+  },
+  "derived_runtime_patch_phase_10": {
+    "evidence": "derived_runtime_config_patch_phase_10.json",
+    "evidence_sha256": "63481be0a0d01574e35c6bd690dcee312816c953b725d8222185a1638d31c7ae"
+  },
+  "driver": {
+    "bytes": 73058,
+    "persisted_in_bucket_before_scientific_execution": true,
+    "persisted_name": "derived_runtime_driver.py",
+    "sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd",
+    "submitted_name": "run_qio_t4_preflight.py"
+  },
+  "environment_separation": {
+    "cache_is_external_to_source": true,
+    "environment_and_cache_are_separate": true,
+    "environment_is_external_to_source": true,
+    "source_root": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent/upstream",
+    "uv_cache_dir": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/uv-cache",
+    "uv_project_environment": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/author-environment"
+  },
+  "finished_at": "2026-07-20T07:29:22.573268+00:00",
+  "hardware": {
+    "accepted_nvidia_smi_aliases": [
+      "NVIDIA T4",
+      "Tesla T4"
+    ],
+    "exactly_one_t4": true,
+    "query": [
+      "nvidia-smi",
+      "--query-gpu=index,name,uuid,driver_version,memory.total,compute_cap",
+      "--format=csv,noheader,nounits"
+    ],
+    "required_flavor": "t4-small",
+    "required_gpu": "Tesla T4",
+    "rows": [
+      {
+        "compute_capability": "7.5",
+        "driver_version": "580.159.03",
+        "index": "0",
+        "memory_total_mib": "15360",
+        "name": "Tesla T4",
+        "uuid": "GPU-7097a727-d7b1-d79a-902c-45bb40541d5e"
+      }
+    ]
+  },
+  "hf_job_contract": {
+    "aggregate_budget_must_be_rechecked_in_central_ledger": true,
+    "external_timeout": "59m",
+    "internal_deadline_seconds": 3300,
+    "rate_usd_per_hour": 0.4,
+    "required_flavor": "t4-small",
+    "timeout_worst_case_cost_usd": 0.3933333333333333
+  },
+  "input_bundle": {
+    "all_extracted_members_rehashed": true,
+    "all_members_stream_verified_before_use": true,
+    "archive": "qio-full-agent-colab-input-v1.tar.gz",
+    "archive_bytes": 22528563,
+    "archive_sha256": "d7f8e07b72f828d8f39100533510a60858dab8b7cc7debcc2e2409260da634ee",
+    "bundle_manifest_sha256": "d2e5706fe5c8f12d904234fd6b23b624624501da05e60954b291372c3e67fa42",
+    "member_count": 26,
+    "sidecar_sha256": "aeb4c83a3d369dff6c9956e9e6731736b7980b33dd12c8a0ecc70ceec196e9fd",
+    "source_commit": "5f13cf22d397be42a87b7d35336db7662879d6db"
+  },
+  "memory_feasibility": {
+    "gpu_names": [
+      "Tesla T4"
+    ],
+    "minimum_gpu_memory_total_mib": 15360.0,
+    "peak_gpu_memory_fraction": 0.7460286458333333,
+    "peak_gpu_memory_used_mib": 11459.0,
+    "peak_process_tree_rss_bytes": 1897746432,
+    "sample_count": 79,
+    "sampler_error_count": 0,
+    "samples_file": "resource_samples.jsonl",
+    "samples_sha256": "c2ef0f8a6a1fe90756ebb51acaa652869d48382b69a19065cb76de30606226be",
+    "t4_memory_feasible_below_95_percent": true,
+    "valid_sample_count": 79
+  },
+  "prior_attempt_provenance": [
+    {
+      "bucket_path": "hf://buckets/DineshAI/qIOcJSCGn2-artifacts/hf-jobs/qio-t4-preflight-v1/runs/qio-t4-preflight-v1-20260720",
+      "driver_sha256": "993c47d674eb7081dbc99cfe2990486664dc99570c9011c1861994cf52558523",
+      "failure": "uv sync completed, then the source verifier rejected upstream/.venv as an unexpected mutation before any scientific update executed",
+      "job_id": "DineshAI/6a5dbfefd216bd6f3a202e00",
+      "phase_10_failure_log_sha256": "f0c8e5fae53ae73f59bd2acc764db0e476567b19a0d587e29c610ba209c58710",
+      "run_id": "qio-t4-preflight-v1-20260720",
+      "status": "failed_closed",
+      "uv_sync_log_sha256": "001ffc4c206a332f3bf2516c06086527cf9a00a95aad9ee58733f692f8183750"
+    },
+    {
+      "bucket_path": "hf://buckets/DineshAI/qIOcJSCGn2-artifacts/hf-jobs/qio-t4-preflight-v2/runs/qio-t4-preflight-v2-20260720",
+      "driver_sha256": "f55fbcdeb8064e9ce15929d7b942bfa6d4db7d5d858f9176c741a87ed34349bc",
+      "events_sha256": "7da79aa3e60119aa34fd603110719bc402ede85089d53cf9370566405cbcc3a5",
+      "failure": "external UV environment and pristine-source gates passed; the first HGCDataset_sample call then rejected list-valued hidden dimensions in the static JAX FrozenDict before any scientific update executed",
+      "job_id": "DineshAI/6a5dc3acd216bd6f3a202e64",
+      "phase_10_failure_log_sha256": "1889c5e5b25a2ace8f7cb51963b245640642b07b680b1a96ddcb6e155b03158f",
+      "preflight_integrity_sha256": "0708fc59d8eb43ed8d981cb499aeb399b18ac76ad3636cf96913877306d2cbe5",
+      "preflight_report_sha256": "1764457e800eae339ccc34c821bde4bb70ff02f396756873a7e130e99e1bd65e",
+      "resource_samples_sha256": "ade646f7b5938eb32a82443acb418500b96ba16ed3cc9c753d1f6b687df01418",
+      "run_id": "qio-t4-preflight-v2-20260720",
+      "status": "failed_closed",
+      "unpatched_protocol_sha256": "32d1c2f063ca96a04cf2e4a163f65dba0aa041dc6da109344dd0ae7eddbfc9f1",
+      "uv_sync_log_sha256": "58e68ae3bd7ff371af7792b83539e55c9631cfdc90b8856fe4b53ae8dddb5098"
+    },
+    {
+      "bucket_path": "hf://buckets/DineshAI/qIOcJSCGn2-artifacts/hf-jobs/qio-t4-preflight-v3/runs/qio-t4-preflight-v3-20260720",
+      "driver_sha256": "013b02f6d6d6964fb2b8216852210a0ef832d59cf1ad917af9ac8153d2701288",
+      "events_sha256": "8752565ab8d18b5c9a2b92e94b4d1e9a67ae94dd64c0691877c22ea1db87d018",
+      "failure": "the frozen UV sync downloaded and extracted most dependencies, then the pinned 667.5 MiB nvidia-cudnn-cu11 wheel exceeded UV's 30-second HTTP read timeout before any scientific update executed",
+      "job_id": "DineshAI/6a5dc7c2bee6ee1cf4ed20ff",
+      "job_running_seconds": 61,
+      "job_total_seconds": 70,
+      "preflight_integrity_sha256": "ac70cd0accb4c4e5bc88108e5cfb94f2fc1e4c1e0385f79de1da6a06de1f0ea2",
+      "preflight_report_sha256": "879c0bde049e449fc508592e205497173f3bef55e3fa237163d43fdcfa9ed8f7",
+      "resource_samples_sha256": "e96ac1e49c88e408703b2c203c29ce5d0590e569284c0cba63c7e872f35f3792",
+      "run_id": "qio-t4-preflight-v3-20260720",
+      "scientific_updates_executed": 0,
+      "status": "failed_closed",
+      "uv_sync_log_bytes": 3452,
+      "uv_sync_log_sha256": "c6cd4ae7bb0de45bd87ab5d5684ee353043dfe7999e6c1c4ab48c74fe063df88",
+      "uv_sync_runtime_seconds": 50.45219963499994
+    },
+    {
+      "bucket_path": "hf://buckets/DineshAI/qIOcJSCGn2-artifacts/hf-jobs/qio-t4-preflight-v4/runs/qio-t4-preflight-v4-20260720",
+      "checkpoint_reload_exact": true,
+      "checkpoint_sha256": "5cdd4706dcf9e4dd38afdfcfe0a09d02af18dd9cbe43e45f6eeda7e7a78791eb",
+      "complete_json_sha256": "7ec127d7a420158e06a01ec14334e026493aab4275b2b26db9fc76ebf772a459",
+      "completed_updates": 100,
+      "driver_sha256": "2d8eef3ea343cc25c420328533b5ee8228fbcaa25a109e0dc60120872a58f9bf",
+      "failure": "the frozen environment, 0-to-10 CUDA stage, exact 10-to-100 resume, checkpoint reload, and pristine-source gates passed; the unchanged official packager then rejected false actor-presence booleans produced by unprefixed lookups against Flax modules_* parameter keys",
+      "job_id": "DineshAI/6a5dca82d216bd6f3a202f21",
+      "job_running_seconds": 150,
+      "job_total_seconds": 158,
+      "module_parameter_counts": {
+        "modules_goal_rep": 662272,
+        "modules_high_actor": 1712896,
+        "modules_low_actor": 1712642,
+        "modules_value": 5690888
+      },
+      "package_failure_log_sha256": "b9f9cb850521ba0612b651170b27f5b44ab89a9da9b6a27769be0757cb4a00ed",
+      "phase_100_log_sha256": "babe97d69fdb0b1a8fabaff4d7270b64cdabf135cd9f03a9773f4842a3742781",
+      "phase_10_log_sha256": "d126119f3bfaeb6ea94c5485d0c0e8671ed3aed724bae12b6ea4927ff15a948e",
+      "preflight_integrity_sha256": "bdb99435d162614efc111ff688b214f7d615bd8a11e84a76767feb6efc8a1c67",
+      "preflight_report_sha256": "3d42a8d31252f8e301872d53b4cfa19e9481210eb31062795399294bdf845197",
+      "protocol_artifact_sha256": "a62d89b3f75956b90b6d3e69da2754bc8f3ddc04b92c56d797934ed5dbc16e07",
+      "reported_actor_presence": {
+        "high_actor": false,
+        "low_actor": false
+      },
+      "resource_samples_sha256": "79c0b9035add9e74c0bff62956d695cde161f9897b44a3da9cb845d376773e96",
+      "resume_event_count": 1,
+      "run_id": "qio-t4-preflight-v4-20260720",
+      "sessions_sha256": "045a131355c03b6e7782a7928a3eb517af6eac23cff9b474afe393a662aaf322",
+      "state_sha256": "38271517ea571a90bc8344e18a9a03017366b46b035f9b6ca5a9537a6af0f056",
+      "status": "failed_closed_after_scientific_gate",
+      "training_trace_sha256": "be6595c2df95f4dba0d1f66f0b5c97f227c1ee38de1cd6d177c201d75bb0769f",
+      "uv_sync_log_sha256": "b4bf77ddc4d1498076da445db19d5d916ecb714ca4d7a95122c4fd6756281143"
+    }
+  ],
+  "purpose": "qio_full_agent_t4_actor_inventory_normalized_execution_resume_preflight",
+  "remaining_budget_usd_at_submission": 39.49,
+  "result_inventory_normalization_contract": {
+    "driver_sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd",
+    "module_key_mapping": {
+      "goal_rep": "modules_goal_rep",
+      "high_actor": "modules_high_actor",
+      "low_actor": "modules_low_actor",
+      "value": "modules_value"
+    },
+    "normalized_fields": [
+      "includes_high_actor",
+      "includes_low_actor"
+    ],
+    "official_colab_runner_sha256": "bed6a8f8bdf44a4c716beb1e0dca8d194faaaccfb10581f9950e4d038e4f2b32",
+    "official_package_gate_modified": false,
+    "official_return_packer_sha256": "124599a99e116f1001e4adefb9455bc06518b255b4768fc1c6439a414b4967e9",
+    "official_source_files_modified": false,
+    "purpose": "normalize_flax_moduledict_actor_presence_false_negatives",
+    "registered_false_negative_predicates": {
+      "includes_high_actor": "'high_actor' in module_parameter_counts",
+      "includes_low_actor": "'low_actor' in module_parameter_counts"
+    },
+    "registered_module_parameter_counts": {
+      "modules_goal_rep": 662272,
+      "modules_high_actor": 1712896,
+      "modules_low_actor": 1712642,
+      "modules_value": 5690888
+    },
+    "registered_total_parameter_count": 9778698,
+    "required_actor_trace_metrics": [
+      "high_actor/actor_loss",
+      "low_actor/actor_loss"
+    ],
+    "schema_version": 1,
+    "scientific_values_modified": false
+  },
+  "result_inventory_normalization_final": {
+    "evidence": "derived_result_inventory_patch.json",
+    "evidence_sha256": "c2d40492a6efa87dff4ddc0bb549b340125586fff7482b3d0f811bf9f6cc2184",
+    "modified_fields": {
+      "derived_result_inventory_normalization": {
+        "after_sha256": "96c2bf5ad0909cdae755f406093a417270999f7f4e61e4124850d869c6f18b6f",
+        "before": "absent"
+      },
+      "includes_high_actor": {
+        "after": true,
+        "before": false
+      },
+      "includes_low_actor": {
+        "after": true,
+        "before": false
+      }
+    },
+    "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea"
+  },
+  "result_inventory_normalization_phase_10": {
+    "evidence": "derived_result_inventory_patch_phase_10.json",
+    "evidence_sha256": "5032f2e8b0ea4063a99e6c5f7ec37a548925dd9dea64940b04259c0f217a3554",
+    "modified_fields": {
+      "derived_result_inventory_normalization": {
+        "after_sha256": "c6b4ad95c13abdd68c4bc92cc0371c2d3be30c414e5f1f19671aeb42a5dc1a60",
+        "before": "absent"
+      },
+      "includes_high_actor": {
+        "after": true,
+        "before": false
+      },
+      "includes_low_actor": {
+        "after": true,
+        "before": false
+      }
+    },
+    "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea"
+  },
+  "return_artifact": {
+    "archive": "qio-full-agent-t4-return-v1.tar.gz",
+    "archive_bytes": 96720938,
+    "archive_sha256": "25911c0bc00a4200f3a1664d0d70c7a7b7dadf397dafcc7e2d36eaf40d7d41fa",
+    "complete_json_sha256": "88ebda1a1c2df8570cc96cf6c04efa4c0cb24e9981af0cf2f1a5b2016e1f74b6",
+    "integrity_sidecar": "qio-full-agent-t4-return-v1.tar.gz.integrity.json",
+    "integrity_sidecar_bytes": 290,
+    "integrity_sidecar_sha256": "7b19f8cf80cced68e2fbc91235f53d603f1c1e176455515e5cd3e870dd551ab3",
+    "sessions_sha256": "868156e5ca4d1cd34568a42b0ed16c594d354b6e95604226b900dea3714935e4",
+    "training_trace_sha256": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d"
+  },
+  "run_id": "qio-t4-preflight-v5-20260720",
+  "schema_version": 1,
+  "scope": "execution_checkpoint_throughput_gate_not_claim3_evidence",
+  "source_tree_after_phase_10": {
+    "all_declared_source_files_match": true,
+    "environment_contamination_absent": true,
+    "file_count": 19,
+    "generated_python_bytecode_ignored_like_official_auditor": true,
+    "inventory_sha256": "651f7b076c0e5edf32d008c61c6ac00aa9631d29750b274f95f43ce9fb99a057",
+    "no_unexpected_source_files": true,
+    "source_root": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent/upstream"
+  },
+  "source_tree_after_phase_100": {
+    "all_declared_source_files_match": true,
+    "environment_contamination_absent": true,
+    "file_count": 19,
+    "generated_python_bytecode_ignored_like_official_auditor": true,
+    "inventory_sha256": "651f7b076c0e5edf32d008c61c6ac00aa9631d29750b274f95f43ce9fb99a057",
+    "no_unexpected_source_files": true,
+    "source_root": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent/upstream"
+  },
+  "source_tree_after_uv_sync": {
+    "all_declared_source_files_match": true,
+    "environment_contamination_absent": true,
+    "file_count": 19,
+    "generated_python_bytecode_ignored_like_official_auditor": true,
+    "inventory_sha256": "651f7b076c0e5edf32d008c61c6ac00aa9631d29750b274f95f43ce9fb99a057",
+    "no_unexpected_source_files": true,
+    "source_root": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v5-20260720/qio-full-agent/upstream"
+  },
+  "started_at": "2026-07-20T07:26:43.210664+00:00",
+  "status": "passed"
+}

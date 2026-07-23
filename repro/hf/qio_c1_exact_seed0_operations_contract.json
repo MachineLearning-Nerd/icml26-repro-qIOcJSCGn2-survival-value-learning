@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "status": "frozen_static_validated_not_launched_not_reserved_not_published",
+  "scope": "qIO_C1_exact_seed0_update100_to_1000000_only_not_C3_not_score_guaranteed",
+  "route": {
+    "id": "qio-c1-exact-seed0-full-v1",
+    "namespace": "DineshAI",
+    "hardware": "t4-small",
+    "timeout_hours": 48,
+    "reservation_id": "pending-qio-c1-exact-seed0-full-v1",
+    "bucket": "DineshAI/qIOcJSCGn2-artifacts",
+    "bucket_prefix": "hf-jobs/qio-c1-exact-seed0-full-v1/state/results with attempts/<submission-token> receipts",
+    "labels": {
+      "paper": "qIOcJSCGn2",
+      "claim": "C1",
+      "phase": "exact-seed0-full",
+      "route": "qio-c1-exact-seed0-full-v1"
+    },
+    "unique_identity_label": "submission"
+  },
+  "bound_files": {
+    "frozen_execution_contract": {
+      "path": "repro/hf/qio_c1_exact_seed0_contract.json",
+      "sha256": "5890f2d07ffeee4e58a99b279f506656816c7469644ad26d1a82c311ed3d4181"
+    },
+    "frozen_31_file_manifest": {
+      "path": "repro/hf/qio_c1_exact_seed0_source_manifest.json",
+      "sha256": "8638e6fffb347a1998772d0771e291a41b6d7ebe1c67b0145098688ddd2ea851"
+    },
+    "frozen_runner": {
+      "path": "repro/hf/run_qio_c1_exact_seed0.py",
+      "sha256": "90ea2ee78cd918d1e39cd2659ce7eeac09e433543a38f8c0a61dab36d8c4fce0"
+    },
+    "frozen_auditor": {
+      "path": "repro/src/audit_qio_c1_exact_seed0.py",
+      "sha256": "12274e0c550ce0795585c120e6be37ec6a4fb47b6818ba9b86dc97ba606e4198"
+    },
+    "frozen_return_verifier": {
+      "path": "repro/src/verify_qio_c1_exact_seed0_return.py",
+      "sha256": "58c11f186c0075d9d1cc072b5b1a0212e372ebf0d941202e634f766c2ac92c4f"
+    },
+    "deterministic_source_bundle": {
+      "path": "hf_jobs/qio-c1-exact-seed0-input/qio-c1-exact-seed0-source-v1.tar.gz",
+      "sha256": "ff76d286ac579fbdaae777c9c2a306d3b2039bd084ab45da999c2ad406a904be"
+    },
+    "source_bundle_integrity": {
+      "path": "hf_jobs/qio-c1-exact-seed0-input/qio-c1-exact-seed0-source-v1.integrity.json",
+      "sha256": "40389fc5b74c6bf0a6d965f4d6ad2ad6bf8667301cd45ffed5867d1ac86e0f91"
+    },
+    "source_bundle_builder": {
+      "path": "repro/hf/build_qio_c1_exact_seed0_source_bundle.py",
+      "sha256": "ce560854274528676f3e099d2004afed300816ccfa53affdf8eee5e3d0231875"
+    },
+    "persistent_job_wrapper": {
+      "path": "repro/hf/run_qio_c1_exact_seed0_job.py",
+      "sha256": "7f2b45b401787a892184f95dfea49bfb999349c6ecc5cdf2171412405aa59ef5"
+    },
+    "race_closing_launcher": {
+      "path": "hf_jobs/launch_qio_c1_exact_seed0.py",
+      "sha256": "d26a3cdacf1f829b802d4edf4420be24108041648bc951fcfa615034395fdc13"
+    },
+    "terminal_importer": {
+      "path": "repro/hf/import_qio_c1_exact_seed0.py",
+      "sha256": "6943ba8dc8caafa9452d00f1426618f19c751b13a1e57708fc49e9e34268ffd9"
+    },
+    "existing_space_repair": {
+      "path": "repro/hf/prepare_qio_c1_exact_seed0_space_repair.py",
+      "sha256": "9337d5ae7b93d4c569d6b48627c78f907dc7836741536eac9d3aba9404c2a8d2"
+    },
+    "operator_document": {
+      "path": "docs/QIO_C1_EXACT_SEED0_OPERATIONAL_CHAIN.md",
+      "sha256": "cacc480e3fd0676943e887c45fe039d1ac89a2ff3b558a79567e57fb14e632e4"
+    }
+  },
+  "launch_rejections": [
+    "protected PID 41861 is present",
+    "any command matching run_full_agent_probe.py, run_full_agent_probe_queue.py, or run_qio_c1_exact_seed0 is present",
+    "any account-wide T4 job is RUNNING or SCHEDULING",
+    "central reservation is absent or violates the frozen limits",
+    "the exact route has a COMPLETED, RUNNING, or SCHEDULING job",
+    "the pinned existing Space parent has drifted",
+    "any bound source, data, checkpoint, manifest, runner, auditor, verifier, wrapper, or bundle hash has drifted"
+  ],
+  "terminal_import_rejections": [
+    "not exactly one terminal COMPLETED exact-label job",
+    "any RUNNING or SCHEDULING duplicate exact route",
+    "wrong selected job ID or unique submission token",
+    "partial persistent bucket output",
+    "terminal receipt, completion, SHA256SUMS, frozen lineage, or local recomputation failure",
+    "pinned existing Space parent drift"
+  ],
+  "space_repair": {
+    "repo_id": "DineshAI/qIOcJSCGn2",
+    "expected_parent_sha": "757e63d6377d6a3789657d75e354306c95d6e43f",
+    "existing_space_only": true,
+    "c2_page_uploaded": false,
+    "preserve_non_allowlisted_parent_files_byte_for_byte": true,
+    "preserve_current_bounded_c1_evidence": true,
+    "report_negative_or_inconclusive_terminal_evidence": true,
+    "official_score_change_assumed": false,
+    "prepare_default": "not_published",
+    "publication_requires_terminal_import_explicit_override_exact_approval_parent_recheck_and_readback": true
+  },
+  "current_live_readiness": {
+    "ready_now": false,
+    "future_root_reservation_is_necessary_but_not_sufficient": true,
+    "remaining_gates": [
+      "protected and matching qIO processes exit naturally",
+      "all account-wide T4 work is terminal",
+      "central root reservation exists with frozen limits",
+      "no exact-route terminal or active duplicate exists",
+      "Space parent still equals the pinned SHA",
+      "immediate pre-submit hash and race-closing gates pass"
+    ]
+  }
+}

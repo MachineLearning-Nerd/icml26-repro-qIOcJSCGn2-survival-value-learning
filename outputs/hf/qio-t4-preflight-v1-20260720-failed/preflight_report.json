@@ -1,0 +1,97 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/usr/local/bin/uv",
+        "sync",
+        "--frozen",
+        "--python",
+        "3.10",
+        "--project",
+        "/tmp/qio-t4-preflight-work/qio-t4-preflight-v1-20260720/qio-full-agent/upstream"
+      ],
+      "cwd": "/tmp/qio-t4-preflight-work/qio-t4-preflight-v1-20260720/qio-full-agent",
+      "finished_at": "2026-07-20T06:29:10.205051+00:00",
+      "log": "uv_sync.log",
+      "log_bytes": 5900,
+      "log_sha256": "001ffc4c206a332f3bf2516c06086527cf9a00a95aad9ee58733f692f8183750",
+      "returncode": 0,
+      "runtime_seconds": 60.61193475300024,
+      "stage": "uv_sync_frozen",
+      "started_at": "2026-07-20T06:28:09.593102+00:00",
+      "stream_errors": [],
+      "timed_out_for_evidence_finalization": false
+    }
+  ],
+  "error": {
+    "message": "stage failed: {\"command\": [\"/tmp/qio-t4-preflight-work/qio-t4-preflight-v1-20260720/qio-full-agent/upstream/.venv/bin/python\", \"/tmp/qio-t4-preflight-work/qio-t4-preflight-v1-20260720/qio-full-agent/repro/colab/run_full_agent_probe_colab.py\", \"--input-archive\", \"/hf-bucket/hf-jobs/qio-t4-preflight-v1/inputs/qio-full-agent-colab-input-v1.tar.gz\", \"--input-integrity\", \"/hf-bucket/hf-jobs/qio-t4-preflight-v1/inputs/qio-full-agent-colab-input-v1.tar.gz.integrity.json\", \"--seed\", \"0\", \"--log-interval\", \"10\", \"--output-dir\", \"/hf-bucket/hf-jobs/qio-t4-preflight-v1/runs/qio-t4-preflight-v1-20260720/full_agent_probe/seed-0\", \"--updates\", \"10\", \"--checkpoint-interval\", \"10\"], \"cwd\": \"/tmp/qio-t4-preflight-work/qio-t4-preflight-v1-20260720/qio-full-agent\", \"finished_at\": \"2026-07-20T06:29:20.659246+00:00\", \"log\": \"phase_10.log\", \"log_bytes\": 1468581, \"log_sha256\": \"f0c8e5fae53ae73f59bd2acc764db0e476567b19a0d587e29c610ba209c58710\", \"returncode\": 1, \"runtime_seconds\": 10.38186495500031, \"stage\": \"phase_10_fresh_process\", \"started_at\": \"2026-07-20T06:29:10.277361+00:00\", \"stream_errors\": [], \"timed_out_for_evidence_finalization\": false}",
+    "traceback": "Traceback (most recent call last):\n  File \"/data/run_qio_t4_preflight.py\", line 700, in main\n    run_logged(\n  File \"/data/run_qio_t4_preflight.py\", line 432, in run_logged\n    raise RuntimeError(f\"stage failed: {json.dumps(record, sort_keys=True)}\")\nRuntimeError: stage failed: {\"command\": [\"/tmp/qio-t4-preflight-work/qio-t4-preflight-v1-20260720/qio-full-agent/upstream/.venv/bin/python\", \"/tmp/qio-t4-preflight-work/qio-t4-preflight-v1-20260720/qio-full-agent/repro/colab/run_full_agent_probe_colab.py\", \"--input-archive\", \"/hf-bucket/hf-jobs/qio-t4-preflight-v1/inputs/qio-full-agent-colab-input-v1.tar.gz\", \"--input-integrity\", \"/hf-bucket/hf-jobs/qio-t4-preflight-v1/inputs/qio-full-agent-colab-input-v1.tar.gz.integrity.json\", \"--seed\", \"0\", \"--log-interval\", \"10\", \"--output-dir\", \"/hf-bucket/hf-jobs/qio-t4-preflight-v1/runs/qio-t4-preflight-v1-20260720/full_agent_probe/seed-0\", \"--updates\", \"10\", \"--checkpoint-interval\", \"10\"], \"cwd\": \"/tmp/qio-t4-preflight-work/qio-t4-preflight-v1-20260720/qio-full-agent\", \"finished_at\": \"2026-07-20T06:29:20.659246+00:00\", \"log\": \"phase_10.log\", \"log_bytes\": 1468581, \"log_sha256\": \"f0c8e5fae53ae73f59bd2acc764db0e476567b19a0d587e29c610ba209c58710\", \"returncode\": 1, \"runtime_seconds\": 10.38186495500031, \"stage\": \"phase_10_fresh_process\", \"started_at\": \"2026-07-20T06:29:10.277361+00:00\", \"stream_errors\": [], \"timed_out_for_evidence_finalization\": false}\n",
+    "type": "RuntimeError"
+  },
+  "finished_at": "2026-07-20T06:29:20.664489+00:00",
+  "hardware": {
+    "accepted_nvidia_smi_aliases": [
+      "NVIDIA T4",
+      "Tesla T4"
+    ],
+    "exactly_one_t4": true,
+    "query": [
+      "nvidia-smi",
+      "--query-gpu=index,name,uuid,driver_version,memory.total,compute_cap",
+      "--format=csv,noheader,nounits"
+    ],
+    "required_flavor": "t4-small",
+    "required_gpu": "Tesla T4",
+    "rows": [
+      {
+        "compute_capability": "7.5",
+        "driver_version": "580.159.03",
+        "index": "0",
+        "memory_total_mib": "15360",
+        "name": "Tesla T4",
+        "uuid": "GPU-7097a727-d7b1-d79a-902c-45bb40541d5e"
+      }
+    ]
+  },
+  "hf_job_contract": {
+    "aggregate_budget_must_be_rechecked_in_central_ledger": true,
+    "external_timeout": "59m",
+    "internal_deadline_seconds": 3300,
+    "rate_usd_per_hour": 0.4,
+    "required_flavor": "t4-small",
+    "timeout_worst_case_cost_usd": 0.3933333333333333
+  },
+  "input_bundle": {
+    "all_extracted_members_rehashed": true,
+    "all_members_stream_verified_before_use": true,
+    "archive": "qio-full-agent-colab-input-v1.tar.gz",
+    "archive_bytes": 22528563,
+    "archive_sha256": "d7f8e07b72f828d8f39100533510a60858dab8b7cc7debcc2e2409260da634ee",
+    "bundle_manifest_sha256": "d2e5706fe5c8f12d904234fd6b23b624624501da05e60954b291372c3e67fa42",
+    "member_count": 26,
+    "sidecar_sha256": "aeb4c83a3d369dff6c9956e9e6731736b7980b33dd12c8a0ecc70ceec196e9fd",
+    "source_commit": "5f13cf22d397be42a87b7d35336db7662879d6db"
+  },
+  "memory_feasibility": {
+    "gpu_names": [
+      "Tesla T4"
+    ],
+    "minimum_gpu_memory_total_mib": 15360.0,
+    "peak_gpu_memory_fraction": 0.006966145833333334,
+    "peak_gpu_memory_used_mib": 107.0,
+    "peak_process_tree_rss_bytes": 551636992,
+    "sample_count": 37,
+    "sampler_error_count": 0,
+    "samples_file": "resource_samples.jsonl",
+    "samples_sha256": "2f2af1ed08561281775958c4a056151b45abb31e42fb4d83837f4fc631da6c4b",
+    "t4_memory_feasible_below_95_percent": true,
+    "valid_sample_count": 37
+  },
+  "purpose": "qio_full_agent_t4_execution_resume_throughput_preflight",
+  "remaining_budget_usd_at_submission": 39.56,
+  "run_id": "qio-t4-preflight-v1-20260720",
+  "schema_version": 1,
+  "scope": "execution_checkpoint_throughput_gate_not_claim3_evidence",
+  "started_at": "2026-07-20T06:28:08.516701+00:00",
+  "status": "failed"
+}

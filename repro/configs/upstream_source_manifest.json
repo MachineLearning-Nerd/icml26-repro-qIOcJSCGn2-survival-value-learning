@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning.git",
+  "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+  "tree": "7a38976b0a065d6ef7f755021853119dc2709487",
+  "verified_against_remote_at": "2026-07-20T04:10:00Z",
+  "files": {
+    ".gitignore": "e39a9c40b98fac9f45cdac7899670072680c6da4",
+    "README.md": "02aedd2e9606d1dc383aae0a5fabb12bb2ae56c4",
+    "hsvl/__init__.py": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "hsvl/agent.py": "71137eff0ed38def87baaf2ca0cb591dab57ff2c",
+    "hsvl/config/agent/hsvl.yaml": "d65939a99a30388dc6068d9aa7a0eaa1c5fd830c",
+    "hsvl/config/main.yaml": "f51147bd2a452991e1b42dded3132802d8e018df",
+    "hsvl/utils/actors.py": "c2239ccce78fde5d717d29474e3ba7e4a2808bdb",
+    "hsvl/utils/common.py": "b066fd817a255b481f3a83683a0248e66a22455f",
+    "hsvl/utils/critics.py": "6ea7cfcc20de458c284c766d8326d45ebc292758",
+    "hsvl/utils/datasets.py": "18e6f7acee6e64b754ebdf1fcc17e155c8e2217b",
+    "hsvl/utils/encoders.py": "ee64c769b13ea07f4afee586d77569bc02b13d97",
+    "hsvl/utils/evaluation.py": "efb68f9e71690977397af6d6109258ee3a47d1a6",
+    "hsvl/utils/flax_utils.py": "73444b9cdce6c68a9e34fde799691866499229d5",
+    "hsvl/utils/mlp.py": "0b22820dd54af1aea03fa1fed647eba088e51e33",
+    "hsvl/utils/survival.py": "11c991bb22c6926e7d08b59907906beee00649b4",
+    "pyproject.toml": "ae08599f3a9b8d1a3d957f52b6409272609f4b33",
+    "train.py": "87a7eb8637ffd2bb9f6996dea6f3e865e43b60f0",
+    "uv.lock": "619d2539dce473d61aa36e5a1f0fa7f387849433"
+  },
+  "intentionally_omitted_remote_files": {
+    "intro.png": {
+      "git_blob": "4b86fcd6472b900c498e2b35ffe42ee69e15e559",
+      "reason": "Non-executable README illustration; not required by any reproduction path."
+    }
+  }
+}

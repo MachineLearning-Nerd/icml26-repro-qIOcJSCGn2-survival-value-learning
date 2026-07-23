@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "status": "components_frozen_static_not_launch_authorized",
+  "scope": {
+    "claim": "C1",
+    "c1_only": true,
+    "claim3": false,
+    "judge_score_upgrade_guaranteed": false,
+    "environment": "pointmaze-large-navigate-v0",
+    "seed": 0,
+    "exact_scale_seed_count": 1,
+    "interpretation": "One exact-scale seed can strengthen or falsify C1 evidence only. It is not a three-seed paper reproduction and cannot support C3."
+  },
+  "lineage": {
+    "returned_run_root": "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0",
+    "protocol": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/protocol.json",
+      "bytes": 5400,
+      "file_sha256": "6b59171427fedd45c5034f74770859ef59f07dde9833adc784d04e64abfe6614",
+      "semantic_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea"
+    },
+    "checkpoint": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/checkpoint-00000100.pkl",
+      "bytes": 117362957,
+      "sha256": "689ed10245e4926249316c79f7502ba692343c583e6fdfcc0de458020f606925",
+      "completed_updates": 100,
+      "state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0"
+    },
+    "checkpoint_manifest": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/checkpoint.manifest.json",
+      "bytes": 403,
+      "sha256": "65a50a2c154f0f19cd1d28739c7934f97a84950cbc2404c1ce77cd0a809c8680"
+    },
+    "completion": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/COMPLETE.json",
+      "sha256": "88ebda1a1c2df8570cc96cf6c04efa4c0cb24e9981af0cf2f1a5b2016e1f74b6"
+    },
+    "training_trace": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/training_trace.json",
+      "sha256": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d"
+    },
+    "sessions": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/sessions.json",
+      "sha256": "868156e5ca4d1cd34568a42b0ed16c594d354b6e95604226b900dea3714935e4"
+    },
+    "returned_archive": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/qio-full-agent-t4-return-v1.tar.gz",
+      "bytes": 96720938,
+      "sha256": "25911c0bc00a4200f3a1664d0d70c7a7b7dadf397dafcc7e2d36eaf40d7d41fa",
+      "required_local": true
+    },
+    "preflight_report": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/preflight_report.json",
+      "sha256": "9ccf813d81403f300908aff319b7c8f8142b19148c29c39e959d32b3ea61b6f8"
+    },
+    "preflight_integrity": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/preflight_integrity.json",
+      "sha256": "ce681ac991e2c732f96f703aa83222b5aee5821ba87ac4d20ea94c692792f3a0"
+    }
+  },
+  "source_and_data": {
+    "hsvl_commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "hsvl_tree": "7a38976b0a065d6ef7f755021853119dc2709487",
+    "ogbench_commit": "1d4140997f60c52c6fb0702ec100dc988b18c548",
+    "source_manifest": {
+      "path": "repro/configs/upstream_source_manifest.json",
+      "sha256": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6"
+    },
+    "uv_lock": {
+      "path": "upstream/uv.lock",
+      "sha256": "8b7c535e583ed86ef3966f9e5b52b07900a86d864fc5f3dc8c99b8fed235d069"
+    },
+    "train_data": {
+      "path": "data/ogbench/pointmaze-large-navigate-v0.npz",
+      "bytes": 20398507,
+      "sha256": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61"
+    },
+    "validation_data": {
+      "path": "data/ogbench/pointmaze-large-navigate-v0-val.npz",
+      "bytes": 2040807,
+      "sha256": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4"
+    },
+    "frozen_preflight_runner": {
+      "path": "repro/hf/run_qio_t4_preflight.py",
+      "sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd"
+    }
+  },
+  "exact_protocol": {
+    "start_update": 100,
+    "target_update": 1000000,
+    "remaining_updates": 999900,
+    "log_interval_updates": 1000,
+    "resume_must_restore_exact_state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0",
+    "checkpoint_interval_updates": 50000,
+    "persistence": {
+      "required": "mounted_persistent_hf_bucket",
+      "immutable_generation_files": true,
+      "atomic_manifest_replace": true,
+      "checkpoint_is_source_of_truth": true,
+      "completion_after_exact_reload_only": true,
+      "timeout_state": "paused_resumable_not_scientific_failure",
+      "retry_requires_new_reservation_and_all_gates": true
+    },
+    "policy_evaluation": {
+      "episodes_total": 50,
+      "task_schedule": "round_robin_over_env_task_infos_in_canonical_order",
+      "task_inventory_must_be_frozen_before_update_101": true,
+      "reset_seed_start": 2026072000,
+      "reset_seed_stop_inclusive": 2026072049,
+      "actor_seed_start": 2026073000,
+      "actor_seed_stop_inclusive": 2026073049,
+      "temperature": 0.0,
+      "gaussian_noise": null,
+      "video_episodes": 0,
+      "raw_per_episode_required": [
+        "episode_index",
+        "task_id",
+        "task_name",
+        "reset_seed",
+        "actor_seed",
+        "reward",
+        "length",
+        "success",
+        "terminal_info"
+      ],
+      "claim_boundary": "Operational behavior evidence only; not a Table 1 or C3 policy-success reproduction."
+    },
+    "heldout_twin_survival": {
+      "source": "validation_data_only",
+      "tuple_count": 32768,
+      "tuple_sampler_seed": 20260719,
+      "chunk_size": 8192,
+      "store_both_heads_raw_logits": true,
+      "store_targets_and_censoring": true,
+      "twin_mean_definition": "arithmetic_mean_of_head_probability_distributions",
+      "metrics_per_head_and_twin_mean": [
+        "censored_negative_log_likelihood",
+        "known_time_brier_score",
+        "survival_mae",
+        "calibration_curve",
+        "distribution_normalization_max_abs_error",
+        "survival_monotonicity_max_increase",
+        "tail_mass",
+        "twin_head_disagreement"
+      ],
+      "numeric_integrity_thresholds": {
+        "distribution_normalization_max_abs_error_lte": 1e-10,
+        "survival_monotonicity_max_increase_lte": 1e-12,
+        "all_values_finite": true
+      },
+      "calibration_claim_threshold": null
+    },
+    "negative_controls": {
+      "joint_target_shuffle": {
+        "seed": 20260721,
+        "required_penalty": "positive_censored_nll_delta_against_unshuffled"
+      },
+      "temporal_hazard_reversal": {
+        "required_penalty": "positive_censored_nll_delta_against_unreversed"
+      },
+      "report_regardless_of_outcome": true
+    },
+    "c1_support_candidate_gate": [
+      "complete_hash_and_provenance_integrity",
+      "both_twin_heads_finite",
+      "distribution_normalization_threshold_passes",
+      "survival_monotonicity_threshold_passes",
+      "joint_target_shuffle_penalty_is_positive",
+      "temporal_hazard_reversal_penalty_is_positive"
+    ],
+    "failed_scientific_gate_interpretation": "Inconclusive or negative C1 evidence, not an integrity failure and never silently discarded."
+  },
+  "compute": {
+    "provider": "huggingface_jobs",
+    "hardware": "t4-small",
+    "verified_rate_usd_per_hour": 0.4,
+    "timeout_hours": 48,
+    "reservation_ceiling_usd": 19.2,
+    "median_observed_updates_per_second": 21.451733,
+    "median_projection_hours": 12.9477,
+    "median_projection_usd": 5.1791,
+    "conservative_observed_updates_per_second": 6.3217566,
+    "conservative_projection_hours": 43.9356,
+    "conservative_projection_usd": 17.5742,
+    "conservative_time_margin_hours": 4.0644
+  },
+  "central_reservation": {
+    "ledger_path": "../../icml-2026-reproduction-challenge/HF_JOBS_BUDGET.md",
+    "reservation_id": "pending-qio-c1-exact-seed0-full-v1",
+    "purpose_substring": "qIO C1",
+    "required_flavor": "t4-small",
+    "required_state_substrings": [
+      "reserved",
+      "not submitted"
+    ],
+    "max_runtime_hours": 48,
+    "max_committed_usd": 19.2,
+    "campaign_cap_usd": 40.0,
+    "must_exist_before_any_submission": true
+  },
+  "nonduplication": {
+    "protected_pids": {
+      "41861": "run_full_agent_probe_queue.py"
+    },
+    "observed_wait_dependency_do_not_modify": {
+      "41276": "run_full_matrix_queue.py"
+    },
+    "block_if_command_contains": [
+      "run_full_agent_probe.py",
+      "run_full_agent_probe_queue.py",
+      "run_qio_c1_exact_seed0"
+    ],
+    "never_signal_or_modify_matching_processes": true
+  },
+  "account_wide_t4_exclusion": {
+    "block_if_any_running_or_scheduling_t4_job_exists": true,
+    "do_not_cancel_pause_kill_or_mutate_any_job": true,
+    "live_active_state_gate_must_run_once_immediately_before_submission": true,
+    "live_gate_queries": [
+      "RUNNING",
+      "SCHEDULING"
+    ],
+    "launcher_must_repeat_read_only_check_at_submit_boundary": true
+  },
+  "required_frozen_execution_components": {
+    "continuation_and_policy_runner": {
+      "path": "repro/hf/run_qio_c1_exact_seed0.py",
+      "sha256": "90ea2ee78cd918d1e39cd2659ce7eeac09e433543a38f8c0a61dab36d8c4fce0",
+      "status": "frozen_static_reviewed"
+    },
+    "independent_numpy_twin_survival_auditor": {
+      "path": "repro/src/audit_qio_c1_exact_seed0.py",
+      "sha256": "12274e0c550ce0795585c120e6be37ec6a4fb47b6818ba9b86dc97ba606e4198",
+      "status": "frozen_static_reviewed"
+    },
+    "terminal_return_verifier": {
+      "path": "repro/src/verify_qio_c1_exact_seed0_return.py",
+      "sha256": "58c11f186c0075d9d1cc072b5b1a0212e372ebf0d941202e634f766c2ac92c4f",
+      "status": "frozen_static_reviewed"
+    },
+    "immutable_job_source_manifest": {
+      "path": "repro/hf/qio_c1_exact_seed0_source_manifest.json",
+      "sha256": "8638e6fffb347a1998772d0771e291a41b6d7ebe1c67b0145098688ddd2ea851",
+      "status": "frozen_static_reviewed"
+    }
+  },
+  "return_contract": {
+    "terminal_status_required": "COMPLETED",
+    "required_artifacts": [
+      "completion.json",
+      "PROGRESS.json",
+      "execution_protocol.json",
+      "source_manifest.json",
+      "bucket_inventory_before.json",
+      "bucket_inventory_after.json",
+      "checkpoint-01000000.pkl",
+      "checkpoint-01000000.manifest.json",
+      "checkpoint.manifest.json",
+      "training_trace.json",
+      "sessions.json",
+      "policy_episodes.jsonl",
+      "policy_summary.json",
+      "heldout_tuple_indices.npz",
+      "twin_survival_raw.npz",
+      "twin_survival_metrics.json",
+      "negative_controls.json",
+      "independent_audit.json",
+      "SHA256SUMS"
+    ],
+    "import_requirements": [
+      "terminal completion sentinel and exact final checkpoint reload",
+      "before and after persistent bucket inventory",
+      "all required file hashes match SHA256SUMS",
+      "all source data checkpoint and execution component hashes match this contract",
+      "independent local recomputation from raw heldout arrays",
+      "immutable hash_named local import destination"
+    ],
+    "publication_allowed": false
+  },
+  "known_blockers": [
+    "protected local qIO queue PID 41861 is alive and waiting on untouched dependency PID 41276",
+    "a campaign FluxNet T4 job is recorded active in the current central ledger snapshot",
+    "central reservation pending-qio-c1-exact-seed0-full-v1 does not exist"
+  ]
+}

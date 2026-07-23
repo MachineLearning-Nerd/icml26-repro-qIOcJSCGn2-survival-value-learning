@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "paper": "qIOcJSCGn2",
+  "space_id": "DineshAI/qIOcJSCGn2",
+  "audited_at": "2026-07-20T12:28:09Z",
+  "audit_classification": "official_3_of_6_current_c1_toy_c2_verified_c3_inconclusive",
+  "official_state": {
+    "space_sha": "757e63d6377d6a3789657d75e354306c95d6e43f",
+    "judged_at": "2026-07-19T17:01:55+00:00",
+    "score": "3/6",
+    "overall_quality": "medium",
+    "claims": {
+      "c1": "toy",
+      "c2": "verified",
+      "c3": "inconclusive"
+    },
+    "local_status_record_path": "STATUS.md",
+    "local_status_record_sha256": "97a5957a567d8b6d8f2296bba894ef30726545f66d1222afeddaaa9386ebcc7a"
+  },
+  "current_space": {
+    "sha": "757e63d6377d6a3789657d75e354306c95d6e43f",
+    "same_space_repair_parent_sha": "757e63d6377d6a3789657d75e354306c95d6e43f",
+    "runtime_state_at_audit": "RUNNING",
+    "last_modified_at_audit": "2026-07-19T16:58:28+00:00",
+    "file_count": 18
+  },
+  "claim_boundary": {
+    "c1": {
+      "accepted_evidence": "Three-seed released PCS distribution learning on official PointMaze-large with disjoint held-out validation, a repeated-hazard baseline, normalization and monotonicity checks, and a shuffled-target control.",
+      "summary_sha256": "49e48feb0eb1cf9ed5304ee0ce3f6cc3c7f83607e8b8a8faff5be5ed4d2d0435",
+      "independent_audit_sha256": "ef99588b060aa3631be80c0479cc8f621742fa1eb4d1f72ed15bed32f8dc2ca2",
+      "official_gap": "Reduced width, update count, effective bin count, representation size, and one critic head, with no actor or policy evaluation.",
+      "current_classification": "toy",
+      "maximum_honest_current_claim": "Applied bounded distribution-learning evidence, not an exact-scale or policy reproduction."
+    },
+    "c2": {
+      "current_classification": "verified",
+      "public_page_sha256": "ac130af15a3f1e82ef62310fb8596f63030f1cacf6cb1974d40c030052ec7951",
+      "repair_policy": "Preserve byte-for-byte in every future overlay."
+    },
+    "c3": {
+      "current_classification": "inconclusive",
+      "official_gap": "No matched hierarchical HSVL and HIQL training, no reported long-horizon task reproduction, no four-seed success rates, and no 50-episode policy evaluation.",
+      "maximum_honest_current_claim": "No C3 performance evidence exists; the PointMaze critic result and 100-update execution preflight are not C3."
+    }
+  },
+  "protected_local_work": {
+    "pid": 41861,
+    "observed_state": "alive_sleeping_waiting_on_pid_41276",
+    "cpu_percent_at_audit": 0.0,
+    "command": "repro/src/run_full_agent_probe_queue.py --wait-pid 41276 --wait-command run_full_matrix_queue.py --max-attempts 3 --timeout-hours 6",
+    "policy": "Never stop, signal, reprioritize, or modify; wait for natural exit."
+  },
+  "prepared_c1_route": {
+    "scope": "C1 only, one exact-scale PointMaze seed, not C3, score increase not guaranteed",
+    "start_update": 100,
+    "target_update": 1000000,
+    "policy_evaluation_episodes": 50,
+    "heldout_twin_survival_tuples": 32768,
+    "hardware": "t4-small",
+    "timeout_hours": 48,
+    "cost_projection": {
+      "median_usd": 5.1791,
+      "conservative_usd": 17.5742,
+      "hard_ceiling_usd": 19.2
+    },
+    "contract_sha256": "5890f2d07ffeee4e58a99b279f506656816c7469644ad26d1a82c311ed3d4181",
+    "operations_contract_sha256": "ddb6442872c1d65833720b3ce3613a02e28880f807107aecc890a3cad0b6f4f8",
+    "source_manifest_sha256": "8638e6fffb347a1998772d0771e291a41b6d7ebe1c67b0145098688ddd2ea851",
+    "source_bundle_sha256": "ff76d286ac579fbdaae777c9c2a306d3b2039bd084ab45da999c2ad406a904be",
+    "launcher_sha256": "d26a3cdacf1f829b802d4edf4420be24108041648bc951fcfa615034395fdc13",
+    "terminal_space_repair_sha256": "9337d5ae7b93d4c569d6b48627c78f907dc7836741536eac9d3aba9404c2a8d2",
+    "route_duplicates_at_audit": [],
+    "current_blockers": [
+      "Protected PID 41861 is alive and must exit naturally.",
+      "The exact central reservation pending-qio-c1-exact-seed0-full-v1 is absent.",
+      "Account-wide T4 job DineshAI/6a5dd080bee6ee1cf4ed215e is RUNNING and must remain untouched.",
+      "A future submit operator must use a Python environment containing huggingface_hub; the project system and .venv interpreters do not currently provide it."
+    ]
+  },
+  "preflight_evidence": {
+    "job_id": "DineshAI/6a5dcda9bee6ee1cf4ed2148",
+    "scope": "execution_checkpoint_and_resume_feasibility_only_not_c1_or_c3_claim_evidence",
+    "updates": 100,
+    "parameters": 9778698,
+    "peak_gpu_memory_mib": 11459,
+    "preflight_report_sha256": "9ccf813d81403f300908aff319b7c8f8142b19148c29c39e959d32b3ea61b6f8",
+    "preflight_integrity_sha256": "ce681ac991e2c732f96f703aa83222b5aee5821ba87ac4d20ea94c692792f3a0",
+    "return_archive_sha256": "25911c0bc00a4200f3a1664d0d70c7a7b7dadf397dafcc7e2d36eaf40d7d41fa"
+  },
+  "zero_cost_evidence_audit": {
+    "scientific_artifact_that_repairs_c1": null,
+    "scientific_artifact_that_repairs_c3": null,
+    "safe_public_quality_improvement": "Correct stale 2/6 narrative to the current official 3/6 verdict and add a clearly non-claim exact-width feasibility/provenance note.",
+    "expected_score_change": null,
+    "recommendation": "Prepare locally only after approval; do not publish while the parent is unaudited or without exact readback."
+  },
+  "approval_gated_same_space_repair": {
+    "publish_now": false,
+    "expected_parent_sha": "757e63d6377d6a3789657d75e354306c95d6e43f",
+    "existing_space_only": true,
+    "allowed_modified_existing_paths": [
+      "pages/executive-summary/page.md",
+      "pages/claim-1-time-to-goal-distribution/page.md",
+      "pages/claim-3-offline-benchmarks/page.md",
+      "pages/conclusion/page.md"
+    ],
+    "protected_c2_path": "pages/claim-2-survival-identity/page.md",
+    "protected_c2_sha256": "ac130af15a3f1e82ef62310fb8596f63030f1cacf6cb1974d40c030052ec7951",
+    "requirements": [
+      "State the current official verdict as 3/6 at the exact parent SHA.",
+      "Retain C1 toy and C3 inconclusive; do not relabel feasibility evidence as scientific support.",
+      "Preserve all non-allowlisted parent files byte-for-byte.",
+      "Require explicit publication approval, fresh parent-SHA check, and exact-revision readback."
+    ]
+  },
+  "remote_inventory_sha256": {
+    ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "README.md": "3fbfcc357b94ae62dec16f3c2e27dc1896641fda0750ae72bada56bcb64ce3da",
+    "bucket-icon.svg": "d1c28fc0a4e07f2688d013f576cf76ffc422d278d56a52a82989e0b93b3b3964",
+    "index.html": "68443360e0da5131465dfb719ffa72eef941b22063013d7e31954a56763372e4",
+    "logbook.css": "64e1de4358c79ec0d5f2697c56f98258c025e992c94ad7b3b7801739222ca41d",
+    "logbook.js": "69d73869184f936613668569980f31984be65229e77c4df4ba9604d3de70c02b",
+    "logbook.json": "dda31c6d1d0d68f7aaa71dc324b68f1ee84539dfe54462676a0567d2cca162be",
+    "pages/claim-1-time-to-goal-distribution/page.md": "4812a4833027ea76f4e53a5b9112351cff53b45e2b79ba642c4df90636883893",
+    "pages/claim-2-survival-identity/page.md": "ac130af15a3f1e82ef62310fb8596f63030f1cacf6cb1974d40c030052ec7951",
+    "pages/claim-3-offline-benchmarks/page.md": "c797be5f514c5d9d48b350bbf85edc8d8520056906c6febc8d9fd2f8b66aae00",
+    "pages/conclusion/page.md": "20513ffd1bbf0e625627a2b8c1fc51c0fbc89ee22f4e7b0c3a311b3a76881ef6",
+    "pages/executive-summary/page.md": "6453e10512657bba1048089c2aa81f85c02f1d039493440c201a90afcf2f2e21",
+    "pages/index.md": "5ea8646d9e463e6a79cb88a9478f4cfca0ab6fe62f4cd65c2a1f70ca668d2b6a",
+    "poster_embed.html": "aedaf2df3d6e6cadb7fd870e59a6657226a6fcec3802945cbaf87c612f2f8485",
+    "style.css": "789bfd541c9f06658ac410d968e9c39fa8c63a48a08643b36071b984c699a9f4",
+    "trackio-logo-light.png": "a6eb72253c0128ce79b526a86b7943eed37beec186b5f57ff6c1701d0e9ff596",
+    "trackio-logo.png": "3e3792061d4d095759da30d7cfe7f14b621901793cd4d677b61b2896f5bf472b",
+    "trackio-wordmark-dark.png": "71da94795855710d214801eb9b9b7b8898e9a8757abac0e22966a0531bbb2f4f"
+  }
+}

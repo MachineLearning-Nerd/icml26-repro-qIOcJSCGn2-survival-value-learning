@@ -1,0 +1,63 @@
+{
+  "method": "standalone NumPy-only audit; no imports from the experiment or released HSVL code",
+  "summary_sha256": "49e48feb0eb1cf9ed5304ee0ce3f6cc3c7f83607e8b8a8faff5be5ed4d2d0435",
+  "audits": [
+    {
+      "file": "outputs/claim1_ogbench/claim1_seed0_predictions.npz",
+      "sha256": "f9560188e97c264d11fb154ec0e9b8b61508dd6f25d6683d7ed5e3ac3edadc9a",
+      "n": 32768,
+      "pcs_nll_mean": 2.401484022877855,
+      "probability_sum_max_abs_error": 1.3322676295501878e-15,
+      "survival_monotonicity_max_increase": 0.0,
+      "mean_temporal_hazard_std": 0.03274896394726056,
+      "seed": 0,
+      "summary_nll_abs_error": 0.0,
+      "summary_sha_match": true
+    },
+    {
+      "file": "outputs/claim1_ogbench/claim1_seed1_predictions.npz",
+      "sha256": "6e39a3fbb0491b99cfa8ef3da2ea5a00a424b6278b8f2354fc675d00f6833fc6",
+      "n": 32768,
+      "pcs_nll_mean": 2.3560213829073806,
+      "probability_sum_max_abs_error": 1.3322676295501878e-15,
+      "survival_monotonicity_max_increase": 0.0,
+      "mean_temporal_hazard_std": 0.03367070130581108,
+      "seed": 1,
+      "summary_nll_abs_error": 0.0,
+      "summary_sha_match": true
+    },
+    {
+      "file": "outputs/claim1_ogbench/claim1_seed2_predictions.npz",
+      "sha256": "0441146171e368f290c1e740f213b8388c20dfc7110b078da341d7f4b2ac1294",
+      "n": 32768,
+      "pcs_nll_mean": 2.437299205830497,
+      "probability_sum_max_abs_error": 1.3322676295501878e-15,
+      "survival_monotonicity_max_increase": 0.0,
+      "mean_temporal_hazard_std": 0.030566728978866683,
+      "seed": 2,
+      "summary_nll_abs_error": 0.0,
+      "summary_sha_match": true
+    }
+  ],
+  "all_checks_pass": true,
+  "artifact_manifest": {
+    "claim1_ogbench_summary.json": "49e48feb0eb1cf9ed5304ee0ce3f6cc3c7f83607e8b8a8faff5be5ed4d2d0435",
+    "claim1_seed0_predictions.npz": "f9560188e97c264d11fb154ec0e9b8b61508dd6f25d6683d7ed5e3ac3edadc9a",
+    "claim1_seed0_training_trace.json": "4aca19e6c4a23731d787b2d040315d594b16be9a5f64a5d62bac2d6658cc6d17",
+    "claim1_seed1_predictions.npz": "6e39a3fbb0491b99cfa8ef3da2ea5a00a424b6278b8f2354fc675d00f6833fc6",
+    "claim1_seed1_training_trace.json": "f1216af7d1a304d30a244cb16c969f972fe08aa1a7b1e99e9fdbe362dfa83a07",
+    "claim1_seed2_predictions.npz": "0441146171e368f290c1e740f213b8388c20dfc7110b078da341d7f4b2ac1294",
+    "claim1_seed2_training_trace.json": "3b18bb379d4f36d72d18884950d9543cb84b113f68e749d9212523371ab84952"
+  },
+  "source_data_test_manifest": {
+    "repro/src/claim1_ogbench_distribution.py": "b2b8221a5af7dde245783b2f1c3e0ae5e00093e92b5ccd3d27c9eb25fd4b425d",
+    "repro/src/audit_claim1_outputs.py": "1bb6fcf4ceb329f4766e1974ceb4dc98f19d885bd2740715f564d029d3642071",
+    "repro/tests/test_claim1_ogbench_distribution.py": "78e9b7da5f5c49af6e424210e2447f724d653f8221652c49a731de12c8e0b83e",
+    "upstream/SOURCE_REVISION": "7397022ddd8741dd7aba1b97e3e0deef34b11f77b621563b5e587a0e5bf26337",
+    "upstream/hsvl/utils/critics.py": "913681a0387bccb815a00829cf98305b4c7182595ef8e8538deb64c68eebb48f",
+    "upstream/hsvl/utils/datasets.py": "cce70d5d1169d6a92e3f7fb8708addff80db80edd5802793337926c855449cc2",
+    "upstream/hsvl/utils/survival.py": "923438fefadace37e496b7b45b512618453b47b9f19ea34b25ce2fb66f20cc77",
+    "data/ogbench/pointmaze-large-navigate-v0.npz": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61",
+    "data/ogbench/pointmaze-large-navigate-v0-val.npz": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4"
+  }
+}

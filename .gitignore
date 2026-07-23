@@ -3,3 +3,14 @@ __pycache__/
 *.pyc
 .pytest_cache/
 *.egg-info/
+data/ogbench/*.npz
+.openresearch/artifacts/
+EVAL.md
+tmp/
+docs/official_paper.pdf
+hf_jobs/**/*.tar.gz
+outputs/**/*.npz
+outputs/**/*.pkl
+outputs/**/*.tar.gz
+.trackio/logbook/.sync.log
+.trackio/logbook/.sync_lock

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact": "upstream/ogbench-hiql-v1.2.1-source.tar.gz",
+  "bytes": 41424,
+  "sha256": "71e1067d3a584e7b4659f9c4d57142d42e1bed59a657036e83755117e50801e6",
+  "archive_format": "deterministic gzip-compressed USTAR",
+  "normalization": {
+    "gzip_filename": "",
+    "gzip_mtime": 0,
+    "tar_mtime": 0,
+    "uid": 0,
+    "gid": 0,
+    "uname": "root",
+    "gname": "root",
+    "regular_file_mode": "0644",
+    "shell_file_mode": "0755"
+  },
+  "archive_root": "ogbench-hiql-v1.2.1",
+  "archive_member_count": 23,
+  "source_member_count": 22,
+  "embedded_manifest_member": "ogbench-hiql-v1.2.1/SOURCE_MANIFEST.json",
+  "embedded_manifest_sha256": "a9ed9028701f70f861239760be761332b42dbb7bdcc3c8fa09109aed8fe52b83",
+  "official_source": {
+    "repository": "https://github.com/seohongpark/ogbench.git",
+    "annotated_tag": "v1.2.1",
+    "annotated_tag_object": "99f9686d4edb18c40ed607ff7d3270d14b27ace2",
+    "commit": "1d4140997f60c52c6fb0702ec100dc988b18c548",
+    "tree": "0919ecd9e71ff437ed05875e921c94cf439107be"
+  },
+  "scope": "Official source provenance only. This archive is not a dependency lock, checkpoint, result artifact, or runnable campaign."
+}

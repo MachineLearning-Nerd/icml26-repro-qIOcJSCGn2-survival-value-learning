@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "status": "frozen_static_reviewed_not_runtime_exercised",
+  "scope": "qIO_C1_exact_seed0_only_not_C3_not_score_guaranteed",
+  "files": {
+    "repro/hf/run_qio_c1_exact_seed0.py": "90ea2ee78cd918d1e39cd2659ce7eeac09e433543a38f8c0a61dab36d8c4fce0",
+    "repro/src/audit_qio_c1_exact_seed0.py": "12274e0c550ce0795585c120e6be37ec6a4fb47b6818ba9b86dc97ba606e4198",
+    "repro/src/verify_qio_c1_exact_seed0_return.py": "58c11f186c0075d9d1cc072b5b1a0212e372ebf0d941202e634f766c2ac92c4f",
+    "repro/hf/run_qio_t4_preflight.py": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd",
+    "repro/src/run_full_agent_probe.py": "3bcc449d317cb00030ebcf2394370a84a9fdbb487cd75ebcc87b451dc4350237",
+    "repro/src/audit_full_agent_protocol.py": "cea07c8a68685d949e8149e1a6366d0bf3a98a346f6e7035e7df6b7236702c1a",
+    "repro/configs/upstream_source_manifest.json": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+    "upstream/SOURCE_REVISION": "7397022ddd8741dd7aba1b97e3e0deef34b11f77b621563b5e587a0e5bf26337",
+    "upstream/pyproject.toml": "d9a041488d6b04a232d8599b5744d0f055e554afca56132358e6b6898737ac49",
+    "upstream/uv.lock": "8b7c535e583ed86ef3966f9e5b52b07900a86d864fc5f3dc8c99b8fed235d069",
+    "upstream/hsvl/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "upstream/hsvl/agent.py": "ad4b966b9138fa298ba3a5838e9a475518346900926d8ebc1b473d414160630d",
+    "upstream/hsvl/config/agent/hsvl.yaml": "707b15ec1e5c2c3b97735d687e8a72b499d72d0bb7f0ee59588bd3f3106a9d2d",
+    "upstream/hsvl/config/main.yaml": "0d584ef55e8ddc6c0b4ca19aa45b6571913b01c6bcbd56dc17fd4f71ee16ae65",
+    "upstream/hsvl/utils/actors.py": "18053b5d308f73494f364b5c08e27d4580f07b328427050673da2faf28d8b851",
+    "upstream/hsvl/utils/common.py": "3d89f3283b2dff6d058eb64991085be78ae6aa71cd14596465af49e18dffc5f4",
+    "upstream/hsvl/utils/critics.py": "913681a0387bccb815a00829cf98305b4c7182595ef8e8538deb64c68eebb48f",
+    "upstream/hsvl/utils/datasets.py": "cce70d5d1169d6a92e3f7fb8708addff80db80edd5802793337926c855449cc2",
+    "upstream/hsvl/utils/encoders.py": "2464bd634e0631c6559b2fd2c18e4be902a93e4acf0157bdb712c6036848d590",
+    "upstream/hsvl/utils/evaluation.py": "f9e35223fcc9e67e59e6bde275db57148756b858f5b743f43b3111e8594f67cd",
+    "upstream/hsvl/utils/flax_utils.py": "b4b98e14e6dd8a7950ed8d353d3c1df648d35be51d5036f67ac67286fb7eeb9c",
+    "upstream/hsvl/utils/mlp.py": "51e2cdbd30d51d61cb2200bdd3b18c2010928323dbdc60bba61636973719e8a5",
+    "upstream/hsvl/utils/survival.py": "923438fefadace37e496b7b45b512618453b47b9f19ea34b25ce2fb66f20cc77",
+    "data/ogbench/pointmaze-large-navigate-v0.npz": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61",
+    "data/ogbench/pointmaze-large-navigate-v0-val.npz": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4",
+    "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/protocol.json": "6b59171427fedd45c5034f74770859ef59f07dde9833adc784d04e64abfe6614",
+    "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/checkpoint-00000100.pkl": "689ed10245e4926249316c79f7502ba692343c583e6fdfcc0de458020f606925",
+    "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/checkpoint.manifest.json": "65a50a2c154f0f19cd1d28739c7934f97a84950cbc2404c1ce77cd0a809c8680",
+    "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/COMPLETE.json": "88ebda1a1c2df8570cc96cf6c04efa4c0cb24e9981af0cf2f1a5b2016e1f74b6",
+    "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/training_trace.json": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d",
+    "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/sessions.json": "868156e5ca4d1cd34568a42b0ed16c594d354b6e95604226b900dea3714935e4"
+  },
+  "source_revisions": {
+    "hsvl_commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "hsvl_tree": "7a38976b0a065d6ef7f755021853119dc2709487",
+    "ogbench_commit": "1d4140997f60c52c6fb0702ec100dc988b18c548"
+  },
+  "runtime_package_versions": {
+    "flax": "0.7.4",
+    "hsvl": "0.1.0",
+    "jax": "0.4.23",
+    "jaxlib": "0.4.23+cuda12.cudnn89",
+    "numpy": "1.26.4",
+    "ogbench": "1.2.1",
+    "optax": "0.2.2"
+  },
+  "bound_lineage": {
+    "start_update": 100,
+    "target_update": 1000000,
+    "returned_protocol_semantic_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea",
+    "input_checkpoint_sha256": "689ed10245e4926249316c79f7502ba692343c583e6fdfcc0de458020f606925",
+    "input_state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0"
+  },
+  "evaluation_protocol": {
+    "policy_episodes": 50,
+    "heldout_tuples": 32768,
+    "heldout_sampler_seed": 20260719,
+    "joint_shuffle_seed": 20260721,
+    "twin_mean_definition": "arithmetic_mean_of_head_probability_distributions",
+    "negative_controls_reported_regardless_of_outcome": true
+  }
+}

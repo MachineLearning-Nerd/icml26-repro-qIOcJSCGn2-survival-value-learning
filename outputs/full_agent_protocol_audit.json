@@ -1,0 +1,75 @@
+{
+  "all_checks_pass": true,
+  "official_datasets": {
+    "pointmaze-large-navigate-v0-val.npz": {
+      "bytes": 2040807,
+      "matches_official_download": true,
+      "sha256": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4"
+    },
+    "pointmaze-large-navigate-v0.npz": {
+      "bytes": 20398507,
+      "matches_official_download": true,
+      "sha256": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61"
+    }
+  },
+  "official_source": {
+    "all_git_blobs_match": true,
+    "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "file_count": 18,
+    "git_blob_manifest_sha256": "7280ad02845849ad10b580c32466f6ad7c9480b4b8902951bba9db57ed34ccd5",
+    "intentionally_omitted_remote_files": {
+      "intro.png": {
+        "git_blob": "4b86fcd6472b900c498e2b35ffe42ee69e15e559",
+        "reason": "Non-executable README illustration; not required by any reproduction path."
+      }
+    },
+    "manifest_sha256": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+    "repository": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning.git",
+    "tree": "7a38976b0a065d6ef7f755021853119dc2709487"
+  },
+  "paper": {
+    "arxiv": "2604.17551v2",
+    "paper_protocol_anchors": {
+      "maze_batch_size": 1024,
+      "maze_train_updates": 1000000,
+      "reported_bins": 500,
+      "reported_seeds": 4,
+      "source": "Section 5 and Appendix Table 3"
+    },
+    "released_evaluation_config": {
+      "evaluation_episodes_per_task": 50,
+      "source": "upstream/hsvl/config/main.yaml"
+    },
+    "title": "SVL: Goal-Conditioned Reinforcement Learning as Survival Learning"
+  },
+  "queued_gate": {
+    "declared_protocol_difference": "The released YAML requests 800 geometric edges (499 unique bins after integer de-duplication), while Appendix Table 3 reports K=500. The gate follows the released source exactly and records this distinction.",
+    "environment": "pointmaze-large-navigate-v0",
+    "interpretation": "Execution, checkpoint, and exact-reload gate only; it cannot verify Claim 3 performance.",
+    "policy_evaluation": false,
+    "preserved_components": [
+      "width-512 twin PCS critic",
+      "width-512 low-level actor",
+      "width-512 high-level actor",
+      "256-dimensional goal representation",
+      "256-by-16 temporal basis library",
+      "requested 800 bins and horizon 10000",
+      "batch size 1024"
+    ],
+    "seeds": 1,
+    "updates": 100
+  },
+  "remaining_claim3_gate": {
+    "required": [
+      "one Table 1 OGBench task",
+      "1,000,000 training updates",
+      "four independent seeds",
+      "50 evaluation episodes per task",
+      "a matched hierarchical TD baseline or an exact reported-result target"
+    ],
+    "status": "unexecuted"
+  },
+  "schema_version": 1,
+  "scope": "preregistered_execution_gate_provenance_not_claim_evidence",
+  "status": "complete"
+}

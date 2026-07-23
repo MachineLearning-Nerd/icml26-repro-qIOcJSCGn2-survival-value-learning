@@ -1,0 +1,47 @@
+{
+  "actor_metric_trace_rows": 1,
+  "actor_metric_trace_sha256": "b7a08b7989b67aca7520da6c684b70c9a461f4f81d84ecb8ebeb9b74094bec47",
+  "after_complete_sha256": "509dc747cc4899a4d62774a961baa115d52668d12da185af94c1a058f174bd4b",
+  "after_progress_sha256": "509dc747cc4899a4d62774a961baa115d52668d12da185af94c1a058f174bd4b",
+  "before_complete_sha256": "106c110cdc2763e8fd72a1a736e40bf58cabf12a538ef8c8a58d55cfe47337a9",
+  "before_progress_sha256": "106c110cdc2763e8fd72a1a736e40bf58cabf12a538ef8c8a58d55cfe47337a9",
+  "checkpoint_reload_exact": true,
+  "checkpoint_state_sha256": "b22b97290afe2a19d0cb6ac5676106faa5e05da51febe24f823dcd87a7482fa0",
+  "completed_updates": 10,
+  "contract_sha256": "e497d1a0a4af8ba5f46fc91ded16cf968d2b50cfaab83f00b3bdaa183e429759",
+  "driver_sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd",
+  "modified_fields": {
+    "derived_result_inventory_normalization": {
+      "after_sha256": "c6b4ad95c13abdd68c4bc92cc0371c2d3be30c414e5f1f19671aeb42a5dc1a60",
+      "before": "absent"
+    },
+    "includes_high_actor": {
+      "after": true,
+      "before": false
+    },
+    "includes_low_actor": {
+      "after": true,
+      "before": false
+    }
+  },
+  "observed_module_parameter_counts": {
+    "modules_goal_rep": 662272,
+    "modules_high_actor": 1712896,
+    "modules_low_actor": 1712642,
+    "modules_value": 5690888
+  },
+  "observed_total_parameter_count": 9778698,
+  "official_colab_runner_sha256": "bed6a8f8bdf44a4c716beb1e0dca8d194faaaccfb10581f9950e4d038e4f2b32",
+  "official_package_gate_modified": false,
+  "official_return_packer_sha256": "124599a99e116f1001e4adefb9455bc06518b255b4768fc1c6439a414b4967e9",
+  "official_source_files_modified": false,
+  "original_flags": {
+    "includes_high_actor": false,
+    "includes_low_actor": false
+  },
+  "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea",
+  "purpose": "normalize_flax_moduledict_actor_presence_false_negatives",
+  "required_actor_trace_metrics_present_and_finite_in_every_row": true,
+  "schema_version": 1,
+  "scientific_values_modified": false
+}

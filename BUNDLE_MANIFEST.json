@@ -1,0 +1,118 @@
+{
+  "members": {
+    "data/ogbench/pointmaze-large-navigate-v0-val.npz": {
+      "bytes": 2040807,
+      "sha256": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4"
+    },
+    "data/ogbench/pointmaze-large-navigate-v0.npz": {
+      "bytes": 20398507,
+      "sha256": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61"
+    },
+    "repro/colab/package_colab_return.py": {
+      "bytes": 11995,
+      "sha256": "124599a99e116f1001e4adefb9455bc06518b255b4768fc1c6439a414b4967e9"
+    },
+    "repro/colab/run_full_agent_probe_colab.py": {
+      "bytes": 22205,
+      "sha256": "bed6a8f8bdf44a4c716beb1e0dca8d194faaaccfb10581f9950e4d038e4f2b32"
+    },
+    "repro/configs/upstream_source_manifest.json": {
+      "bytes": 1784,
+      "sha256": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6"
+    },
+    "repro/src/audit_full_agent_protocol.py": {
+      "bytes": 7985,
+      "sha256": "cea07c8a68685d949e8149e1a6366d0bf3a98a346f6e7035e7df6b7236702c1a"
+    },
+    "repro/src/run_full_agent_probe.py": {
+      "bytes": 18057,
+      "sha256": "3bcc449d317cb00030ebcf2394370a84a9fdbb487cd75ebcc87b451dc4350237"
+    },
+    "upstream/.gitignore": {
+      "bytes": 382,
+      "sha256": "b73436f30a42e379e44b0ea6ced7d87c793a2f33e33919d7679fa784ae8b8f29"
+    },
+    "upstream/README.md": {
+      "bytes": 3347,
+      "sha256": "a41062c63ec94b67fab1b99555f1d61cb95612d1026179cec980dab51eea6a43"
+    },
+    "upstream/SOURCE_REVISION": {
+      "bytes": 232,
+      "sha256": "7397022ddd8741dd7aba1b97e3e0deef34b11f77b621563b5e587a0e5bf26337"
+    },
+    "upstream/hsvl/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "upstream/hsvl/agent.py": {
+      "bytes": 10894,
+      "sha256": "ad4b966b9138fa298ba3a5838e9a475518346900926d8ebc1b473d414160630d"
+    },
+    "upstream/hsvl/config/agent/hsvl.yaml": {
+      "bytes": 924,
+      "sha256": "707b15ec1e5c2c3b97735d687e8a72b499d72d0bb7f0ee59588bd3f3106a9d2d"
+    },
+    "upstream/hsvl/config/main.yaml": {
+      "bytes": 569,
+      "sha256": "0d584ef55e8ddc6c0b4ca19aa45b6571913b01c6bcbd56dc17fd4f71ee16ae65"
+    },
+    "upstream/hsvl/utils/actors.py": {
+      "bytes": 3019,
+      "sha256": "18053b5d308f73494f364b5c08e27d4580f07b328427050673da2faf28d8b851"
+    },
+    "upstream/hsvl/utils/common.py": {
+      "bytes": 2537,
+      "sha256": "3d89f3283b2dff6d058eb64991085be78ae6aa71cd14596465af49e18dffc5f4"
+    },
+    "upstream/hsvl/utils/critics.py": {
+      "bytes": 3971,
+      "sha256": "913681a0387bccb815a00829cf98305b4c7182595ef8e8538deb64c68eebb48f"
+    },
+    "upstream/hsvl/utils/datasets.py": {
+      "bytes": 12689,
+      "sha256": "cce70d5d1169d6a92e3f7fb8708addff80db80edd5802793337926c855449cc2"
+    },
+    "upstream/hsvl/utils/encoders.py": {
+      "bytes": 1363,
+      "sha256": "2464bd634e0631c6559b2fd2c18e4be902a93e4acf0157bdb712c6036848d590"
+    },
+    "upstream/hsvl/utils/evaluation.py": {
+      "bytes": 5340,
+      "sha256": "f9e35223fcc9e67e59e6bde275db57148756b858f5b743f43b3111e8594f67cd"
+    },
+    "upstream/hsvl/utils/flax_utils.py": {
+      "bytes": 6247,
+      "sha256": "b4b98e14e6dd8a7950ed8d353d3c1df648d35be51d5036f67ac67286fb7eeb9c"
+    },
+    "upstream/hsvl/utils/mlp.py": {
+      "bytes": 2468,
+      "sha256": "51e2cdbd30d51d61cb2200bdd3b18c2010928323dbdc60bba61636973719e8a5"
+    },
+    "upstream/hsvl/utils/survival.py": {
+      "bytes": 3702,
+      "sha256": "923438fefadace37e496b7b45b512618453b47b9f19ea34b25ce2fb66f20cc77"
+    },
+    "upstream/pyproject.toml": {
+      "bytes": 1377,
+      "sha256": "d9a041488d6b04a232d8599b5744d0f055e554afca56132358e6b6898737ac49"
+    },
+    "upstream/train.py": {
+      "bytes": 6564,
+      "sha256": "397dada4a1f6c106954f1387478ac4fc5b211093984067c03ee722c2fc9980c5"
+    },
+    "upstream/uv.lock": {
+      "bytes": 173408,
+      "sha256": "8b7c535e583ed86ef3966f9e5b52b07900a86d864fc5f3dc8c99b8fed235d069"
+    }
+  },
+  "official_dataset_hashes": {
+    "data/ogbench/pointmaze-large-navigate-v0-val.npz": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4",
+    "data/ogbench/pointmaze-large-navigate-v0.npz": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61"
+  },
+  "official_source": {
+    "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "repository": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning"
+  },
+  "purpose": "qio_full_agent_colab_cuda_input",
+  "schema_version": 1
+}

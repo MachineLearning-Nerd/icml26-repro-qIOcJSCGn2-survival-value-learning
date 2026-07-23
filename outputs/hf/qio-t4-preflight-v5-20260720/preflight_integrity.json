@@ -1,0 +1,113 @@
+{
+  "generated_at": "2026-07-20T07:29:27.512736+00:00",
+  "member_count_excluding_this_manifest": 26,
+  "members": {
+    "derived_result_inventory_patch.json": {
+      "bytes": 2107,
+      "sha256": "c2d40492a6efa87dff4ddc0bb549b340125586fff7482b3d0f811bf9f6cc2184"
+    },
+    "derived_result_inventory_patch_phase_10.json": {
+      "bytes": 2105,
+      "sha256": "5032f2e8b0ea4063a99e6c5f7ec37a548925dd9dea64940b04259c0f217a3554"
+    },
+    "derived_runtime_config_patch.json": {
+      "bytes": 5120,
+      "sha256": "63481be0a0d01574e35c6bd690dcee312816c953b725d8222185a1638d31c7ae"
+    },
+    "derived_runtime_config_patch_phase_10.json": {
+      "bytes": 5120,
+      "sha256": "63481be0a0d01574e35c6bd690dcee312816c953b725d8222185a1638d31c7ae"
+    },
+    "derived_runtime_driver.py": {
+      "bytes": 73058,
+      "sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd"
+    },
+    "events.jsonl": {
+      "bytes": 3902,
+      "sha256": "4100d1b8955ddaaa9e1afc0fad710fb342b21f3943f42af9c8f401771887ddb9"
+    },
+    "full_agent_probe/seed-0/COMPLETE.json": {
+      "bytes": 4896,
+      "sha256": "88ebda1a1c2df8570cc96cf6c04efa4c0cb24e9981af0cf2f1a5b2016e1f74b6"
+    },
+    "full_agent_probe/seed-0/PROGRESS.json": {
+      "bytes": 4896,
+      "sha256": "88ebda1a1c2df8570cc96cf6c04efa4c0cb24e9981af0cf2f1a5b2016e1f74b6"
+    },
+    "full_agent_probe/seed-0/checkpoint-00000010.manifest.json": {
+      "bytes": 402,
+      "sha256": "25af3f225913fde5d4bb0a173bf157d73c9930d20cf908f9fef80f1ac02235d6"
+    },
+    "full_agent_probe/seed-0/checkpoint-00000010.pkl": {
+      "bytes": 117362957,
+      "sha256": "4b2abd7b78c22db2bf816a1dbdbb63498b12d9d15621b99c980f33e21b1a4bc0"
+    },
+    "full_agent_probe/seed-0/checkpoint-00000050.manifest.json": {
+      "bytes": 402,
+      "sha256": "cb7671fbfff46df1f0c7ecba396e5b700977b6a447520cb8f4201acac81ff4f6"
+    },
+    "full_agent_probe/seed-0/checkpoint-00000050.pkl": {
+      "bytes": 117362957,
+      "sha256": "4e35bb94b770dcb1ab6cfef84c789047da3816eb48ac5a34b0dc969806217260"
+    },
+    "full_agent_probe/seed-0/checkpoint-00000100.manifest.json": {
+      "bytes": 403,
+      "sha256": "65a50a2c154f0f19cd1d28739c7934f97a84950cbc2404c1ce77cd0a809c8680"
+    },
+    "full_agent_probe/seed-0/checkpoint-00000100.pkl": {
+      "bytes": 117362957,
+      "sha256": "689ed10245e4926249316c79f7502ba692343c583e6fdfcc0de458020f606925"
+    },
+    "full_agent_probe/seed-0/checkpoint.manifest.json": {
+      "bytes": 403,
+      "sha256": "65a50a2c154f0f19cd1d28739c7934f97a84950cbc2404c1ce77cd0a809c8680"
+    },
+    "full_agent_probe/seed-0/protocol.json": {
+      "bytes": 5400,
+      "sha256": "6b59171427fedd45c5034f74770859ef59f07dde9833adc784d04e64abfe6614"
+    },
+    "full_agent_probe/seed-0/sessions.json": {
+      "bytes": 7100,
+      "sha256": "868156e5ca4d1cd34568a42b0ed16c594d354b6e95604226b900dea3714935e4"
+    },
+    "full_agent_probe/seed-0/training_trace.json": {
+      "bytes": 10876,
+      "sha256": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d"
+    },
+    "package_return.log": {
+      "bytes": 290,
+      "sha256": "7b19f8cf80cced68e2fbc91235f53d603f1c1e176455515e5cd3e870dd551ab3"
+    },
+    "phase_10.log": {
+      "bytes": 6703,
+      "sha256": "0e7ed2f1a28dd3026a069d1136a133afe0b2692ae193b5b808112ae6918f9ad7"
+    },
+    "phase_100.log": {
+      "bytes": 14196,
+      "sha256": "9f030019dd8de3263a40d5ec58b48ac85598f938a43145b9816d01cd64fd5b30"
+    },
+    "preflight_report.json": {
+      "bytes": 22876,
+      "sha256": "9ccf813d81403f300908aff319b7c8f8142b19148c29c39e959d32b3ea61b6f8"
+    },
+    "qio-full-agent-t4-return-v1.tar.gz": {
+      "bytes": 96720938,
+      "sha256": "25911c0bc00a4200f3a1664d0d70c7a7b7dadf397dafcc7e2d36eaf40d7d41fa"
+    },
+    "qio-full-agent-t4-return-v1.tar.gz.integrity.json": {
+      "bytes": 290,
+      "sha256": "7b19f8cf80cced68e2fbc91235f53d603f1c1e176455515e5cd3e870dd551ab3"
+    },
+    "resource_samples.jsonl": {
+      "bytes": 31358,
+      "sha256": "c2ef0f8a6a1fe90756ebb51acaa652869d48382b69a19065cb76de30606226be"
+    },
+    "uv_sync.log": {
+      "bytes": 6020,
+      "sha256": "2da36f4c3769f37376c73347599b57fa78c5c7578d94a8b324f1b1ec9e6abcfc"
+    }
+  },
+  "root": "qio-t4-preflight-v5-20260720",
+  "run_id": "qio-t4-preflight-v5-20260720",
+  "schema_version": 1
+}

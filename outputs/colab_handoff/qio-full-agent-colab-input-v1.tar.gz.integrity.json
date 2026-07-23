@@ -1,0 +1,8 @@
+{
+  "archive": "qio-full-agent-colab-input-v1.tar.gz",
+  "archive_bytes": 22528563,
+  "archive_sha256": "d7f8e07b72f828d8f39100533510a60858dab8b7cc7debcc2e2409260da634ee",
+  "bundle_manifest_sha256": "d2e5706fe5c8f12d904234fd6b23b624624501da05e60954b291372c3e67fa42",
+  "member_count": 26,
+  "schema_version": 1
+}

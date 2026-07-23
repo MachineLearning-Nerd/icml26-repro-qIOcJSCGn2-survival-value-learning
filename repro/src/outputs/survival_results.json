@@ -1,0 +1,21 @@
+{
+  "claim": "SurvivalValueLearning_Prop4.1",
+  "paper": "arXiv:2604.17551",
+  "V_valueiteration_S": -4.116238,
+  "time_to_goal_modes": [
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15
+  ],
+  "multimodal_time_to_goal": true,
+  "V_survival_identity_S": -4.116238,
+  "V_montecarlo_S": -4.1156,
+  "identity_abs_error": 0.0,
+  "prop4.1_identity_holds": true,
+  "montecarlo_agrees": true,
+  "verdict": "supports"
+}

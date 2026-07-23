@@ -1,0 +1,33 @@
+
+=== 2026-07-21 08:12:26 ===
+command: /Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/.venv/bin/python repro/src/run_full_agent_probe.py --updates 100 --log-interval 10 --checkpoint-interval 10
+Traceback (most recent call last):
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/run_full_agent_probe.py", line 454, in <module>
+    main()
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/run_full_agent_probe.py", line 308, in main
+    upstream_source = verify_upstream_source()
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/audit_full_agent_protocol.py", line 90, in verify_upstream_source
+    raise ValueError(
+ValueError: vendored source inventory mismatch: missing=[], unexpected=['ogbench-hiql-v1.2.1-source.tar.gz', 'ogbench-hiql-v1.2.1-source.tar.gz.integrity.json', 'ogbench-hiql-v1.2.1/LICENSE', 'ogbench-hiql-v1.2.1/README.md', 'ogbench-hiql-v1.2.1/impls/agents/__init__.py', 'ogbench-hiql-v1.2.1/impls/agents/crl.py', 'ogbench-hiql-v1.2.1/impls/agents/gcbc.py', 'ogbench-hiql-v1.2.1/impls/agents/gciql.py', 'ogbench-hiql-v1.2.1/impls/agents/gcivl.py', 'ogbench-hiql-v1.2.1/impls/agents/hiql.py', 'ogbench-hiql-v1.2.1/impls/agents/qrl.py', 'ogbench-hiql-v1.2.1/impls/agents/sac.py', 'ogbench-hiql-v1.2.1/impls/hyperparameters.sh', 'ogbench-hiql-v1.2.1/impls/main.py', 'ogbench-hiql-v1.2.1/impls/requirements.txt', 'ogbench-hiql-v1.2.1/impls/utils/__init__.py', 'ogbench-hiql-v1.2.1/impls/utils/datasets.py', 'ogbench-hiql-v1.2.1/impls/utils/encoders.py', 'ogbench-hiql-v1.2.1/impls/utils/env_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/evaluation.py', 'ogbench-hiql-v1.2.1/impls/utils/flax_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/log_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/networks.py', 'ogbench-hiql-v1.2.1/pyproject.toml']
+
+=== 2026-07-21 08:12:30 ===
+command: /Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/.venv/bin/python repro/src/run_full_agent_probe.py --updates 100 --log-interval 10 --checkpoint-interval 10
+Traceback (most recent call last):
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/run_full_agent_probe.py", line 454, in <module>
+    main()
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/run_full_agent_probe.py", line 308, in main
+    upstream_source = verify_upstream_source()
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/audit_full_agent_protocol.py", line 90, in verify_upstream_source
+    raise ValueError(
+ValueError: vendored source inventory mismatch: missing=[], unexpected=['ogbench-hiql-v1.2.1-source.tar.gz', 'ogbench-hiql-v1.2.1-source.tar.gz.integrity.json', 'ogbench-hiql-v1.2.1/LICENSE', 'ogbench-hiql-v1.2.1/README.md', 'ogbench-hiql-v1.2.1/impls/agents/__init__.py', 'ogbench-hiql-v1.2.1/impls/agents/crl.py', 'ogbench-hiql-v1.2.1/impls/agents/gcbc.py', 'ogbench-hiql-v1.2.1/impls/agents/gciql.py', 'ogbench-hiql-v1.2.1/impls/agents/gcivl.py', 'ogbench-hiql-v1.2.1/impls/agents/hiql.py', 'ogbench-hiql-v1.2.1/impls/agents/qrl.py', 'ogbench-hiql-v1.2.1/impls/agents/sac.py', 'ogbench-hiql-v1.2.1/impls/hyperparameters.sh', 'ogbench-hiql-v1.2.1/impls/main.py', 'ogbench-hiql-v1.2.1/impls/requirements.txt', 'ogbench-hiql-v1.2.1/impls/utils/__init__.py', 'ogbench-hiql-v1.2.1/impls/utils/datasets.py', 'ogbench-hiql-v1.2.1/impls/utils/encoders.py', 'ogbench-hiql-v1.2.1/impls/utils/env_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/evaluation.py', 'ogbench-hiql-v1.2.1/impls/utils/flax_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/log_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/networks.py', 'ogbench-hiql-v1.2.1/pyproject.toml']
+
+=== 2026-07-21 08:12:32 ===
+command: /Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/.venv/bin/python repro/src/run_full_agent_probe.py --updates 100 --log-interval 10 --checkpoint-interval 10
+Traceback (most recent call last):
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/run_full_agent_probe.py", line 454, in <module>
+    main()
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/run_full_agent_probe.py", line 308, in main
+    upstream_source = verify_upstream_source()
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/papers/icml26-repro-qIOcJSCGn2-survival-value-learning/repro/src/audit_full_agent_protocol.py", line 90, in verify_upstream_source
+    raise ValueError(
+ValueError: vendored source inventory mismatch: missing=[], unexpected=['ogbench-hiql-v1.2.1-source.tar.gz', 'ogbench-hiql-v1.2.1-source.tar.gz.integrity.json', 'ogbench-hiql-v1.2.1/LICENSE', 'ogbench-hiql-v1.2.1/README.md', 'ogbench-hiql-v1.2.1/impls/agents/__init__.py', 'ogbench-hiql-v1.2.1/impls/agents/crl.py', 'ogbench-hiql-v1.2.1/impls/agents/gcbc.py', 'ogbench-hiql-v1.2.1/impls/agents/gciql.py', 'ogbench-hiql-v1.2.1/impls/agents/gcivl.py', 'ogbench-hiql-v1.2.1/impls/agents/hiql.py', 'ogbench-hiql-v1.2.1/impls/agents/qrl.py', 'ogbench-hiql-v1.2.1/impls/agents/sac.py', 'ogbench-hiql-v1.2.1/impls/hyperparameters.sh', 'ogbench-hiql-v1.2.1/impls/main.py', 'ogbench-hiql-v1.2.1/impls/requirements.txt', 'ogbench-hiql-v1.2.1/impls/utils/__init__.py', 'ogbench-hiql-v1.2.1/impls/utils/datasets.py', 'ogbench-hiql-v1.2.1/impls/utils/encoders.py', 'ogbench-hiql-v1.2.1/impls/utils/env_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/evaluation.py', 'ogbench-hiql-v1.2.1/impls/utils/flax_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/log_utils.py', 'ogbench-hiql-v1.2.1/impls/utils/networks.py', 'ogbench-hiql-v1.2.1/pyproject.toml']

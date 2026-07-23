@@ -1,0 +1,7 @@
+{
+  "archive": "qio-full-agent-t4-return-v1.tar.gz",
+  "archive_bytes": 96720938,
+  "archive_sha256": "25911c0bc00a4200f3a1664d0d70c7a7b7dadf397dafcc7e2d36eaf40d7d41fa",
+  "return_manifest_sha256": "b523824ca05c356441b19bcc94b1d8cd57b76b301501d2a5ddfa91035a86daee",
+  "schema_version": 1
+}

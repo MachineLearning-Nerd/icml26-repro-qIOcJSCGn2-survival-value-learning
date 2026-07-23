@@ -1,0 +1,137 @@
+Loading official PointMaze train split...
+Training released full CUDA agent: 0->10 updates, parameters=9,778,698, batch=1024
+{"elapsed_seconds_this_session": 25.221793865999643, "interval_seconds": 25.221793865999643, "metrics": {"grad/max": 4.166723251342773, "grad/min": -4.078225135803223, "grad/norm": 441.66107177734375, "high_actor/actor_loss": 299.39990234375, "high_actor/adv": 0.0033503032755106688, "high_actor/bc_log_prob": -258.9486083984375, "high_actor/mse": 0.18515881896018982, "high_actor/std": 1.0, "low_actor/actor_loss": 2.3261451721191406, "low_actor/adv": -0.010631983168423176, "low_actor/bc_log_prob": -2.3326549530029297, "low_actor/mse": 0.494778037071228, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 365.1484375, "value/surv/event_rate": 0.6748046875, "value/v_max": -0.27980607748031616, "value/v_mean": -5.1815266609191895, "value/v_min": -5.427387237548828, "value/value_loss": 63.42237091064453}, "session_id": "021dfef8-ae2a-4be0-b2c0-8c41061a11a7", "update": 10, "updates_per_second": 0.3964825045010199}
+{
+  "actual_bins": 499,
+  "checkpoint_bytes": 117362957,
+  "checkpoint_manifest": "checkpoint.manifest.json",
+  "checkpoint_manifest_sha256": "25af3f225913fde5d4bb0a173bf157d73c9930d20cf908f9fef80f1ac02235d6",
+  "checkpoint_reload_exact": true,
+  "checkpoint_sha256": "4b2abd7b78c22db2bf816a1dbdbb63498b12d9d15621b99c980f33e21b1a4bc0",
+  "completed_updates": 10,
+  "dataset_hashes": {
+    "train": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61",
+    "validation": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4"
+  },
+  "dataset_rows": 1001000,
+  "dataset_valid_pool": 1000000,
+  "deviations": [
+    "Execution gate runs 10 updates rather than 1,000,000.",
+    "PointMaze-large is official OGBench navigation data but is not a Table 1 headline task.",
+    "No policy-success claim is made by this training-and-reload gate."
+  ],
+  "includes_high_actor": false,
+  "includes_low_actor": false,
+  "includes_twin_critic": true,
+  "input_bundle": {
+    "archive_bytes": 22528563,
+    "archive_sha256": "d7f8e07b72f828d8f39100533510a60858dab8b7cc7debcc2e2409260da634ee",
+    "bundle_manifest_sha256": "d2e5706fe5c8f12d904234fd6b23b624624501da05e60954b291372c3e67fa42",
+    "member_count": 26,
+    "schema_version": 1
+  },
+  "jax_backend": "gpu",
+  "jax_devices": [
+    "cuda:0"
+  ],
+  "max_rss_platform_units": 1853136,
+  "module_parameter_counts": {
+    "modules_goal_rep": 662272,
+    "modules_high_actor": 1712896,
+    "modules_low_actor": 1712642,
+    "modules_value": 5690888
+  },
+  "package_versions": {
+    "flax": "0.7.4",
+    "hsvl": "0.1.0",
+    "jax": "0.4.23",
+    "jaxlib": "0.4.23+cuda12.cudnn89",
+    "numpy": "1.26.4",
+    "ogbench": "1.2.1",
+    "optax": "0.2.2"
+  },
+  "paper_scale_target_updates": 1000000,
+  "parameter_count": 9778698,
+  "platform": "Linux-6.12.94-123.180.amzn2023.x86_64-x86_64-with-glibc2.36",
+  "protocol_artifact": "protocol.json",
+  "protocol_artifact_sha256": "6b59171427fedd45c5034f74770859ef59f07dde9833adc784d04e64abfe6614",
+  "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea",
+  "requested_bins": 800,
+  "restored_state_sha256": "b22b97290afe2a19d0cb6ac5676106faa5e05da51febe24f823dcd87a7482fa0",
+  "resume_event_count": 0,
+  "runtime_seconds_this_invocation": 27.471820239999943,
+  "schema_version": 1,
+  "scope": "execution_gate_not_paper_scale",
+  "seed": 0,
+  "session_count": 1,
+  "sessions": "sessions.json",
+  "sessions_sha256": "068059b3b08cd3a67af0c0c11a1bd5e87fd4bdd1a7856e366001e4cdaa0fcbba",
+  "state_sha256": "b22b97290afe2a19d0cb6ac5676106faa5e05da51febe24f823dcd87a7482fa0",
+  "status": "complete",
+  "target_updates": 10,
+  "training_trace": "training_trace.json",
+  "training_trace_rows": 1,
+  "training_trace_sha256": "b7a08b7989b67aca7520da6c684b70c9a461f4f81d84ecb8ebeb9b74094bec47",
+  "upstream_source": {
+    "all_git_blobs_match": true,
+    "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "file_count": 18,
+    "git_blob_manifest_sha256": "7280ad02845849ad10b580c32466f6ad7c9480b4b8902951bba9db57ed34ccd5",
+    "intentionally_omitted_remote_files": {
+      "intro.png": {
+        "git_blob": "4b86fcd6472b900c498e2b35ffe42ee69e15e559",
+        "reason": "Non-executable README illustration; not required by any reproduction path."
+      }
+    },
+    "manifest_sha256": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+    "repository": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning.git",
+    "tree": "7a38976b0a065d6ef7f755021853119dc2709487"
+  }
+}
+{
+  "actor_metric_trace_rows": 1,
+  "actor_metric_trace_sha256": "b7a08b7989b67aca7520da6c684b70c9a461f4f81d84ecb8ebeb9b74094bec47",
+  "after_complete_sha256": "509dc747cc4899a4d62774a961baa115d52668d12da185af94c1a058f174bd4b",
+  "after_progress_sha256": "509dc747cc4899a4d62774a961baa115d52668d12da185af94c1a058f174bd4b",
+  "before_complete_sha256": "106c110cdc2763e8fd72a1a736e40bf58cabf12a538ef8c8a58d55cfe47337a9",
+  "before_progress_sha256": "106c110cdc2763e8fd72a1a736e40bf58cabf12a538ef8c8a58d55cfe47337a9",
+  "checkpoint_reload_exact": true,
+  "checkpoint_state_sha256": "b22b97290afe2a19d0cb6ac5676106faa5e05da51febe24f823dcd87a7482fa0",
+  "completed_updates": 10,
+  "contract_sha256": "e497d1a0a4af8ba5f46fc91ded16cf968d2b50cfaab83f00b3bdaa183e429759",
+  "driver_sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd",
+  "modified_fields": {
+    "derived_result_inventory_normalization": {
+      "after_sha256": "c6b4ad95c13abdd68c4bc92cc0371c2d3be30c414e5f1f19671aeb42a5dc1a60",
+      "before": "absent"
+    },
+    "includes_high_actor": {
+      "after": true,
+      "before": false
+    },
+    "includes_low_actor": {
+      "after": true,
+      "before": false
+    }
+  },
+  "observed_module_parameter_counts": {
+    "modules_goal_rep": 662272,
+    "modules_high_actor": 1712896,
+    "modules_low_actor": 1712642,
+    "modules_value": 5690888
+  },
+  "observed_total_parameter_count": 9778698,
+  "official_colab_runner_sha256": "bed6a8f8bdf44a4c716beb1e0dca8d194faaaccfb10581f9950e4d038e4f2b32",
+  "official_package_gate_modified": false,
+  "official_return_packer_sha256": "124599a99e116f1001e4adefb9455bc06518b255b4768fc1c6439a414b4967e9",
+  "official_source_files_modified": false,
+  "original_flags": {
+    "includes_high_actor": false,
+    "includes_low_actor": false
+  },
+  "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea",
+  "purpose": "normalize_flax_moduledict_actor_presence_false_negatives",
+  "required_actor_trace_metrics_present_and_finite_in_every_row": true,
+  "schema_version": 1,
+  "scientific_values_modified": false
+}

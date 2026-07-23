@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-07-20",
+  "scope": "read_only_source_paper_and_artifact_archaeology",
+  "official_paper": {
+    "arxiv_id": "2604.17551",
+    "local_path": "docs/official_paper.pdf",
+    "sha256": "f468cfd9e6ea9e06e185a01e3bf81bc703565d55fa7db98c0b4211499c05ec72",
+    "page_count": 20,
+    "reported_protocol": {
+      "maze_gradient_steps": 1000000,
+      "maze_batch_size": 1024,
+      "mlp_width": 512,
+      "critic_depth": 3,
+      "actor_depth": 6,
+      "evaluation_seeds": 4,
+      "evaluation_episodes": 50,
+      "table_3_bins": 500
+    },
+    "table_1_targets": {
+      "antmaze-giant-navigate-v0": {
+        "hiql_mean_success_percent": 65,
+        "hiql_std_percent": 5,
+        "hsvl_mean_success_percent": 74,
+        "hsvl_std_percent": 1
+      },
+      "humanoidmaze-giant-navigate-v0": {
+        "hiql_mean_success_percent": 12,
+        "hiql_std_percent": 4,
+        "hsvl_mean_success_percent": 81,
+        "hsvl_std_percent": 1
+      }
+    },
+    "table_2_is_not_a_c3_substitute": {
+      "reason": "The controlled flat-critic table compares SVL with CRL under the same DDPG+BC actor; anchored C3 requires the hierarchical HSVL-versus-HIQL claim.",
+      "all_reported_results_are_author_results_not_independent_reproduction": true
+    }
+  },
+  "official_hsvl_source": {
+    "repository": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning",
+    "branch": "main",
+    "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "tree": "7a38976b0a065d6ef7f755021853119dc2709487",
+    "pushed_at": "2026-05-26T08:32:17Z",
+    "repository_size_kib": 232,
+    "tag_count": 0,
+    "release_count": 0,
+    "github_actions_artifact_count": 0,
+    "checkpoint_or_result_files_in_tree": 0,
+    "vendored_source_manifest": {
+      "path": "repro/configs/upstream_source_manifest.json",
+      "sha256": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+      "file_count": 18,
+      "all_git_blobs_match": true
+    },
+    "logging_and_persistence": {
+      "wandb_project": "hsvl",
+      "wandb_group": "rebutal",
+      "wandb_entity_declared": false,
+      "wandb_metric_logging_present": true,
+      "wandb_artifact_or_checkpoint_upload_present": false,
+      "checkpoint_write_is_local_only": true,
+      "checkpoint_load_or_restore_path_present": false,
+      "source_train_sha256": "397dada4a1f6c106954f1387478ac4fc5b211093984067c03ee722c2fc9980c5",
+      "source_main_config_sha256": "0d584ef55e8ddc6c0b4ca19aa45b6571913b01c6bcbd56dc17fd4f71ee16ae65",
+      "source_wandb_helper_sha256": "3d89f3283b2dff6d058eb64991085be78ae6aa71cd14596465af49e18dffc5f4",
+      "source_checkpoint_helper_sha256": "b4b98e14e6dd8a7950ed8d353d3c1df648d35be51d5036f67ac67286fb7eeb9c"
+    }
+  },
+  "official_ogbench_source": {
+    "repository": "https://github.com/seohongpark/ogbench",
+    "commit": "1d4140997f60c52c6fb0702ec100dc988b18c548",
+    "resolved_version": "1.2.1",
+    "releases_checked": [
+      "v1.2.1",
+      "v1.2.0",
+      "v1.1.5"
+    ],
+    "release_asset_count_each": 0,
+    "checkpoint_or_result_files_in_pinned_tree": 0,
+    "hiql_source_present": true,
+    "hiql_checkpoint_present": false
+  },
+  "local_exact_checkpoint": {
+    "path": "outputs/hf/qio-t4-preflight-v5-20260720/full_agent_probe/seed-0/checkpoint-00000100.pkl",
+    "bytes": 117362957,
+    "sha256": "689ed10245e4926249316c79f7502ba692343c583e6fdfcc0de458020f606925",
+    "restored_state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0",
+    "seed": 0,
+    "completed_updates": 100,
+    "paper_scale_target_updates": 1000000,
+    "completion_fraction": 0.0001,
+    "exact_reload": true,
+    "parameter_count": 9778698,
+    "includes_goal_representation": true,
+    "includes_high_actor": true,
+    "includes_low_actor": true,
+    "includes_twin_critic": true,
+    "policy_evaluation_present": false,
+    "claim_evidence_eligible_now": false,
+    "return_archive": {
+      "path": "outputs/hf/qio-t4-preflight-v5-20260720/qio-full-agent-t4-return-v1.tar.gz",
+      "bytes": 96720938,
+      "sha256": "25911c0bc00a4200f3a1664d0d70c7a7b7dadf397dafcc7e2d36eaf40d7d41fa"
+    },
+    "supporting_hashes": {
+      "preflight_report": "9ccf813d81403f300908aff319b7c8f8142b19148c29c39e959d32b3ea61b6f8",
+      "complete_json": "88ebda1a1c2df8570cc96cf6c04efa4c0cb24e9981af0cf2f1a5b2016e1f74b6",
+      "protocol_file": "6b59171427fedd45c5034f74770859ef59f07dde9833adc784d04e64abfe6614",
+      "checkpoint_manifest": "65a50a2c154f0f19cd1d28739c7934f97a84950cbc2404c1ce77cd0a809c8680",
+      "training_trace": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d"
+    }
+  },
+  "deterministic_evaluator_only_falsification": {
+    "can_repair_c1_now": false,
+    "can_repair_c3_now": false,
+    "reason": "A deterministic evaluation of a 100-update, single-seed PointMaze checkpoint would measure an explicitly undertrained execution gate, not the paper-scale model or a matched long-horizon HSVL-versus-HIQL comparison."
+  },
+  "candidate_under_cap": {
+    "name": "resume_one_exact_pointmaze_seed_for_c1_only",
+    "launch_authorized_by_this_audit": false,
+    "resume_from_update": 100,
+    "target_update": 1000000,
+    "remaining_updates": 999900,
+    "required_post_training_evidence": [
+      "50-episode deterministic released-policy evaluation",
+      "held-out censored NLL and calibration",
+      "twin-head probability normalization and survival monotonicity",
+      "temporal and shuffled-target negative controls",
+      "raw checkpoint, prediction, episode, config, dataset, and environment hashes"
+    ],
+    "median_projection": {
+      "updates_per_second": 21.45173313579931,
+      "hours": 12.947671791,
+      "cost_usd_at_0_40_per_hour": 5.179068717
+    },
+    "conservative_observed_projection": {
+      "updates_per_second": 6.321756575725298,
+      "hours": 43.935573392,
+      "cost_usd_at_0_40_per_hour": 17.574229357
+    },
+    "recorded_remaining_campaign_budget_usd_at_preflight_submission": 39.49,
+    "fits_recorded_budget_snapshot_at_both_projections": true,
+    "required_before_launch": [
+      "centrally recheck current shared budget",
+      "preserve active-job and queue safeguards",
+      "confirm resume and final evaluator contract",
+      "do not stop or modify PID 41861"
+    ],
+    "honest_scope_if_completed": "C1 exact-scale single-seed evidence augmenting the existing three-seed reduced audit",
+    "limitations_if_completed": [
+      "Only one independent exact-scale seed",
+      "PointMaze is not a Table 1 headline target",
+      "Cannot repair or falsify C3",
+      "Does not guarantee a judge upgrade"
+    ]
+  },
+  "fail_closed_conclusion": {
+    "reusable_author_checkpoint_found": false,
+    "reusable_hiql_checkpoint_found": false,
+    "independent_logged_evaluation_table_found": false,
+    "c1_repaired_by_existing_artifacts": false,
+    "c3_repaired_by_existing_artifacts": false,
+    "c3_repair_within_cap_without_matched_training_evidence_identified": false,
+    "only_bounded_candidate": "One exact PointMaze HSVL seed may be resumed to paper scale for C1 only; it remains non-evidence until training and all preregistered audits complete.",
+    "jobs_or_processes_changed": false,
+    "tests_run": false,
+    "publication_changed": false
+  }
+}

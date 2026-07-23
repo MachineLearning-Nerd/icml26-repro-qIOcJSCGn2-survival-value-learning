@@ -1,0 +1,208 @@
+{
+  "approved_fields": [
+    "actor_hidden_dims",
+    "value_hidden_dims"
+  ],
+  "driver_sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd",
+  "field_checks": {
+    "actor_hidden_dims": {
+      "after_type": "tuple",
+      "before_type": "list",
+      "element_types_unchanged": true,
+      "element_values_unchanged": true,
+      "length_unchanged": true,
+      "values": [
+        512,
+        512,
+        512
+      ]
+    },
+    "value_hidden_dims": {
+      "after_type": "tuple",
+      "before_type": "list",
+      "element_types_unchanged": true,
+      "element_values_unchanged": true,
+      "length_unchanged": true,
+      "values": [
+        512,
+        512,
+        512
+      ]
+    }
+  },
+  "json_semantic_sha256_after": "9a9407b6a90d61b7381fb1ae97ea6d0c0f34811ee1934cc5d78682a5db1eda61",
+  "json_semantic_sha256_before": "9a9407b6a90d61b7381fb1ae97ea6d0c0f34811ee1934cc5d78682a5db1eda61",
+  "json_semantics_unchanged": true,
+  "key_set_unchanged": true,
+  "official_colab_runner_sha256": "bed6a8f8bdf44a4c716beb1e0dca8d194faaaccfb10581f9950e4d038e4f2b32",
+  "official_source_files_modified": false,
+  "post_patch_frozendict_hash_succeeds": true,
+  "pre_patch_frozendict_hash_failure_reproduced": true,
+  "pre_patch_hash_error": "TypeError: unhashable type: 'list'",
+  "purpose": "qio_static_jax_config_list_to_tuple_runtime_derivation",
+  "scalar_field_checks": {
+    "activation_fn": {
+      "type": "str",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "actor_geom_sample": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "actor_num_blocks": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "actor_p_curgoal": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "actor_p_randomgoal": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "actor_p_trajgoal": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "add_tail": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "agent_name": {
+      "type": "str",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "batch_size": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "const_std": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "critic_agg": {
+      "type": "str",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "critic_num_blocks": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "discount": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "ensemble": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "frame_stack": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "high_alpha": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "k_basis": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "layer_norm": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "low_actor_rep_grad": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "low_alpha": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "lr": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "num_basis_sets": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "num_log_bins": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "rep_dim": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "residual_actor": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "residual_critic": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "subgoal_steps": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "surv_horizon": {
+      "type": "int",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "value_geom_sample": {
+      "type": "bool",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "value_p_curgoal": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "value_p_randomgoal": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    },
+    "value_p_trajgoal": {
+      "type": "float",
+      "type_unchanged": true,
+      "value_unchanged": true
+    }
+  },
+  "schema_version": 1,
+  "scientific_values_modified": false,
+  "type_only_change": "built-in list to tuple for the two approved hidden-dimension fields"
+}

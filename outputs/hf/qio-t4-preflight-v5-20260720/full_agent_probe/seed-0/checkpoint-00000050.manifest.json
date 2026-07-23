@@ -1,0 +1,9 @@
+{
+  "active_checkpoint": "checkpoint-00000050.pkl",
+  "checkpoint_bytes": 117362957,
+  "checkpoint_sha256": "4e35bb94b770dcb1ab6cfef84c789047da3816eb48ac5a34b0dc969806217260",
+  "completed_updates": 50,
+  "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea",
+  "schema_version": 1,
+  "state_sha256": "45f370ce6bd20b802c575ad26330bbefc3fda5ddc0592624f768a802cfa5b96d"
+}

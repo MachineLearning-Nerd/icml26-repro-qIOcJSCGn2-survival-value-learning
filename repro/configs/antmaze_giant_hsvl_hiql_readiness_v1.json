@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "paper": "qIOcJSCGn2",
+  "claim": "C3",
+  "status": "source_and_candidate_protocol_pinned_not_launch_ready",
+  "scope": "future matched HSVL versus official OGBench HIQL reproduction on one reported long-horizon task; no execution or claim evidence",
+  "task": {
+    "env_name": "antmaze-giant-navigate-v0",
+    "table": "official paper Table 1 and Appendix Table 6",
+    "task_count": 5,
+    "reported_overall_success_percent": {
+      "hsvl": {"mean": 74, "std": 1},
+      "hiql": {"mean": 65, "std": 5}
+    }
+  },
+  "data": {
+    "train": {
+      "path": "data/ogbench/antmaze-giant-navigate-v0.npz",
+      "url": "https://rail.eecs.berkeley.edu/datasets/ogbench/antmaze-giant-navigate-v0.npz",
+      "bytes": 241141207,
+      "sha256": "387791c414cfba2d77eda64a47f3b6db7950bdf146ae901e4f08c2c2f9e0f3aa",
+      "last_modified": "Wed, 16 Oct 2024 15:10:10 GMT",
+      "etag": "e5f85d7-624997755106b"
+    },
+    "validation": {
+      "path": "data/ogbench/antmaze-giant-navigate-v0-val.npz",
+      "url": "https://rail.eecs.berkeley.edu/datasets/ogbench/antmaze-giant-navigate-v0-val.npz",
+      "bytes": 24052175,
+      "sha256": "61d40e91899f496030fb4ee73ffd61c20dad502ab6cc8075744867097930ce71",
+      "last_modified": "Wed, 16 Oct 2024 15:10:17 GMT",
+      "etag": "16f01cf-6249977b66e31"
+    }
+  },
+  "sources": {
+    "hsvl": {
+      "repository": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning.git",
+      "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+      "tree": "7a38976b0a065d6ef7f755021853119dc2709487",
+      "source_manifest": "repro/configs/upstream_source_manifest.json",
+      "source_manifest_sha256": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+      "main_config_sha256": "0d584ef55e8ddc6c0b4ca19aa45b6571913b01c6bcbd56dc17fd4f71ee16ae65",
+      "agent_config_sha256": "707b15ec1e5c2c3b97735d687e8a72b499d72d0bb7f0ee59588bd3f3106a9d2d",
+      "lock_sha256": "8b7c535e583ed86ef3966f9e5b52b07900a86d864fc5f3dc8c99b8fed235d069"
+    },
+    "hiql": {
+      "repository": "https://github.com/seohongpark/ogbench.git",
+      "tag": "v1.2.1",
+      "tag_object": "99f9686d4edb18c40ed607ff7d3270d14b27ace2",
+      "commit": "1d4140997f60c52c6fb0702ec100dc988b18c548",
+      "tree": "0919ecd9e71ff437ed05875e921c94cf439107be",
+      "local_root": "upstream/ogbench-hiql-v1.2.1",
+      "source_manifest": "repro/configs/ogbench_hiql_v1_2_1_source_manifest.json",
+      "source_manifest_sha256": "a9ed9028701f70f861239760be761332b42dbb7bdcc3c8fa09109aed8fe52b83",
+      "source_bundle": "upstream/ogbench-hiql-v1.2.1-source.tar.gz",
+      "source_bundle_bytes": 41424,
+      "source_bundle_sha256": "71e1067d3a584e7b4659f9c4d57142d42e1bed59a657036e83755117e50801e6",
+      "source_bundle_integrity": "upstream/ogbench-hiql-v1.2.1-source.tar.gz.integrity.json",
+      "source_bundle_integrity_sha256": "ed286e6aec15b56342eea063fa15d4328b0268ec691da51f9f530ef431379a8a",
+      "hiql_source_sha256": "0cbceb5506e465f2be793dfd69be0244f7990a4d7335afe78c1f74a42b1aa43e",
+      "main_sha256": "375fad6375047ff59f3baea408ab7197784c1ec1457588a78a631025e434faee",
+      "hyperparameters_sha256": "633f6e1f5311e42d0bfd6524cda7255120a0835678dcaa1227cfbf3f5cb1d9df",
+      "requirements_sha256": "131375e19086af484cabd3c9a9e0c812f542bcb36e064f7970e3c80f33f796c1"
+    }
+  },
+  "candidate_training_seeds": {
+    "values": [0, 1, 2, 3],
+    "use_identically_for_both_methods": true,
+    "provenance": "new preregistered matched reproduction seeds",
+    "not_claimed": "The paper and released HSVL/OGBench sources state four random seeds but do not identify the original four values. These must not be described as recovered author seeds."
+  },
+  "candidate_evaluation_seed_rule": {
+    "scope": "same reset and actor seeds for both methods, five tasks, 50 episodes per task",
+    "episode_index": "zero-based 0..49",
+    "reset_seed_formula": "202607200 + training_seed * 10000 + (task_id - 1) * 100 + episode_index",
+    "actor_seed_formula": "302607200 + training_seed * 10000 + (task_id - 1) * 100 + episode_index",
+    "implementation_status": "not implemented; both official evaluators require a bounded wrapper to make these episode seeds explicit"
+  },
+  "hsvl_candidate_config": {
+    "command_template": "uv run train.py env_name=antmaze-giant-navigate-v0 seed=<0|1|2|3>",
+    "main": {
+      "train_steps": 1000000,
+      "log_interval": 10,
+      "eval_interval": 500000,
+      "save_interval": 1000000,
+      "eval_tasks": null,
+      "eval_episodes": 50,
+      "video_episodes": 0,
+      "eval_temperature": 0.0,
+      "eval_gaussian": null,
+      "eval_on_cpu": false
+    },
+    "agent": {
+      "agent_name": "hsvl",
+      "lr": 0.0003,
+      "batch_size": 1024,
+      "critic_agg": "min",
+      "value_hidden_dims": [512, 512, 512],
+      "actor_hidden_dims": [512, 512, 512],
+      "layer_norm": true,
+      "activation_fn": "gelu",
+      "k_basis": 256,
+      "num_basis_sets": 16,
+      "residual_actor": true,
+      "residual_critic": false,
+      "critic_num_blocks": 2,
+      "actor_num_blocks": 2,
+      "discount": 0.995,
+      "const_std": true,
+      "subgoal_steps": 25,
+      "rep_dim": 256,
+      "low_actor_rep_grad": false,
+      "low_alpha": 3.0,
+      "high_alpha": 3.0,
+      "frame_stack": 1,
+      "value_p_curgoal": 0.08,
+      "value_p_trajgoal": 0.6,
+      "value_p_randomgoal": 0.32,
+      "value_geom_sample": true,
+      "actor_p_curgoal": 0.0,
+      "actor_p_trajgoal": 1.0,
+      "actor_p_randomgoal": 0.0,
+      "actor_geom_sample": false,
+      "surv_horizon": 10000,
+      "num_log_bins_requested": 800,
+      "num_unique_intervals_observed_by_prior_static_audit": 499,
+      "ensemble": true,
+      "add_tail": true
+    },
+    "paper_discrepancy": "Appendix Table 3 says K=500, while the released YAML requests 800 logarithmic edges and the released construction yields 499 unique intervals. The exact paper-run K cannot be recovered from public evidence."
+  },
+  "hiql_official_config": {
+    "command_template": "python main.py --env_name=antmaze-giant-navigate-v0 --eval_episodes=50 --agent=agents/hiql.py --agent.discount=0.995 --agent.high_alpha=3.0 --agent.low_alpha=3.0 --seed=<0|1|2|3>",
+    "command_source": "upstream/ogbench-hiql-v1.2.1/impls/hyperparameters.sh lines 141-142 plus an explicit candidate seed",
+    "main": {
+      "train_steps": 1000000,
+      "log_interval": 5000,
+      "eval_interval": 100000,
+      "save_interval": 1000000,
+      "eval_tasks": null,
+      "eval_episodes": 50,
+      "video_episodes": 1,
+      "video_frame_skip": 3,
+      "eval_temperature": 0.0,
+      "eval_gaussian": null,
+      "eval_on_cpu": 1
+    },
+    "agent": {
+      "agent_name": "hiql",
+      "lr": 0.0003,
+      "batch_size": 1024,
+      "actor_hidden_dims": [512, 512, 512],
+      "value_hidden_dims": [512, 512, 512],
+      "layer_norm": true,
+      "discount": 0.995,
+      "tau": 0.005,
+      "expectile": 0.7,
+      "low_alpha": 3.0,
+      "high_alpha": 3.0,
+      "subgoal_steps": 25,
+      "rep_dim": 10,
+      "low_actor_rep_grad": false,
+      "const_std": true,
+      "discrete": false,
+      "encoder": null,
+      "dataset_class": "HGCDataset",
+      "value_p_curgoal": 0.2,
+      "value_p_trajgoal": 0.5,
+      "value_p_randomgoal": 0.3,
+      "value_geom_sample": true,
+      "actor_p_curgoal": 0.0,
+      "actor_p_trajgoal": 1.0,
+      "actor_p_randomgoal": 0.0,
+      "actor_geom_sample": false,
+      "gc_negative": true,
+      "p_aug": 0.0,
+      "frame_stack": null
+    },
+    "environment_gap": "The official impls/requirements.txt is range-based (including jax[cuda12]>=0.4.26 and flax>=0.8.4) and has no lockfile, so an exact official HIQL dependency environment is not recoverable."
+  },
+  "matched_measurement": {
+    "primary_seed_metric": "arithmetic mean success across all five task IDs, each evaluated for 50 episodes",
+    "paired_delta": "HSVL primary seed metric minus HIQL primary seed metric for the same candidate training seed",
+    "reporting": "retain all task-, episode-, seed-, method-, failure-, checkpoint-, and environment-level records; do not substitute the paper's reported means for new execution"
+  },
+  "launch_gate": {
+    "ready": false,
+    "blockers": [
+      "Resolve the HSVL K=500 paper-versus-released-source discrepancy or preregister the released 800-request/499-interval route as a disclosed reproduction choice.",
+      "Create and hash a concrete HIQL dependency lock; it will be a reproduction environment choice, not recovered official provenance.",
+      "Implement and statically bind a common deterministic evaluator seed wrapper without changing task or success semantics.",
+      "Build matched resume/checkpoint/terminal importer and independent audit contracts for both methods.",
+      "Run later bounded target-specific CPU compatibility and dual-GPU throughput/resume preflights under separate authorization.",
+      "Freeze a symmetric C3 decision rule before any paper-scale result is observed and recheck accelerator budget."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-07-20T06:29:20.875917+00:00",
+  "member_count_excluding_this_manifest": 5,
+  "members": {
+    "events.jsonl": {
+      "bytes": 2069,
+      "sha256": "15f83712d1ecc3ae21c009d5794a35d7e692b18a1d187f5d0658d81dad666915"
+    },
+    "phase_10.log": {
+      "bytes": 1468581,
+      "sha256": "f0c8e5fae53ae73f59bd2acc764db0e476567b19a0d587e29c610ba209c58710"
+    },
+    "preflight_report.json": {
+      "bytes": 5954,
+      "sha256": "39aabd7d83a0720496dc78a960291c54cdec86e04aa37c3f80c31fd434ecb992"
+    },
+    "resource_samples.jsonl": {
+      "bytes": 14305,
+      "sha256": "2f2af1ed08561281775958c4a056151b45abb31e42fb4d83837f4fc631da6c4b"
+    },
+    "uv_sync.log": {
+      "bytes": 5900,
+      "sha256": "001ffc4c206a332f3bf2516c06086527cf9a00a95aad9ee58733f692f8183750"
+    }
+  },
+  "root": "qio-t4-preflight-v1-20260720",
+  "run_id": "qio-t4-preflight-v1-20260720",
+  "schema_version": 1
+}

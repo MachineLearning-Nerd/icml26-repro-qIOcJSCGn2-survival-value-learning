@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "orid": "qIOcJSCGn2",
+  "paper_title": "SVL: Goal-Conditioned Reinforcement Learning as Survival Learning",
+  "source": {
+    "primary_url": "https://ar5iv.labs.arxiv.org/html/2604.17551",
+    "retrieved_on": "2026-07-23",
+    "sha256": "69f0db8b7819cac262f4c91e945fc7a6d4b011e7d603fbfe3f0844fa5acecec0"
+  },
+  "live_verdict": {
+    "space_id": "DineshAI/qIOcJSCGn2",
+    "judged_sha": "db72d25f24ec51384021a3081e3aaad17f229572",
+    "judged_at": "2026-07-22T11:29:00+00:00",
+    "model": "zai-org/GLM-5.2",
+    "score": 4,
+    "maximum": 12,
+    "quality": "medium"
+  },
+  "protected_hf_files": {
+    "logbook.json": "1ac21286c205bacbfeab7d35ee3e0c8e304f8e585fc8b0d13530acab038cab0c",
+    "pages/claim-2-survival-identity/page.md": "ac130af15a3f1e82ef62310fb8596f63030f1cacf6cb1974d40c030052ec7951",
+    "repro/src/verify_survival.py": "0656fce46d2c579a1447b6e20280cb050ce66b23bdc30e1e0562f67f8d6351c4"
+  },
+  "score_mapping": {
+    "verified": 2,
+    "falsified": 2,
+    "toy": 1,
+    "inconclusive": 0
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "anchor": "Section 4.1",
+      "claim": "SVL reframes goal-conditioned reinforcement learning by modeling time-to-goal as a survival probability distribution rather than learning a value function through TD bootstrapping.",
+      "current_verdict": "toy",
+      "current_points": 1,
+      "upgrade_gate": "Faithful released full architecture and distribution protocol at claim-relevant scale, including twin heads, actors and policy evaluation, or an exact in-scope falsification."
+    },
+    {
+      "id": "C2",
+      "anchor": "Section 4.1, Proposition 4.1",
+      "claim": "The sparse-reward goal-conditioned value equals the negative discounted sum of survival probabilities.",
+      "current_verdict": "verified",
+      "current_points": 2,
+      "upgrade_gate": "No upgrade needed; preserve and regression-test the exact identity and its scope controls."
+    },
+    {
+      "id": "C3",
+      "anchor": "Section 4.2, Lemma 4.2",
+      "claim": "The survival-estimator MLE/ERM is consistent and asymptotically normal with statistical fluctuations of order n^(-1/2) under standard conditions.",
+      "current_verdict": "toy",
+      "current_points": 1,
+      "upgrade_gate": "Machine-checkable proof at the lemma's actual scope with explicit assumptions, or a valid-assumption counterexample; a small parametric Monte Carlo alone is insufficient."
+    },
+    {
+      "id": "C4",
+      "anchor": "Table 1, HumanoidMaze-giant-navigate-v0",
+      "claim": "HSVL obtains 81 percent success versus 12 percent for HIQL on HumanoidMaze-giant navigation.",
+      "current_verdict": "inconclusive",
+      "current_points": 0,
+      "upgrade_gate": "Preregistered matched HSVL/HIQL four-seed paper-scale training and 50-episode evaluation per seed, or faithful falsification."
+    },
+    {
+      "id": "C5",
+      "anchor": "Table 1, visual-AntMaze-giant and AntMaze-giant navigation",
+      "claim": "HSVL obtains 61 versus 6 percent on visual-AntMaze-giant and 74 versus 65 percent on AntMaze-giant compared with HIQL.",
+      "current_verdict": "inconclusive",
+      "current_points": 0,
+      "upgrade_gate": "Preregistered matched four-seed paper-scale HSVL/HIQL evidence for both conjuncts, or faithful falsification."
+    },
+    {
+      "id": "C6",
+      "anchor": "Table 2, HumanoidMaze-giant navigate-v0",
+      "claim": "With hierarchical extraction removed, flat SVL obtains 45 percent versus 7 percent for re-evaluated CRL using the same DDPG+BC actor.",
+      "current_verdict": "inconclusive",
+      "current_points": 0,
+      "upgrade_gate": "Preregistered matched four-seed flat-SVL/CRL paper-scale training and evaluation with the identical actor, or faithful falsification."
+    }
+  ]
+}

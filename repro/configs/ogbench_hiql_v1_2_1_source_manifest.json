@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "purpose": "paper-local immutable official OGBench HIQL source provenance for a future matched AntMaze-giant route",
+  "paper": "qIOcJSCGn2",
+  "source_root": "upstream/ogbench-hiql-v1.2.1",
+  "official_source": {
+    "repository": "https://github.com/seohongpark/ogbench.git",
+    "annotated_tag": "v1.2.1",
+    "annotated_tag_object": "99f9686d4edb18c40ed607ff7d3270d14b27ace2",
+    "commit": "1d4140997f60c52c6fb0702ec100dc988b18c548",
+    "tree": "0919ecd9e71ff437ed05875e921c94cf439107be",
+    "verified_against_remote_at": "2026-07-20T13:14:53Z"
+  },
+  "selection": {
+    "policy": "Preserve LICENSE, README, package metadata, and the complete official impls subtree. The runtime ogbench package is separately pinned to the v1.2.1 PyPI artifacts below.",
+    "file_count": 22,
+    "members_canonical_sha256": "906ab3bed3a15fa359388f84b961532d6f98bfc2dbcef230e169d3041dd5a0c6"
+  },
+  "members": {
+    "LICENSE": {"bytes": 1082, "git_blob": "314409aeb4a7023b574bfe0f79a42f89a687eb3f", "sha256": "715578d1f9e969ec0e99b730b443a4a3b7d07dbc0da462e47b50c36782b1812b"},
+    "README.md": {"bytes": 24110, "git_blob": "8e8e93162576d4cda3e7d38c1f96ea964b67395d", "sha256": "189f9f9ca77150d977716027423f677d2a80ea5c8a276340e66e136c44a5fc34"},
+    "impls/agents/__init__.py": {"bytes": 392, "git_blob": "4596fe23d246eb1cbe83d49d33677413e2e7eebe", "sha256": "291a2ef703bf040fc30d248d401cad4e071350470539e8a5d61ae71040c4c408"},
+    "impls/agents/crl.py": {"bytes": 13137, "git_blob": "53109ab8dde7f345162f678683e1e24601a3b4f8", "sha256": "05a9faaa8348a16154a03004b54a7eff90ec58eae2588fe7b2bedef2bfcc48af"},
+    "impls/agents/gcbc.py": {"bytes": 6373, "git_blob": "afcf1faff2ee001a3d3cd10daca688894edca2de", "sha256": "a130452c9c76d5718a6c1307525e7d5603334b479683654f7decb6b1280ec15c"},
+    "impls/agents/gciql.py": {"bytes": 12457, "git_blob": "559df7190638e7c7babf7a218acd938b005c4e03", "sha256": "05a0b5d9b987d3049df8a1158bbfbaba2ca2611604d24f9e484f8fb6d0cd92bc"},
+    "impls/agents/gcivl.py": {"bytes": 10307, "git_blob": "f45222b9370b9ff5913f2fd3af0916bba726453d", "sha256": "643ed73b1bad4caa4cf8079aa1bd6cf77f17367f8c67cc9b43acc173bb9aecf8"},
+    "impls/agents/hiql.py": {"bytes": 15549, "git_blob": "63e5deec0401cb4a15cb73979ccb97f768a33dee", "sha256": "0cbceb5506e465f2be793dfd69be0244f7990a4d7335afe78c1f74a42b1aa43e"},
+    "impls/agents/qrl.py": {"bytes": 13882, "git_blob": "79852cbb31cde465f8314b9755b03af31028f3df", "sha256": "4dc68d9a9dbbac73f8610c348308e5044ea05ab21d740841b0e1dd450b62e4c4"},
+    "impls/agents/sac.py": {"bytes": 7831, "git_blob": "34b00407795eec9d0f17479c6a912d11d65d4cfa", "sha256": "fa0957073822df61aba6393e702b8913d0b2307a99baf7690d43e7749f9fb751"},
+    "impls/hyperparameters.sh": {"bytes": 112589, "git_blob": "481b97fa29653263a3eadbf93c63446478bf34ce", "sha256": "633f6e1f5311e42d0bfd6524cda7255120a0835678dcaa1227cfbf3f5cb1d9df"},
+    "impls/main.py": {"bytes": 6742, "git_blob": "3660e034b9483142662c060d0d8a68505d015892", "sha256": "375fad6375047ff59f3baea408ab7197784c1ec1457588a78a631025e434faee"},
+    "impls/requirements.txt": {"bytes": 211, "git_blob": "f32d561d522464cdfe41f2bfb75bf3dac072877c", "sha256": "131375e19086af484cabd3c9a9e0c812f542bcb36e064f7970e3c80f33f796c1"},
+    "impls/utils/__init__.py": {"bytes": 0, "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    "impls/utils/datasets.py": {"bytes": 16774, "git_blob": "59b32a661dd484fab84e179e088c2e4b0eca4877", "sha256": "52c373922a87e1ba8ad8b3b96c3474d5e6385e2ea2c7206930f7a8a315816609"},
+    "impls/utils/encoders.py": {"bytes": 4644, "git_blob": "3c2378b9c685336cc1aa4e0c43682b35f191d872", "sha256": "6bd7fdd82838b754d26af01f9e84d70fa63fca1e09efee38a09f325884073ecc"},
+    "impls/utils/env_utils.py": {"bytes": 3113, "git_blob": "6b17e11a3f9bbdfe518175bca7ae5e5a451c6b03", "sha256": "a92d391a3d95e26717b80ea783f487f0639c956f23ef603bfa8b7bb098f763d7"},
+    "impls/utils/evaluation.py": {"bytes": 3777, "git_blob": "a3a9944be009a0b2cb4d477145f7cf3f38ad28b2", "sha256": "4d9a2732bc9ef89ce99fbc0f07a76d3f4d035783af3a658251709140ff9de3d5"},
+    "impls/utils/flax_utils.py": {"bytes": 6694, "git_blob": "48d8b11600dd29d7245a5056ff35bdfb9452318a", "sha256": "5b6a8e9a919bf57dae0c1454f327ded4235385f9d9dcd1e62263fe4fad9fd484"},
+    "impls/utils/log_utils.py": {"bytes": 4664, "git_blob": "9c421dd2e28873b738f52d092e6961b2b53d785f", "sha256": "ba5ad408d91ee35d92bf06ec7846846c5a75af4ae7cc62c329ec43d074bfaeb6"},
+    "impls/utils/networks.py": {"bytes": 16753, "git_blob": "4ee2b26748dc21207036d7bb7c8037da571891df", "sha256": "e7e4c4a439b691911e5ae6c2653f253c5703e6b5d190d813e28ebc32e7306094"},
+    "pyproject.toml": {"bytes": 999, "git_blob": "e423f81e87c59cbce164037701d95c2b8e3736c5", "sha256": "1111d9ba887b1d3fd03ed05fe19f602003c698b8bea860e9167bcf0b28484c4c"}
+  },
+  "ogbench_runtime_package": {
+    "version": "1.2.1",
+    "sdist": {"bytes": 13002841, "sha256": "d1689a5925c9717786fb7b81baf3dc7c6b4ecf53aa358b2638fc0fb29ca81c5f"},
+    "wheel": {"bytes": 8940331, "sha256": "597ac2207935e4edc46de5d5742e940a753f2329e18612e9cfe7f9e857435f83"},
+    "binding_source": "upstream/uv.lock"
+  },
+  "limitations": [
+    "The official impls/requirements.txt gives lower bounds rather than a complete environment lock.",
+    "No official HIQL checkpoint or result artifact is present in this source snapshot.",
+    "This source recovery is readiness work and is not a runnable campaign or claim evidence."
+  ]
+}

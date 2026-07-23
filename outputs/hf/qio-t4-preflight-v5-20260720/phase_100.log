@@ -1,0 +1,146 @@
+Loading official PointMaze train split...
+Resumed validated checkpoint at update 10
+Training released full CUDA agent: 10->100 updates, parameters=9,778,698, batch=1024
+{"elapsed_seconds_this_session": 24.30653494099988, "interval_seconds": 24.30653494099988, "metrics": {"grad/max": 1.9791133403778076, "grad/min": -2.0341796875, "grad/norm": 200.14572143554688, "high_actor/actor_loss": 482.19287109375, "high_actor/adv": -0.019700270146131516, "high_actor/bc_log_prob": -240.7531280517578, "high_actor/mse": 0.043006785213947296, "high_actor/std": 1.0, "low_actor/actor_loss": 2.503965377807617, "low_actor/adv": -0.006520342081785202, "low_actor/bc_log_prob": -2.3005099296569824, "low_actor/mse": 0.4626331031322479, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 495.2240905761719, "value/surv/event_rate": 0.673828125, "value/v_max": -1.0660912990570068, "value/v_mean": -51.77283477783203, "value/v_min": -53.24974060058594, "value/value_loss": 10.52725887298584}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 20, "updates_per_second": 0.41141199369936343}
+{"elapsed_seconds_this_session": 24.87527420100014, "interval_seconds": 0.5687392600002568, "metrics": {"grad/max": 41.776336669921875, "grad/min": -41.13489532470703, "grad/norm": 735.1292724609375, "high_actor/actor_loss": 1331.478271484375, "high_actor/adv": 0.16939899325370789, "high_actor/bc_log_prob": -238.37957763671875, "high_actor/mse": 0.024463435634970665, "high_actor/std": 1.0, "low_actor/actor_loss": 2.572793960571289, "low_actor/adv": 0.0013082027435302734, "low_actor/bc_log_prob": -2.3064112663269043, "low_actor/mse": 0.4685344398021698, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 1342.8369140625, "value/surv/event_rate": 0.6865234375, "value/v_max": -56.53229522705078, "value/v_mean": -145.57196044921875, "value/v_min": -147.71844482421875, "value/value_loss": 8.785876274108887}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 30, "updates_per_second": 17.582749606551666}
+{"elapsed_seconds_this_session": 25.340799435000008, "interval_seconds": 0.46552523399986967, "metrics": {"grad/max": 4.006923675537109, "grad/min": -4.6021552085876465, "grad/norm": 253.16505432128906, "high_actor/actor_loss": 1845.424560546875, "high_actor/adv": -0.06213466823101044, "high_actor/bc_log_prob": -236.86376953125, "high_actor/mse": 0.01262118760496378, "high_actor/std": 1.0, "low_actor/actor_loss": 2.4101386070251465, "low_actor/adv": -0.004184305667877197, "low_actor/bc_log_prob": -2.291313409805298, "low_actor/mse": 0.4534364342689514, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 1856.7119140625, "value/surv/event_rate": 0.673828125, "value/v_max": -143.28172302246094, "value/v_mean": -150.19207763671875, "value/v_min": -154.17276000976562, "value/value_loss": 8.877252578735352}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 40, "updates_per_second": 21.481112665103776}
+{"elapsed_seconds_this_session": 25.80751956200038, "interval_seconds": 0.4667201270003716, "metrics": {"grad/max": 4.177951812744141, "grad/min": -4.93049430847168, "grad/norm": 314.9971923828125, "high_actor/actor_loss": 3271.81005859375, "high_actor/adv": 0.16713932156562805, "high_actor/bc_log_prob": -236.29586791992188, "high_actor/mse": 0.008184526115655899, "high_actor/std": 1.0, "low_actor/actor_loss": 2.7271642684936523, "low_actor/adv": 0.12072589993476868, "low_actor/bc_log_prob": -2.2682552337646484, "low_actor/mse": 0.43037816882133484, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 3282.88818359375, "value/surv/event_rate": 0.685546875, "value/v_max": -108.13859558105469, "value/v_mean": -121.35255432128906, "value/v_min": -126.64094543457031, "value/value_loss": 8.350969314575195}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 50, "updates_per_second": 21.42611689851558}
+{"elapsed_seconds_this_session": 27.38935838799989, "interval_seconds": 1.5818388259995118, "metrics": {"grad/max": 3.3847432136535645, "grad/min": -4.154544830322266, "grad/norm": 318.4418640136719, "high_actor/actor_loss": 4417.736328125, "high_actor/adv": 0.1012018471956253, "high_actor/bc_log_prob": -236.02513122558594, "high_actor/mse": 0.006069314666092396, "high_actor/std": 1.0, "low_actor/actor_loss": 2.8784329891204834, "low_actor/adv": 0.10776414722204208, "low_actor/bc_log_prob": -2.2733490467071533, "low_actor/mse": 0.43547195196151733, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 4428.91845703125, "value/surv/event_rate": 0.69140625, "value/v_max": -99.24737548828125, "value/v_mean": -112.3671875, "value/v_min": -118.68951416015625, "value/value_loss": 8.303549766540527}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 60, "updates_per_second": 6.321756575725298}
+{"elapsed_seconds_this_session": 27.852228698000545, "interval_seconds": 0.46287031000065326, "metrics": {"grad/max": 1.3077619075775146, "grad/min": -1.2821955680847168, "grad/norm": 87.36309051513672, "high_actor/actor_loss": 1509.1051025390625, "high_actor/adv": 0.06518620252609253, "high_actor/bc_log_prob": -236.14544677734375, "high_actor/mse": 0.007009318098425865, "high_actor/std": 1.0, "low_actor/actor_loss": 2.608637571334839, "low_actor/adv": 0.09060285240411758, "low_actor/bc_log_prob": -2.262746572494507, "low_actor/mse": 0.4248695373535156, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 1519.8782958984375, "value/surv/event_rate": 0.6787109375, "value/v_max": -99.06419372558594, "value/v_mean": -118.90623474121094, "value/v_min": -128.18772888183594, "value/value_loss": 8.164609909057617}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 70, "updates_per_second": 21.604323681909705}
+{"elapsed_seconds_this_session": 28.31501349300015, "interval_seconds": 0.4627847949996067, "metrics": {"grad/max": 3.4720067977905273, "grad/min": -3.7498316764831543, "grad/norm": 209.70460510253906, "high_actor/actor_loss": 6236.5849609375, "high_actor/adv": 0.2470514178276062, "high_actor/bc_log_prob": -236.1417236328125, "high_actor/mse": 0.006980279926210642, "high_actor/std": 1.0, "low_actor/actor_loss": 2.842561721801758, "low_actor/adv": 0.010097600519657135, "low_actor/bc_log_prob": -2.210127353668213, "low_actor/mse": 0.3722503185272217, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 6247.58154296875, "value/surv/event_rate": 0.67578125, "value/v_max": -71.48451232910156, "value/v_mean": -113.83551025390625, "value/v_min": -128.94375610351562, "value/value_loss": 8.154170989990234}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 80, "updates_per_second": 21.608315804775952}
+{"elapsed_seconds_this_session": 28.780620297000496, "interval_seconds": 0.4656068040003447, "metrics": {"grad/max": 4.802506446838379, "grad/min": -4.197790622711182, "grad/norm": 330.98077392578125, "high_actor/actor_loss": 7978.841796875, "high_actor/adv": 0.7736949920654297, "high_actor/bc_log_prob": -236.0296630859375, "high_actor/mse": 0.006104613188654184, "high_actor/std": 1.0, "low_actor/actor_loss": 4.559431076049805, "low_actor/adv": 0.12946462631225586, "low_actor/bc_log_prob": -2.1801464557647705, "low_actor/mse": 0.34226930141448975, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 7991.59521484375, "value/surv/event_rate": 0.689453125, "value/v_max": -79.42847442626953, "value/v_mean": -117.21112823486328, "value/v_min": -137.75982666015625, "value/value_loss": 8.194132804870605}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 90, "updates_per_second": 21.477349373083037}
+{"elapsed_seconds_this_session": 29.250713047999852, "interval_seconds": 0.4700927509993562, "metrics": {"grad/max": 5.533084869384766, "grad/min": -7.4885358810424805, "grad/norm": 522.4544067382812, "high_actor/actor_loss": 9285.68359375, "high_actor/adv": 1.14461350440979, "high_actor/bc_log_prob": -236.30389404296875, "high_actor/mse": 0.008247125893831253, "high_actor/std": 1.0, "low_actor/actor_loss": 4.801560878753662, "low_actor/adv": 0.05885794013738632, "low_actor/bc_log_prob": -2.1718502044677734, "low_actor/mse": 0.33397310972213745, "low_actor/std": 1.0, "sucess_set_event": 0.0, "total_loss": 9298.8955078125, "value/surv/event_rate": 0.6982421875, "value/v_max": -54.78304672241211, "value/v_mean": -116.70500183105469, "value/v_min": -140.32228088378906, "value/value_loss": 8.410017013549805}, "session_id": "6bb017f9-c7cc-4ead-ae4c-9e784ea74dc2", "update": 100, "updates_per_second": 21.272397795416538}
+{
+  "actual_bins": 499,
+  "checkpoint_bytes": 117362957,
+  "checkpoint_manifest": "checkpoint.manifest.json",
+  "checkpoint_manifest_sha256": "65a50a2c154f0f19cd1d28739c7934f97a84950cbc2404c1ce77cd0a809c8680",
+  "checkpoint_reload_exact": true,
+  "checkpoint_sha256": "689ed10245e4926249316c79f7502ba692343c583e6fdfcc0de458020f606925",
+  "completed_updates": 100,
+  "dataset_hashes": {
+    "train": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61",
+    "validation": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4"
+  },
+  "dataset_rows": 1001000,
+  "dataset_valid_pool": 1000000,
+  "deviations": [
+    "Execution gate runs 100 updates rather than 1,000,000.",
+    "PointMaze-large is official OGBench navigation data but is not a Table 1 headline task.",
+    "No policy-success claim is made by this training-and-reload gate."
+  ],
+  "includes_high_actor": false,
+  "includes_low_actor": false,
+  "includes_twin_critic": true,
+  "input_bundle": {
+    "archive_bytes": 22528563,
+    "archive_sha256": "d7f8e07b72f828d8f39100533510a60858dab8b7cc7debcc2e2409260da634ee",
+    "bundle_manifest_sha256": "d2e5706fe5c8f12d904234fd6b23b624624501da05e60954b291372c3e67fa42",
+    "member_count": 26,
+    "schema_version": 1
+  },
+  "jax_backend": "gpu",
+  "jax_devices": [
+    "cuda:0"
+  ],
+  "max_rss_platform_units": 1865700,
+  "module_parameter_counts": {
+    "modules_goal_rep": 662272,
+    "modules_high_actor": 1712896,
+    "modules_low_actor": 1712642,
+    "modules_value": 5690888
+  },
+  "package_versions": {
+    "flax": "0.7.4",
+    "hsvl": "0.1.0",
+    "jax": "0.4.23",
+    "jaxlib": "0.4.23+cuda12.cudnn89",
+    "numpy": "1.26.4",
+    "ogbench": "1.2.1",
+    "optax": "0.2.2"
+  },
+  "paper_scale_target_updates": 1000000,
+  "parameter_count": 9778698,
+  "platform": "Linux-6.12.94-123.180.amzn2023.x86_64-x86_64-with-glibc2.36",
+  "protocol_artifact": "protocol.json",
+  "protocol_artifact_sha256": "6b59171427fedd45c5034f74770859ef59f07dde9833adc784d04e64abfe6614",
+  "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea",
+  "requested_bins": 800,
+  "restored_state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0",
+  "resume_event_count": 1,
+  "runtime_seconds_this_invocation": 31.460832570000093,
+  "schema_version": 1,
+  "scope": "execution_gate_not_paper_scale",
+  "seed": 0,
+  "session_count": 2,
+  "sessions": "sessions.json",
+  "sessions_sha256": "868156e5ca4d1cd34568a42b0ed16c594d354b6e95604226b900dea3714935e4",
+  "state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0",
+  "status": "complete",
+  "target_updates": 100,
+  "training_trace": "training_trace.json",
+  "training_trace_rows": 10,
+  "training_trace_sha256": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d",
+  "upstream_source": {
+    "all_git_blobs_match": true,
+    "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "file_count": 18,
+    "git_blob_manifest_sha256": "7280ad02845849ad10b580c32466f6ad7c9480b4b8902951bba9db57ed34ccd5",
+    "intentionally_omitted_remote_files": {
+      "intro.png": {
+        "git_blob": "4b86fcd6472b900c498e2b35ffe42ee69e15e559",
+        "reason": "Non-executable README illustration; not required by any reproduction path."
+      }
+    },
+    "manifest_sha256": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+    "repository": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning.git",
+    "tree": "7a38976b0a065d6ef7f755021853119dc2709487"
+  }
+}
+{
+  "actor_metric_trace_rows": 10,
+  "actor_metric_trace_sha256": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d",
+  "after_complete_sha256": "88ebda1a1c2df8570cc96cf6c04efa4c0cb24e9981af0cf2f1a5b2016e1f74b6",
+  "after_progress_sha256": "88ebda1a1c2df8570cc96cf6c04efa4c0cb24e9981af0cf2f1a5b2016e1f74b6",
+  "before_complete_sha256": "6ba801f8cd4a6ed4000143e3f07f9a70c692e7683962be6059e2b40e0fbebc94",
+  "before_progress_sha256": "6ba801f8cd4a6ed4000143e3f07f9a70c692e7683962be6059e2b40e0fbebc94",
+  "checkpoint_reload_exact": true,
+  "checkpoint_state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0",
+  "completed_updates": 100,
+  "contract_sha256": "e497d1a0a4af8ba5f46fc91ded16cf968d2b50cfaab83f00b3bdaa183e429759",
+  "driver_sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd",
+  "modified_fields": {
+    "derived_result_inventory_normalization": {
+      "after_sha256": "96c2bf5ad0909cdae755f406093a417270999f7f4e61e4124850d869c6f18b6f",
+      "before": "absent"
+    },
+    "includes_high_actor": {
+      "after": true,
+      "before": false
+    },
+    "includes_low_actor": {
+      "after": true,
+      "before": false
+    }
+  },
+  "observed_module_parameter_counts": {
+    "modules_goal_rep": 662272,
+    "modules_high_actor": 1712896,
+    "modules_low_actor": 1712642,
+    "modules_value": 5690888
+  },
+  "observed_total_parameter_count": 9778698,
+  "official_colab_runner_sha256": "bed6a8f8bdf44a4c716beb1e0dca8d194faaaccfb10581f9950e4d038e4f2b32",
+  "official_package_gate_modified": false,
+  "official_return_packer_sha256": "124599a99e116f1001e4adefb9455bc06518b255b4768fc1c6439a414b4967e9",
+  "official_source_files_modified": false,
+  "original_flags": {
+    "includes_high_actor": false,
+    "includes_low_actor": false
+  },
+  "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea",
+  "purpose": "normalize_flax_moduledict_actor_presence_false_negatives",
+  "required_actor_trace_metrics_present_and_finite_in_every_row": true,
+  "schema_version": 1,
+  "scientific_values_modified": false
+}

@@ -1,0 +1,114 @@
+{
+  "actual_bins": 499,
+  "checkpoint_bytes": 117362957,
+  "checkpoint_manifest": "checkpoint.manifest.json",
+  "checkpoint_manifest_sha256": "65a50a2c154f0f19cd1d28739c7934f97a84950cbc2404c1ce77cd0a809c8680",
+  "checkpoint_reload_exact": true,
+  "checkpoint_sha256": "689ed10245e4926249316c79f7502ba692343c583e6fdfcc0de458020f606925",
+  "completed_updates": 100,
+  "dataset_hashes": {
+    "train": "82a73ed8de90ad2b8bf89069253e961918438d127d7f7c7f09c81e642d0d2c61",
+    "validation": "19e6b510c800b865d5c3f9e4335941a602731184fa683eb99face7c5405b6ec4"
+  },
+  "dataset_rows": 1001000,
+  "dataset_valid_pool": 1000000,
+  "derived_result_inventory_normalization": {
+    "actor_metric_trace_rows": 10,
+    "actor_metric_trace_sha256": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d",
+    "checkpoint_reload_exact": true,
+    "checkpoint_state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0",
+    "contract_sha256": "e497d1a0a4af8ba5f46fc91ded16cf968d2b50cfaab83f00b3bdaa183e429759",
+    "driver_sha256": "c54c972b3e02dd013cc972f8847b15b3bec28168458369c186c659eb424e29cd",
+    "observed_module_parameter_counts": {
+      "modules_goal_rep": 662272,
+      "modules_high_actor": 1712896,
+      "modules_low_actor": 1712642,
+      "modules_value": 5690888
+    },
+    "observed_total_parameter_count": 9778698,
+    "official_colab_runner_sha256": "bed6a8f8bdf44a4c716beb1e0dca8d194faaaccfb10581f9950e4d038e4f2b32",
+    "official_package_gate_modified": false,
+    "official_return_packer_sha256": "124599a99e116f1001e4adefb9455bc06518b255b4768fc1c6439a414b4967e9",
+    "official_source_files_modified": false,
+    "original_flags": {
+      "includes_high_actor": false,
+      "includes_low_actor": false
+    },
+    "purpose": "normalize_flax_moduledict_actor_presence_false_negatives",
+    "required_actor_trace_metrics_present_and_finite_in_every_row": true,
+    "schema_version": 1,
+    "scientific_values_modified": false
+  },
+  "deviations": [
+    "Execution gate runs 100 updates rather than 1,000,000.",
+    "PointMaze-large is official OGBench navigation data but is not a Table 1 headline task.",
+    "No policy-success claim is made by this training-and-reload gate."
+  ],
+  "includes_high_actor": true,
+  "includes_low_actor": true,
+  "includes_twin_critic": true,
+  "input_bundle": {
+    "archive_bytes": 22528563,
+    "archive_sha256": "d7f8e07b72f828d8f39100533510a60858dab8b7cc7debcc2e2409260da634ee",
+    "bundle_manifest_sha256": "d2e5706fe5c8f12d904234fd6b23b624624501da05e60954b291372c3e67fa42",
+    "member_count": 26,
+    "schema_version": 1
+  },
+  "jax_backend": "gpu",
+  "jax_devices": [
+    "cuda:0"
+  ],
+  "max_rss_platform_units": 1865700,
+  "module_parameter_counts": {
+    "modules_goal_rep": 662272,
+    "modules_high_actor": 1712896,
+    "modules_low_actor": 1712642,
+    "modules_value": 5690888
+  },
+  "package_versions": {
+    "flax": "0.7.4",
+    "hsvl": "0.1.0",
+    "jax": "0.4.23",
+    "jaxlib": "0.4.23+cuda12.cudnn89",
+    "numpy": "1.26.4",
+    "ogbench": "1.2.1",
+    "optax": "0.2.2"
+  },
+  "paper_scale_target_updates": 1000000,
+  "parameter_count": 9778698,
+  "platform": "Linux-6.12.94-123.180.amzn2023.x86_64-x86_64-with-glibc2.36",
+  "protocol_artifact": "protocol.json",
+  "protocol_artifact_sha256": "6b59171427fedd45c5034f74770859ef59f07dde9833adc784d04e64abfe6614",
+  "protocol_sha256": "9c54d123aa361d8d6fcfe77a1049445490b89a67ae2749a36e7bf460ac0b11ea",
+  "requested_bins": 800,
+  "restored_state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0",
+  "resume_event_count": 1,
+  "runtime_seconds_this_invocation": 31.460832570000093,
+  "schema_version": 1,
+  "scope": "execution_gate_not_paper_scale",
+  "seed": 0,
+  "session_count": 2,
+  "sessions": "sessions.json",
+  "sessions_sha256": "868156e5ca4d1cd34568a42b0ed16c594d354b6e95604226b900dea3714935e4",
+  "state_sha256": "7bc393ffaac206b7deaa64de5e67634c4c0556aed1d0ff43e5dc258fbc25d9a0",
+  "status": "complete",
+  "target_updates": 100,
+  "training_trace": "training_trace.json",
+  "training_trace_rows": 10,
+  "training_trace_sha256": "2433a3a6e12cea7a0731df5e559a805116b430ed62c848ed3e8abc64338c5e2d",
+  "upstream_source": {
+    "all_git_blobs_match": true,
+    "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "file_count": 18,
+    "git_blob_manifest_sha256": "7280ad02845849ad10b580c32466f6ad7c9480b4b8902951bba9db57ed34ccd5",
+    "intentionally_omitted_remote_files": {
+      "intro.png": {
+        "git_blob": "4b86fcd6472b900c498e2b35ffe42ee69e15e559",
+        "reason": "Non-executable README illustration; not required by any reproduction path."
+      }
+    },
+    "manifest_sha256": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+    "repository": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning.git",
+    "tree": "7a38976b0a065d6ef7f755021853119dc2709487"
+  }
+}
