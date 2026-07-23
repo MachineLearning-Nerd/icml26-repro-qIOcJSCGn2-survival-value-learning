@@ -30,7 +30,7 @@
   "pattern_checks": [
     {
       "path": ".openresearch/judge_contract.json",
-      "pattern": "survival distribution rather than a TD value",
+      "pattern": "survival probability distribution rather than learning a value function through TD bootstrapping",
       "must_exist": true
     },
     {
