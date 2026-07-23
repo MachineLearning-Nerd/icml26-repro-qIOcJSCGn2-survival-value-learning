@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "route_id": "c1_exact_released_architecture",
+  "claims": ["C1"],
+  "scientific_evidence": false,
+  "current_live_verdicts": {"C1": "toy"},
+  "paper_source": {
+    "url": "https://ar5iv.labs.arxiv.org/html/2604.17551",
+    "anchor": "Section 4.1/4.3; Appendix Table 3 (S4.SS1, S4.SS3, A1.T3)",
+    "retrieved_on": "2026-07-23",
+    "sha256": "69f0db8b7819cac262f4c91e945fc7a6d4b011e7d603fbfe3f0844fa5acecec0"
+  },
+  "exact_scope": "Released HSVL with width 512, twin survival heads, both hierarchical actors, the disclosed 500-paper versus 800-request/499-unique interval discrepancy, 1,000,000 updates, deterministic policy evaluation, held-out twin outputs, independent reconstruction, and shuffled-target plus temporal-reversal controls.",
+  "required_sha256": {
+    ".openresearch/judge_contract.json": "4bb26d3092561164b4da5a481ff937c98dd8d139bf4bdb864847fe76aab9fd75",
+    "docs/APPROACH2_C1_EXACT_SCALE_EXECUTION_CONTRACT.md": "f311601507a32f066685d5d633e407264a0ba8019ee4d8e5a270f12ac970cac9",
+    "docs/APPROACH2_SOURCE_ARTIFACT_ARCHAEOLOGY.md": "5d6643888c0968c46f649a9e6fa093ca284e3d32346bcbc89aab7fb292a77454",
+    "outputs/hf/qio-t4-preflight-v5-20260720/preflight_report.json": "9ccf813d81403f300908aff319b7c8f8142b19148c29c39e959d32b3ea61b6f8",
+    "upstream/hsvl/agent.py": "ad4b966b9138fa298ba3a5838e9a475518346900926d8ebc1b473d414160630d",
+    "upstream/hsvl/config/agent/hsvl.yaml": "707b15ec1e5c2c3b97735d687e8a72b499d72d0bb7f0ee59588bd3f3106a9d2d",
+    "upstream/hsvl/config/main.yaml": "0d584ef55e8ddc6c0b4ca19aa45b6571913b01c6bcbd56dc17fd4f71ee16ae65"
+  },
+  "pattern_checks": [
+    {"path": "upstream/hsvl/agent.py", "pattern": "pair1, pair2", "must_exist": true},
+    {"path": "upstream/hsvl/agent.py", "pattern": "high_actor", "must_exist": true},
+    {"path": "upstream/hsvl/agent.py", "pattern": "low_actor", "must_exist": true},
+    {"path": "upstream/hsvl/config/main.yaml", "pattern": "train_steps: 1000000", "must_exist": true},
+    {"path": "upstream/hsvl/config/main.yaml", "pattern": "eval_episodes: 50", "must_exist": true},
+    {"path": "upstream/pyproject.toml", "pattern": "jax\\[cuda12_pip\\]", "must_exist": true}
+  ],
+  "cpu_reachable": false,
+  "score_relevant_if_completed": true,
+  "decision_basis": [
+    "The frozen T4 preflight instantiated 9,778,698 released parameters and measured 21.451733 median and 6.321757 conservative updates/s.",
+    "The remaining 999,900 updates project to 12.95-43.94 T4 hours; the frozen continuation runner explicitly requires one T4 and JAX GPU.",
+    "The prior CPU experiment used width 64, one head, 2,000 updates, and no actors or policy evaluation, so it cannot establish exact-scope CPU reachability.",
+    "Completing the exact route would address every live C1 scale/component criticism, so it is score-relevant but forbidden by the no-GPU policy."
+  ],
+  "blockers": [
+    "Faithful execution is bound to the released CUDA environment and a measured T4 continuation; GPU/T4 is forbidden by campaign policy.",
+    "No measured CPU paper-scale run exists, and substituting the bounded CPU architecture would remain toy."
+  ],
+  "next_step": "Stop this route as BLOCKED. Do not launch local full training, HF cpu-upgrade, or any GPU job; preserve the existing exact-scale contract as non-executed feasibility evidence."
+}
