@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "route_id": "c4_c5_giant_benchmarks",
+  "claims": ["C4", "C5"],
+  "scientific_evidence": false,
+  "current_live_verdicts": {"C4": "inconclusive", "C5": "inconclusive"},
+  "paper_source": {
+    "url": "https://ar5iv.labs.arxiv.org/html/2604.17551",
+    "anchor": "Section 5.1, Table 1; Appendix Tables 3, 6, 7, and 8 (S5.SS1, S5.T1, A1.T3, A1.T6-A1.T8)",
+    "retrieved_on": "2026-07-23",
+    "sha256": "69f0db8b7819cac262f4c91e945fc7a6d4b011e7d603fbfe3f0844fa5acecec0"
+  },
+  "exact_scope": "Matched HSVL-versus-HIQL reproduction or falsification on HumanoidMaze-giant for C4 and on both AntMaze-giant and visual-AntMaze-giant for conjunctive C5, using preregistered seeds 0-3, matched datasets/configurations, 1,000,000 state updates or 500,000 visual updates, 50 evaluation episodes per task and seed, and uncertainty reconstructed from raw seed outputs.",
+  "required_sha256": {
+    ".openresearch/judge_contract.json": "4bb26d3092561164b4da5a481ff937c98dd8d139bf4bdb864847fe76aab9fd75",
+    "repro/configs/upstream_source_manifest.json": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+    "repro/configs/ogbench_hiql_v1_2_1_source_manifest.json": "a9ed9028701f70f861239760be761332b42dbb7bdcc3c8fa09109aed8fe52b83",
+    "repro/configs/antmaze_giant_hsvl_hiql_readiness_v1.json": "a5078a8cfefbfbf8f3cae0c8f14c29d85110bf296f3b97466263a3b0ad91b7b7",
+    "upstream/hsvl/agent.py": "ad4b966b9138fa298ba3a5838e9a475518346900926d8ebc1b473d414160630d",
+    "upstream/hsvl/config/main.yaml": "0d584ef55e8ddc6c0b4ca19aa45b6571913b01c6bcbd56dc17fd4f71ee16ae65",
+    "upstream/hsvl/config/agent/hsvl.yaml": "707b15ec1e5c2c3b97735d687e8a72b499d72d0bb7f0ee59588bd3f3106a9d2d",
+    "upstream/ogbench-hiql-v1.2.1/impls/agents/hiql.py": "0cbceb5506e465f2be793dfd69be0244f7990a4d7335afe78c1f74a42b1aa43e",
+    "upstream/ogbench-hiql-v1.2.1/impls/hyperparameters.sh": "633f6e1f5311e42d0bfd6524cda7255120a0835678dcaa1227cfbf3f5cb1d9df"
+  },
+  "pattern_checks": [
+    {"path": "upstream/hsvl/config/main.yaml", "pattern": "train_steps: 1000000", "must_exist": true},
+    {"path": "upstream/hsvl/config/main.yaml", "pattern": "eval_episodes: 50", "must_exist": true},
+    {"path": "upstream/hsvl/agent.py", "pattern": "state_encoder=Identity\\(\\)", "must_exist": true},
+    {"path": "upstream/hsvl/config/agent/hsvl.yaml", "pattern": "^encoder:", "must_exist": false},
+    {"path": "upstream/ogbench-hiql-v1.2.1/impls/hyperparameters.sh", "pattern": "visual-antmaze-giant-navigate-v0", "must_exist": true},
+    {"path": "upstream/ogbench-hiql-v1.2.1/impls/hyperparameters.sh", "pattern": "visual-antmaze-giant-navigate-v0.*agent=agents/hiql.py.*agent.encoder=impala_small", "must_exist": true},
+    {"path": "upstream/ogbench-hiql-v1.2.1/impls/hyperparameters.sh", "pattern": "humanoidmaze-giant-navigate-v0.*agent=agents/hiql.py", "must_exist": true}
+  ],
+  "cpu_reachable": false,
+  "score_relevant_if_completed": true,
+  "decision_basis": [
+    "Each accepted comparison requires both methods, four fixed seeds, paper-scale optimization, matched datasets and evaluation episodes, and seed-level uncertainty; paper numbers alone are not evidence.",
+    "The released state HSVL configuration specifies 1,000,000 JAX updates, while the official visual HIQL command specifies 500,000 convolutional updates and eval_on_cpu=0; these are accelerator-scale workloads.",
+    "The released HSVL agent constructs Identity state encoders and its disclosed HSVL configuration exposes no visual encoder field, whereas the pinned HIQL release explicitly uses impala_small for visual-AntMaze-giant.",
+    "C5 is conjunctive, so a state-only AntMaze result cannot substitute for the missing visual comparison."
+  ],
+  "blockers": [
+    "Faithful four-seed giant-task training is GPU-bound, but every GPU flavor is forbidden by campaign policy.",
+    "The pinned public HSVL release does not expose the visual encoder integration needed to reproduce the paper's visual HSVL arm exactly.",
+    "A CPU-reduced model, fewer updates, fewer seeds, or one C5 task would remain toy or incomplete."
+  ],
+  "next_step": "Stop C4 and C5 as BLOCKED. Do not launch local training, HF cpu-upgrade, or GPU work; retain this audit as source/protocol feasibility evidence only."
+}
