@@ -5,7 +5,7 @@
   "space_id": "DineshAI/qIOcJSCGn2",
   "paper": {"arxiv_id": "2604.17551", "openreview_id": "qIOcJSCGn2", "title": "SVL: Goal-Conditioned Reinforcement Learning as Survival Learning"},
   "tags": ["icml2026-repro", "paper-qIOcJSCGn2"],
-  "updated_at": "2026-07-23T11:23:18+00:00",
+  "updated_at": "2026-07-23T12:14:51+00:00",
   "root": {
     "slug": "index",
     "title": "Repro - SVL Survival Value Learning (qIOcJSCGn2)",
@@ -13,11 +13,12 @@
     "children": [
       {"slug": "claim-2-survival-identity", "title": "Claim 2 — Value = discounted survival sum", "file": "pages/claim-2-survival-identity/page.md", "children": []},
       {"slug": "first-round-route-audits", "title": "First-round route audits — C1, C3-C6", "file": "pages/first-round-route-audits/page.md", "children": []},
+      {"slug": "three-interpretation-retry", "title": "Three-interpretation retry — C1, C4-C6", "file": "pages/three-interpretation-retry/page.md", "children": []},
       {"slug": "methods-environment", "title": "Methods & environment", "file": "pages/methods-environment/page.md", "children": []},
       {"slug": "negative-controls", "title": "Negative controls", "file": "pages/negative-controls/page.md", "children": []},
       {"slug": "conclusion", "title": "Conclusion", "file": "pages/conclusion/page.md", "children": []}
     ]
   },
   "agent_view_tokens": 220,
-  "revision": "1784805802000000000"
+  "revision": "1784808891000000000"
 }
