@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "route_id": "c3_mle_erm_theorem",
+  "claims": ["C3"],
+  "scientific_evidence": false,
+  "current_live_verdicts": {"C3": "toy"},
+  "paper_source": {
+    "url": "https://ar5iv.labs.arxiv.org/html/2604.17551",
+    "anchor": "Section 4.2, Lemma 4.2 and Equation 14 (S4.Thmtheorem2, S4.E14)",
+    "retrieved_on": "2026-07-23",
+    "sha256": "69f0db8b7819cac262f4c91e945fc7a6d4b011e7d603fbfe3f0844fa5acecec0"
+  },
+  "exact_scope": "Prove or falsify the finite-dimensional MLE/ERM claim for approximately i.i.d. state-action-horizon-outcome tuples under non-informative right censoring, correct specification or a stated KL-minimizer target, identifiability, smoothness, an interior true parameter, uniform laws/envelopes, and nonsingular information; establish consistency and n^(-1/2) asymptotic normality, with inverse Fisher covariance only under correct specification.",
+  "required_sha256": {
+    ".openresearch/judge_contract.json": "4bb26d3092561164b4da5a481ff937c98dd8d139bf4bdb864847fe76aab9fd75",
+    "repro/src/verify_survival.py": "0656fce46d2c579a1447b6e20280cb050ce66b23bdc30e1e0562f67f8d6351c4",
+    "repro/tests/test_svl.py": "c2cdecaebdf9ecd905ef7b2cbdba076b772d47413fcff2631693a84f38ddfca4"
+  },
+  "pattern_checks": [
+    {"path": ".openresearch/judge_contract.json", "pattern": "\\\"id\\\": \\\"C3\\\"", "must_exist": true},
+    {"path": ".openresearch/judge_contract.json", "pattern": "MLE/ERM", "must_exist": true},
+    {"path": ".openresearch/judge_contract.json", "pattern": "n\\^\\(-1/2\\)", "must_exist": true},
+    {"path": "repro/src/verify_survival.py", "pattern": "verify_mle_rate", "must_exist": true}
+  ],
+  "cpu_reachable": true,
+  "score_relevant_if_completed": true,
+  "decision_basis": [
+    "The paper states a finite-dimensional parametric MLE result, so exact-scope evidence can be constructed as algebraic and probabilistic proof certificates without benchmark training.",
+    "The paper names i.i.d.-style sampling, non-informative censoring, identifiability, and smoothness; a faithful proof must make the additional compactness/interiority, domination, uniform-convergence, and nonsingular-information conditions explicit.",
+    "A primary derivation and an independent reconstruction from primitive likelihood derivatives can check consistency, score centering, Hessian convergence, and the covariance qualification.",
+    "Non-identifiability and singular-information counterexamples provide destructive controls; a small Monte Carlo experiment alone would remain toy."
+  ],
+  "blockers": [],
+  "next_step": "Promote this node to a bounded proof-preflight child. Commit a theorem-and-assumption manifest, a primary symbolic verifier, an independent auditor that does not import it, and destructive controls for non-identifiability and singular information; do not launch an HF job."
+}
