@@ -1,35 +1,90 @@
 {
   "schema_version": 1,
-  "route_id": "c3_mle_erm_theorem",
-  "claims": ["C3"],
+  "route_id": "interpretation_b_official_artifact_witness",
+  "claims": ["C1", "C4", "C5", "C6"],
   "scientific_evidence": false,
-  "current_live_verdicts": {"C3": "toy"},
+  "current_live_verdicts": {
+    "C1": "toy",
+    "C4": "inconclusive",
+    "C5": "inconclusive",
+    "C6": "inconclusive"
+  },
   "paper_source": {
     "url": "https://ar5iv.labs.arxiv.org/html/2604.17551",
-    "anchor": "Section 4.2, Lemma 4.2 and Equation 14 (S4.Thmtheorem2, S4.E14)",
+    "anchor": "Sections 3-4; Tables 1-2; Appendix Tables 6-8",
     "retrieved_on": "2026-07-23",
     "sha256": "69f0db8b7819cac262f4c91e945fc7a6d4b011e7d603fbfe3f0844fa5acecec0"
   },
-  "exact_scope": "Prove or falsify the finite-dimensional MLE/ERM claim for approximately i.i.d. state-action-horizon-outcome tuples under non-informative right censoring, correct specification or a stated KL-minimizer target, identifiability, smoothness, an interior true parameter, uniform laws/envelopes, and nonsingular information; establish consistency and n^(-1/2) asymptotic normality, with inverse Fisher covariance only under correct specification.",
+  "exact_scope": "Official-artifact witness interpretation: an immutable author-released paper-scale checkpoint or raw four-seed output could permit independent CPU re-evaluation or reconstruction without retraining. A candidate must identify the exact claim, task, method, paper configuration, seed-level provenance, immutable URL, and content hash. Source code, paper tables, a local 100-update PointMaze checkpoint, or an unverified filename is not a candidate.",
   "required_sha256": {
     ".openresearch/judge_contract.json": "4bb26d3092561164b4da5a481ff937c98dd8d139bf4bdb864847fe76aab9fd75",
+    "docs/APPROACH2_SOURCE_ARTIFACT_ARCHAEOLOGY.md": "5d6643888c0968c46f649a9e6fa093ca284e3d32346bcbc89aab7fb292a77454",
+    "outputs/approach2_source_artifact_audit.json": "f3b38c7a5e616cc5a50e7f24d52a800294089014303a392d1d0d5e68a1903c68",
+    "repro/configs/ogbench_hiql_v1_2_1_source_manifest.json": "a9ed9028701f70f861239760be761332b42dbb7bdcc3c8fa09109aed8fe52b83",
+    "repro/configs/upstream_source_manifest.json": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
     "repro/src/verify_survival.py": "0656fce46d2c579a1447b6e20280cb050ce66b23bdc30e1e0562f67f8d6351c4",
     "repro/tests/test_svl.py": "c2cdecaebdf9ecd905ef7b2cbdba076b772d47413fcff2631693a84f38ddfca4"
   },
   "pattern_checks": [
-    {"path": ".openresearch/judge_contract.json", "pattern": "\\\"id\\\": \\\"C3\\\"", "must_exist": true},
-    {"path": ".openresearch/judge_contract.json", "pattern": "MLE/ERM", "must_exist": true},
-    {"path": ".openresearch/judge_contract.json", "pattern": "n\\^\\(-1/2\\)", "must_exist": true},
-    {"path": "repro/src/verify_survival.py", "pattern": "verify_mle_rate", "must_exist": true}
+    {
+      "path": "outputs/approach2_source_artifact_audit.json",
+      "pattern": "\"release_count\": 0",
+      "must_exist": true
+    },
+    {
+      "path": "outputs/approach2_source_artifact_audit.json",
+      "pattern": "\"github_actions_artifact_count\": 0",
+      "must_exist": true
+    },
+    {
+      "path": "outputs/approach2_source_artifact_audit.json",
+      "pattern": "\"hiql_checkpoint_present\": false",
+      "must_exist": true
+    },
+    {
+      "path": "outputs/approach2_source_artifact_audit.json",
+      "pattern": "\"independent_logged_evaluation_table_found\": false",
+      "must_exist": true
+    }
   ],
+  "artifact_witness": {
+    "manifest": "outputs/approach2_source_artifact_audit.json",
+    "required_false_paths": [
+      "fail_closed_conclusion.reusable_author_checkpoint_found",
+      "fail_closed_conclusion.reusable_hiql_checkpoint_found",
+      "fail_closed_conclusion.independent_logged_evaluation_table_found"
+    ],
+    "required_zero_paths": [
+      "official_hsvl_source.release_count",
+      "official_hsvl_source.github_actions_artifact_count",
+      "official_hsvl_source.checkpoint_or_result_files_in_tree",
+      "official_ogbench_source.checkpoint_or_result_files_in_pinned_tree"
+    ],
+    "negative_control_candidate": {
+      "claim_ids": ["C4"],
+      "task": "humanoidmaze-giant-navigate-v0",
+      "method": "HSVL",
+      "configuration": "paper-scale",
+      "seed_level_provenance": "four seeds",
+      "immutable_url": "https://example.invalid/invented-checkpoint"
+    }
+  },
   "cpu_reachable": true,
-  "score_relevant_if_completed": true,
+  "score_relevant_if_completed": false,
   "decision_basis": [
-    "The paper states a finite-dimensional parametric MLE result, so exact-scope evidence can be constructed as algebraic and probabilistic proof certificates without benchmark training.",
-    "The paper names i.i.d.-style sampling, non-informative censoring, identifiability, and smoothness; a faithful proof must make the additional compactness/interiority, domination, uniform-convergence, and nonsingular-information conditions explicit.",
-    "A primary derivation and an independent reconstruction from primitive likelihood derivatives can check consistency, score centering, Hessian convergence, and the covariance qualification.",
-    "Non-identifiability and singular-information counterexamples provide destructive controls; a small Monte Carlo experiment alone would remain toy."
+    "The official HSVL repository at commit 5f13cf22d397be42a87b7d35336db7662879d6db has no releases, tags, GitHub Actions artifacts, or checkpoint/result files in its tree.",
+    "The pinned official OGBench source and checked releases provide HIQL code but no HIQL checkpoint or result artifact.",
+    "Repository logging writes local checkpoints and metrics but does not publish immutable checkpoints or recoverable raw four-seed tables.",
+    "The only locally recovered exact HSVL checkpoint is PointMaze seed 0 after 100 of 1000000 updates; it has no policy evaluation and is not author paper-scale evidence.",
+    "A current namespace recheck found no exact official HSVL/HIQL model or Space artifact tied to qIOcJSCGn2.",
+    "Without an eligible artifact, independent CPU re-evaluation cannot begin and absence of an artifact is not performance falsification."
   ],
-  "blockers": [],
-  "next_step": "Promote this node to a bounded proof-preflight child. Commit a theorem-and-assumption manifest, a primary symbolic verifier, an independent auditor that does not import it, and destructive controls for non-identifiability and singular information; do not launch an HF job."
+  "blockers": [
+    "No immutable author-released HSVL checkpoint with paper-scale task, configuration, and seed provenance.",
+    "No immutable author-released HIQL or CRL comparator checkpoint.",
+    "No author raw four-seed evaluation output from which Tables 1-2 can be independently reconstructed.",
+    "C5 additionally needs both visual and state AntMaze-giant artifacts; neither conjunction is complete.",
+    "C6 additionally needs a flat SVL artifact and actor-identical re-evaluated CRL artifact; neither is available."
+  ],
+  "next_step": "Do not promote this route. Leave C1 toy and C4-C6 inconclusive under this interpretation unless the authors release immutable exact-scope artifacts; do not infer falsification from missing files."
 }

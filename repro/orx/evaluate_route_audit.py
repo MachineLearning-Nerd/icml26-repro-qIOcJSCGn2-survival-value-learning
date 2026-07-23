@@ -41,6 +41,39 @@ def resolved_environment() -> dict[str, object]:
     }
 
 
+def nested_value(data: dict[str, object], dotted_path: str) -> object:
+    value: object = data
+    for key in dotted_path.split("."):
+        if not isinstance(value, dict) or key not in value:
+            raise KeyError(dotted_path)
+        value = value[key]
+    return value
+
+
+def valid_artifact_candidate(candidate: dict[str, object]) -> bool:
+    required = {
+        "claim_ids",
+        "task",
+        "method",
+        "configuration",
+        "seed_level_provenance",
+        "immutable_url",
+        "sha256",
+    }
+    if not required.issubset(candidate):
+        return False
+    digest = candidate["sha256"]
+    url = candidate["immutable_url"]
+    return (
+        isinstance(candidate["claim_ids"], list)
+        and bool(candidate["claim_ids"])
+        and isinstance(url, str)
+        and url.startswith("https://")
+        and isinstance(digest, str)
+        and re.fullmatch(r"[0-9a-f]{64}", digest) is not None
+    )
+
+
 def evaluate_route_audit(contract: dict[str, object], c2_pass: bool) -> int:
     config = json.loads(CONFIG.read_text())
     if config.get("schema_version") != 1:
@@ -85,6 +118,48 @@ def evaluate_route_audit(contract: dict[str, object], c2_pass: bool) -> int:
     tampered_expected = ("0" if first_hash[1][0] != "0" else "1") + first_hash[1][1:]
     tampered_manifest_rejected = sha256(ROOT / first_hash[0]) != tampered_expected
 
+    artifact_witness_check = None
+    artifact_witness_pass = True
+    if "artifact_witness" in config:
+        witness = config["artifact_witness"]
+        manifest_path = ROOT / witness["manifest"]
+        manifest = json.loads(manifest_path.read_text())
+        false_checks = [
+            {
+                "path": path,
+                "actual": nested_value(manifest, path),
+                "pass": nested_value(manifest, path) is False,
+            }
+            for path in witness["required_false_paths"]
+        ]
+        zero_checks = [
+            {
+                "path": path,
+                "actual": nested_value(manifest, path),
+                "pass": nested_value(manifest, path) == 0,
+            }
+            for path in witness["required_zero_paths"]
+        ]
+        invented_candidate_rejected = not valid_artifact_candidate(
+            witness["negative_control_candidate"]
+        )
+        artifact_witness_pass = (
+            all(row["pass"] for row in false_checks)
+            and all(row["pass"] for row in zero_checks)
+            and invented_candidate_rejected
+        )
+        artifact_witness_check = {
+            "manifest": witness["manifest"],
+            "false_checks": false_checks,
+            "zero_checks": zero_checks,
+            "eligible_official_artifact_count": 0,
+            "negative_control": {
+                "name": "invented_candidate_missing_content_hash",
+                "rejected": invented_candidate_rejected,
+            },
+            "pass": artifact_witness_pass,
+        }
+
     integrity_pass = (
         c2_pass
         and verdicts_match
@@ -92,6 +167,7 @@ def evaluate_route_audit(contract: dict[str, object], c2_pass: bool) -> int:
         and all(row["pass"] for row in hash_checks)
         and all(row["pass"] for row in pattern_checks)
         and tampered_manifest_rejected
+        and artifact_witness_pass
     )
     if not integrity_pass:
         route_status = "AUDIT_FAILED"
@@ -125,6 +201,7 @@ def evaluate_route_audit(contract: dict[str, object], c2_pass: bool) -> int:
             "target": first_hash[0],
             "tampered_manifest_rejected": tampered_manifest_rejected,
         },
+        "artifact_witness_check": artifact_witness_check,
         "integrity_pass": integrity_pass,
         "cpu_reachable": config["cpu_reachable"],
         "score_relevant_if_completed": config["score_relevant_if_completed"],
@@ -154,6 +231,8 @@ def evaluate_route_audit(contract: dict[str, object], c2_pass: bool) -> int:
         f"integrity_checks: {'PASS' if integrity_pass else 'FAIL'}",
         f"cpu_reachable: {str(config['cpu_reachable']).lower()}",
         f"score_relevant_if_completed: {str(config['score_relevant_if_completed']).lower()}",
+        f"eligible_official_artifact_count: {0 if artifact_witness_check else 'not_applicable'}",
+        f"invented_artifact_negative_control: {'PASS' if artifact_witness_check and artifact_witness_check['negative_control']['rejected'] else 'not_applicable'}",
         f"paper_source: {source['url']}",
         f"paper_anchor: {source['anchor']}",
         f"paper_retrieved_on: {source['retrieved_on']}",
