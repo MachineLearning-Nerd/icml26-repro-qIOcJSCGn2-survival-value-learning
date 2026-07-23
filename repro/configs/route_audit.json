@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "route_id": "c6_flat_svl_crl",
+  "claims": ["C6"],
+  "scientific_evidence": false,
+  "current_live_verdicts": {"C6": "inconclusive"},
+  "paper_source": {
+    "url": "https://ar5iv.labs.arxiv.org/html/2604.17551",
+    "anchor": "Section 5.2, Table 2; Appendix Table 5 (S5.SS2, S5.T2, A1.T5)",
+    "retrieved_on": "2026-07-23",
+    "sha256": "69f0db8b7819cac262f4c91e945fc7a6d4b011e7d603fbfe3f0844fa5acecec0"
+  },
+  "exact_scope": "Matched flat-SVL-versus-re-evaluated-CRL performance comparison on HumanoidMaze-giant using the same depth-6 DDPG+BC actor, preregistered seeds 0-3, identical data and evaluation protocol, 1,000,000 updates, 50 evaluation episodes per seed, raw seed outputs, and independently reconstructed uncertainty.",
+  "required_sha256": {
+    ".openresearch/judge_contract.json": "4bb26d3092561164b4da5a481ff937c98dd8d139bf4bdb864847fe76aab9fd75",
+    "repro/configs/upstream_source_manifest.json": "e9a279e09fa5952002b8f37a2aa54c7e02a711fcff3f86c362101d6e406131a6",
+    "repro/configs/ogbench_hiql_v1_2_1_source_manifest.json": "a9ed9028701f70f861239760be761332b42dbb7bdcc3c8fa09109aed8fe52b83",
+    "upstream/hsvl/agent.py": "ad4b966b9138fa298ba3a5838e9a475518346900926d8ebc1b473d414160630d",
+    "upstream/hsvl/config/main.yaml": "0d584ef55e8ddc6c0b4ca19aa45b6571913b01c6bcbd56dc17fd4f71ee16ae65",
+    "upstream/ogbench-hiql-v1.2.1/impls/agents/crl.py": "05a9faaa8348a16154a03004b54a7eff90ec58eae2588fe7b2bedef2bfcc48af",
+    "upstream/ogbench-hiql-v1.2.1/impls/main.py": "375fad6375047ff59f3baea408ab7197784c1ec1457588a78a631025e434faee",
+    "upstream/ogbench-hiql-v1.2.1/impls/hyperparameters.sh": "633f6e1f5311e42d0bfd6524cda7255120a0835678dcaa1227cfbf3f5cb1d9df"
+  },
+  "pattern_checks": [
+    {"path": "upstream/hsvl/agent.py", "pattern": "agents = dict\\(\\s*hsvl=HSVL", "must_exist": true},
+    {"path": "upstream/hsvl/agent.py", "pattern": "flat", "must_exist": false},
+    {"path": "upstream/ogbench-hiql-v1.2.1/impls/agents/crl.py", "pattern": "class CRLAgent", "must_exist": true},
+    {"path": "upstream/ogbench-hiql-v1.2.1/impls/hyperparameters.sh", "pattern": "humanoidmaze-giant-navigate-v0.*agent=agents/crl.py", "must_exist": true},
+    {"path": "upstream/hsvl/config/main.yaml", "pattern": "train_steps: 1000000", "must_exist": true},
+    {"path": "upstream/hsvl/config/main.yaml", "pattern": "eval_episodes: 50", "must_exist": true}
+  ],
+  "cpu_reachable": false,
+  "score_relevant_if_completed": true,
+  "decision_basis": [
+    "C6 requires new matched performance outputs; paper values and source inspection alone cannot verify the comparison.",
+    "The pinned HSVL release registers only the hierarchical HSVL agent with high and low actors and contains no flat-SVL implementation or flat-agent registry entry.",
+    "The pinned OGBench release contains its benchmark CRL agent, but that does not identify the paper's re-evaluated CRL variant with the paper-matched depth-6 DDPG+BC actor.",
+    "Even with a faithful recovered implementation, both arms require four 1,000,000-update HumanoidMaze-giant runs and are accelerator-scale."
+  ],
+  "blockers": [
+    "The exact flat SVL implementation and paper-matched re-evaluated CRL actor are not present in the pinned public releases, so the required method pairing cannot be reconstructed without unsupported invention.",
+    "Faithful four-seed HumanoidMaze-giant training is GPU-bound, but every GPU flavor is forbidden by campaign policy.",
+    "A source-only, reduced-update, reduced-seed, or CPU toy comparison would not be performance evidence."
+  ],
+  "next_step": "Stop C6 as BLOCKED. Do not launch local training, HF cpu-upgrade, or GPU work; reopen only if exact paper-matched flat SVL and CRL source becomes available together with an authorized faithful compute route."
+}
