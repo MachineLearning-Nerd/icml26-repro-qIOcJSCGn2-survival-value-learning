@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CONTRACT = ROOT / ".openresearch" / "judge_contract.json"
 ARTIFACTS = ROOT / ".openresearch" / "artifacts"
 ROUTE_AUDIT = ROOT / "repro" / "configs" / "route_audit.json"
+TABLE_ARITHMETIC_AUDIT = ROOT / "repro" / "configs" / "table_arithmetic_audit.json"
 
 
 def sha256(path: Path) -> str:
@@ -130,6 +131,10 @@ def main() -> int:
         sys.stderr.write(check["stderr"])
     print(f"BASELINE_SCORE={live['score']}/{live['maximum']}")
     print(f"PROTECTED_C2_REGRESSION={'PASS' if checks_pass else 'FAIL'}")
+    if TABLE_ARITHMETIC_AUDIT.is_file():
+        from evaluate_table_arithmetic import evaluate_table_arithmetic
+
+        return evaluate_table_arithmetic(contract, checks_pass)
     if ROUTE_AUDIT.is_file():
         from evaluate_route_audit import evaluate_route_audit
 

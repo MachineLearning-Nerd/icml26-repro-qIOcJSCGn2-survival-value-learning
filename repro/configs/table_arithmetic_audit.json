@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "audit_id": "interpretation_c_table_arithmetic_falsification",
+  "scientific_scope": "finite-sample arithmetic compatibility only",
+  "paper_source": {
+    "url": "https://ar5iv.labs.arxiv.org/html/2604.17551",
+    "retrieved_on": "2026-07-23",
+    "sha256": "69f0db8b7819cac262f4c91e945fc7a6d4b011e7d603fbfe3f0844fa5acecec0",
+    "anchors": [
+      "Table 1 (S5.T1) and Appendix Tables 6-8",
+      "Table 2 (S5.T2)"
+    ]
+  },
+  "protocol": {
+    "training_seed_count": 4,
+    "task_count_per_seed": 5,
+    "episodes_per_task": 50,
+    "binary_trials_per_seed": 250,
+    "seed_rate_percent": "100 * integer_success_count / 250",
+    "summary": "arithmetic mean and standard deviation across four seed rates",
+    "mean_rounding_interval": "[reported_mean - 0.5, reported_mean + 0.5)",
+    "std_rounding_interval": "[max(0, reported_std - 0.5), reported_std + 0.5)",
+    "std_conventions_checked": [
+      {"name": "population", "ddof": 0},
+      {"name": "sample", "ddof": 1}
+    ]
+  },
+  "claim_scope": {
+    "C1": "not applicable: C1 is an architectural/method claim, not a four-seed table summary",
+    "C4": "both HumanoidMaze-giant HSVL and HIQL entries",
+    "C5": "all four entries from both visual-AntMaze-giant and AntMaze-giant conjuncts",
+    "C6": "both flat SVL and re-evaluated CRL entries"
+  },
+  "targets": [
+    {
+      "id": "c4_humanoid_hsvl",
+      "claim_id": "C4",
+      "table": "Table 1",
+      "task": "HumanoidMaze-giant navigate",
+      "method": "HSVL",
+      "reported_mean_percent": 81,
+      "reported_std_percent": 1
+    },
+    {
+      "id": "c4_humanoid_hiql",
+      "claim_id": "C4",
+      "table": "Table 1",
+      "task": "HumanoidMaze-giant navigate",
+      "method": "HIQL",
+      "reported_mean_percent": 12,
+      "reported_std_percent": 4
+    },
+    {
+      "id": "c5_visual_ant_hsvl",
+      "claim_id": "C5",
+      "table": "Table 1",
+      "task": "visual-AntMaze-giant navigate",
+      "method": "HSVL",
+      "reported_mean_percent": 61,
+      "reported_std_percent": 1
+    },
+    {
+      "id": "c5_visual_ant_hiql",
+      "claim_id": "C5",
+      "table": "Table 1",
+      "task": "visual-AntMaze-giant navigate",
+      "method": "HIQL",
+      "reported_mean_percent": 6,
+      "reported_std_percent": 4
+    },
+    {
+      "id": "c5_ant_hsvl",
+      "claim_id": "C5",
+      "table": "Table 1",
+      "task": "AntMaze-giant navigate",
+      "method": "HSVL",
+      "reported_mean_percent": 74,
+      "reported_std_percent": 1
+    },
+    {
+      "id": "c5_ant_hiql",
+      "claim_id": "C5",
+      "table": "Table 1",
+      "task": "AntMaze-giant navigate",
+      "method": "HIQL",
+      "reported_mean_percent": 65,
+      "reported_std_percent": 5
+    },
+    {
+      "id": "c6_flat_svl",
+      "claim_id": "C6",
+      "table": "Table 2",
+      "task": "HumanoidMaze-giant navigate",
+      "method": "flat SVL",
+      "reported_mean_percent": 45,
+      "reported_std_percent": 2
+    },
+    {
+      "id": "c6_reevaluated_crl",
+      "claim_id": "C6",
+      "table": "Table 2",
+      "task": "HumanoidMaze-giant navigate",
+      "method": "re-evaluated CRL",
+      "reported_mean_percent": 7,
+      "reported_std_percent": 0
+    }
+  ],
+  "destructive_controls": [
+    {
+      "id": "impossible_bounded_std",
+      "reported_mean_percent": 50,
+      "reported_std_percent": 60,
+      "reason": "For four rates in [0,100], population std is at most 50 and sample std is at most sqrt(10000/3), which is below the 59.5 lower rounding boundary."
+    },
+    {
+      "id": "impossible_mean_above_range",
+      "reported_mean_percent": 101,
+      "reported_std_percent": 0,
+      "reason": "The mean of rates in [0,100] cannot enter [100.5,101.5)."
+    }
+  ],
+  "decision_rule": {
+    "falsified": "At least one reported target has no integer four-seed witness under either population or sample standard-deviation convention.",
+    "compatible_not_verified": "Every target has at least one witness; this only shows arithmetic compatibility and supplies no policy-performance evidence.",
+    "fail_closed": "Any C2 failure, hash mismatch, auditor failure, or destructive-control acceptance makes the audit fail."
+  },
+  "candidate_score": null,
+  "hf_job_authorized": false,
+  "hf_space_publication_authorized": false
+}
