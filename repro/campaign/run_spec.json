@@ -1,12 +1,12 @@
 {
-  "checkpoint_interval": 10,
+  "checkpoint_interval": 100000,
   "dataset": "humanoidmaze-giant-navigate-v0",
-  "evaluation_episodes_per_task": 1,
-  "kind": "integration",
-  "log_interval": 10,
+  "evaluation_episodes_per_task": 50,
+  "kind": "paper_scale",
+  "log_interval": 5000,
   "method": "hsvl",
   "negative_control_episodes_per_task": 1,
-  "orx_experiment_id": "553bb920-a109-4e06-8449-a2db7d183b4c",
+  "orx_experiment_id": "004a8e24-4bc6-4b04-acba-434ad1e7e179",
   "seed": 0,
-  "train_steps": 20
+  "train_steps": 1000000
 }
