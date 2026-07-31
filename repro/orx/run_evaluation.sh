@@ -16,4 +16,4 @@ export WANDB_MODE=disabled
 export MUJOCO_GL=egl
 
 uv sync --frozen --python 3.10
-uv run --frozen --no-sync python repro/campaign/run_preflight.py
+uv run --frozen --no-sync python repro/campaign/diagnose_smoke.py
