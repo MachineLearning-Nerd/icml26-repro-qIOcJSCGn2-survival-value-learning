@@ -1,12 +1,12 @@
 {
-  "checkpoint_interval": 10,
+  "checkpoint_interval": 50000,
   "dataset": "visual-antmaze-giant-navigate-v0",
-  "evaluation_episodes_per_task": 1,
-  "kind": "integration",
-  "log_interval": 10,
+  "evaluation_episodes_per_task": 50,
+  "kind": "paper_scale",
+  "log_interval": 2500,
   "method": "hiql",
   "negative_control_episodes_per_task": 1,
-  "orx_experiment_id": "a8f3d5dd-aba0-4d60-bb3d-de98d7d18956",
-  "seed": 0,
-  "train_steps": 20
+  "orx_experiment_id": "601dfc4b-4f85-4bc3-94ea-4d4ec132c4df",
+  "seed": 1,
+  "train_steps": 500000
 }
