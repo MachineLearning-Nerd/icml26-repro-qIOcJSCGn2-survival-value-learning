@@ -9,6 +9,9 @@ if ! command -v uv >/dev/null 2>&1; then
   exit 2
 fi
 
+apt-get update -qq
+apt-get install -y -qq libegl1 libgl1-mesa-dri >/dev/null
+
 export JAX_PLATFORMS=cpu
 export JAX_PLATFORM_NAME=cpu
 export CUDA_VISIBLE_DEVICES=""
