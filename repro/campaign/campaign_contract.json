@@ -13,10 +13,12 @@
     "critic_depth": 3,
     "evaluation_episodes_per_task": 50,
     "learning_rate": 0.0003,
+    "num_survival_bins": 500,
     "optimizer": "adam",
     "seeds": [0, 1, 2, 3],
     "train_steps_maze": 1000000,
     "train_steps_visual": 500000,
+    "survival_horizon": 10000,
     "width": 512
   },
   "claims": {

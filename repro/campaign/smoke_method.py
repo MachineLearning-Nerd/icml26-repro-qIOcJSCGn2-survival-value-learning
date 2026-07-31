@@ -21,6 +21,28 @@ def block(tree) -> None:
             leaf.block_until_ready()
 
 
+def measure_updates(agent, update, timed_updates: int):
+    started = time.monotonic()
+    agent, info = update(agent)
+    block((agent, info))
+    compile_seconds = time.monotonic() - started
+
+    steady_seconds = None
+    if timed_updates:
+        started = time.monotonic()
+        for _ in range(timed_updates):
+            agent, info = update(agent)
+        block((agent, info))
+        steady_seconds = (time.monotonic() - started) / timed_updates
+
+    return agent, info, {
+        "compile_update_seconds": round(compile_seconds, 3),
+        "steady_update_seconds": None if steady_seconds is None else round(steady_seconds, 6),
+        "timed_updates": timed_updates,
+        "update_seconds": round(compile_seconds, 3),
+    }
+
+
 def load_dataset(dataset_name: str):
     import ogbench
 
@@ -29,7 +51,7 @@ def load_dataset(dataset_name: str):
     return env, train_dataset, observation, info
 
 
-def smoke_hsvl(dataset_name: str, visual: bool = False) -> dict:
+def smoke_hsvl(dataset_name: str, visual: bool = False, timed_updates: int = 0) -> dict:
     sys.path.insert(0, str(ROOT / "upstream"))
     import jax
     import jax.numpy as jnp
@@ -40,9 +62,8 @@ def smoke_hsvl(dataset_name: str, visual: bool = False) -> dict:
     _, train_dataset, _, _ = load_dataset(dataset_name)
     config = yaml.safe_load((ROOT / "upstream/hsvl/config/agent/hsvl.yaml").read_text())
     config.update(
-        actor_hidden_dims=[512, 512, 512, 512, 512, 512],
         frame_stack=None,
-        residual_actor=False,
+        num_log_bins=500,
     )
     if visual:
         sys.path.insert(0, str(ROOT / "repro/campaign"))
@@ -57,20 +78,24 @@ def smoke_hsvl(dataset_name: str, visual: bool = False) -> dict:
     example_observations = jnp.asarray(train_dataset["observations"][:1])
     example_actions = jnp.asarray(train_dataset["actions"][:1])
     agent = HSVL.create(0, example_observations, example_actions, config)
-    started = time.monotonic()
-    agent, info = agent.sample_and_update(dataset, config["batch_size"], size)
-    block((agent, info))
-    return {
+    agent, info, timing = measure_updates(
+        agent,
+        lambda current: current.sample_and_update(dataset, config["batch_size"], size),
+        timed_updates,
+    )
+    return timing | {
+        "actor_num_blocks": config["actor_num_blocks"],
+        "actor_residual": config["residual_actor"],
         "batch_size": config["batch_size"],
         "dataset_size": size,
         "discount": config["discount"],
         "encoder": config.get("encoder"),
+        "num_log_bins": config["num_log_bins"],
         "subgoal_steps": config["subgoal_steps"],
-        "update_seconds": round(time.monotonic() - started, 3),
     }
 
 
-def smoke_flat_svl(dataset_name: str) -> dict:
+def smoke_flat_svl(dataset_name: str, timed_updates: int = 0) -> dict:
     sys.path.insert(0, str(ROOT / "upstream"))
     import jax
     import jax.numpy as jnp
@@ -82,7 +107,13 @@ def smoke_flat_svl(dataset_name: str) -> dict:
 
     _, train_dataset, _, _ = load_dataset(dataset_name)
     config = yaml.safe_load((ROOT / "upstream/hsvl/config/agent/hsvl.yaml").read_text())
-    config.update(frame_stack=None, actor_alpha=0.1, discount=0.999, subgoal_steps=100)
+    config.update(
+        frame_stack=None,
+        actor_alpha=0.1,
+        discount=0.999,
+        num_log_bins=500,
+        subgoal_steps=100,
+    )
     dataset = prepare_hgc_dataset_for_jax(train_dataset, device=jax.devices("cpu")[0])
     size = dataset_size_jax(dataset)
     agent = FlatSVL.create(
@@ -91,19 +122,21 @@ def smoke_flat_svl(dataset_name: str) -> dict:
         jnp.asarray(train_dataset["actions"][:1]),
         config,
     )
-    started = time.monotonic()
-    agent, info = agent.sample_and_update(dataset, config["batch_size"], size)
-    block((agent, info))
-    return {
+    agent, info, timing = measure_updates(
+        agent,
+        lambda current: current.sample_and_update(dataset, config["batch_size"], size),
+        timed_updates,
+    )
+    return timing | {
         "batch_size": config["batch_size"],
         "dataset_size": size,
         "discount": config["discount"],
         "actor_depth": 6,
-        "update_seconds": round(time.monotonic() - started, 3),
+        "num_log_bins": config["num_log_bins"],
     }
 
 
-def smoke_ogbench(method: str, dataset_name: str) -> dict:
+def smoke_ogbench(method: str, dataset_name: str, timed_updates: int = 0) -> dict:
     impls = ROOT / "upstream/ogbench-hiql-v1.2.1/impls"
     sys.path.insert(0, str(impls))
     import jax
@@ -129,7 +162,7 @@ def smoke_ogbench(method: str, dataset_name: str) -> dict:
         config = crl_config()
         config.encoder = "impala_small" if visual else None
         config.batch_size = 256 if visual else 1024
-        config.discount = 0.995
+        config.discount = 0.999 if "humanoidmaze-giant" in dataset_name else 0.995
         config.alpha = 0.1
         config.actor_hidden_dims = (512, 512, 512, 512, 512, 512)
         dataset = GCDataset(Dataset.create(**train_dataset), config)
@@ -137,17 +170,24 @@ def smoke_ogbench(method: str, dataset_name: str) -> dict:
     else:
         raise ValueError(method)
     config.frame_stack = None
-    batch = dataset.sample(config.batch_size)
-    agent = agent_class.create(0, batch["observations"][:1], batch["actions"][:1], config)
-    started = time.monotonic()
-    agent, info = agent.update(batch)
-    block((agent, info))
-    return {
+    example_batch = dataset.sample(config.batch_size)
+    agent = agent_class.create(
+        0,
+        example_batch["observations"][:1],
+        example_batch["actions"][:1],
+        config,
+    )
+    agent, info, timing = measure_updates(
+        agent,
+        lambda current: current.update(dataset.sample(config.batch_size)),
+        timed_updates,
+    )
+    return timing | {
+        "actor_depth": len(config.actor_hidden_dims),
         "batch_size": config.batch_size,
         "dataset_size": dataset.size,
         "discount": config.discount,
         "encoder": config.encoder,
-        "update_seconds": round(time.monotonic() - started, 3),
     }
 
 
@@ -155,17 +195,25 @@ def main() -> int:
     if os.environ.get("JAX_PLATFORMS") != "cpu":
         raise RuntimeError("JAX_PLATFORMS must be cpu")
     method, dataset_name = sys.argv[1:3]
+    timed_updates = int(sys.argv[3]) if len(sys.argv) >= 4 else 0
+    output_path = Path(sys.argv[4]) if len(sys.argv) >= 5 else None
+    if timed_updates < 0:
+        raise ValueError("timed_updates must be non-negative")
     np.random.seed(0)
     if method == "hsvl":
-        result = smoke_hsvl(dataset_name)
+        result = smoke_hsvl(dataset_name, timed_updates=timed_updates)
     elif method == "visual_hsvl":
-        result = smoke_hsvl(dataset_name, visual=True)
+        result = smoke_hsvl(dataset_name, visual=True, timed_updates=timed_updates)
     elif method == "flat_svl":
-        result = smoke_flat_svl(dataset_name)
+        result = smoke_flat_svl(dataset_name, timed_updates=timed_updates)
     else:
-        result = smoke_ogbench(method, dataset_name)
+        result = smoke_ogbench(method, dataset_name, timed_updates=timed_updates)
     result.update({"method": method, "dataset": dataset_name})
-    print(json.dumps(result, indent=2, sort_keys=True))
+    rendered = json.dumps(result, indent=2, sort_keys=True) + "\n"
+    if output_path is not None:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(rendered)
+    print(rendered, end="")
     return 0
 
 
