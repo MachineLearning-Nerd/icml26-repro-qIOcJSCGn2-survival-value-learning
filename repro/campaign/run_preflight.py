@@ -40,6 +40,9 @@ def run(name: str, command: list[str]) -> dict:
     result = subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
     log = result.stdout + result.stderr
     (ARTIFACTS / f"{name}.log").write_text(log)
+    if result.returncode:
+        print(f"===== {name} failed =====", file=sys.stderr)
+        print(log, file=sys.stderr)
     return {
         "command": command,
         "duration_seconds": round(time.monotonic() - started, 3),
