@@ -7,7 +7,7 @@ import jax
 import jax.numpy as jnp
 import optax
 
-from hsvl.utils.encoders import GCEncoder
+from hsvl.utils.encoders import GCEncoder, ImpalaEncoder
 from hsvl.utils.flax_utils import ModuleDict, TrainState, nonpytree_field
 from hsvl.utils.mlp import MLP, Identity, LengthNormalize
 from hsvl.utils.actors import GCActor
@@ -195,8 +195,10 @@ class HSVL(flax.struct.PyTreeNode):
 
         activation_fn = get_activation_fn(config["activation_fn"])
 
-        # -------- Goal representation phi([s; g]) --------
-        goal_rep_def = nn.Sequential([
+        goal_rep_layers = []
+        if config.get("encoder") == "impala_small":
+            goal_rep_layers.append(ImpalaEncoder())
+        goal_rep_layers.extend([
             MLP(
                 hidden_dims=(*config["value_hidden_dims"], config["rep_dim"]),
                 activations=activation_fn,
@@ -205,11 +207,16 @@ class HSVL(flax.struct.PyTreeNode):
             ),
             LengthNormalize(),
         ])
+        goal_rep_def = nn.Sequential(goal_rep_layers)
 
-        # -------- Encoders --------
-        value_encoder_def = GCEncoder(state_encoder=Identity(), concat_encoder=goal_rep_def)
-        low_actor_encoder_def = GCEncoder(state_encoder=Identity(), concat_encoder=goal_rep_def)
-        high_actor_encoder_def = None
+        if config.get("encoder") == "impala_small":
+            value_encoder_def = GCEncoder(state_encoder=ImpalaEncoder(), concat_encoder=goal_rep_def)
+            low_actor_encoder_def = GCEncoder(state_encoder=ImpalaEncoder(), concat_encoder=goal_rep_def)
+            high_actor_encoder_def = GCEncoder(concat_encoder=ImpalaEncoder())
+        else:
+            value_encoder_def = GCEncoder(state_encoder=Identity(), concat_encoder=goal_rep_def)
+            low_actor_encoder_def = GCEncoder(state_encoder=Identity(), concat_encoder=goal_rep_def)
+            high_actor_encoder_def = None
 
         # -------- Survival bins + math --------
         H = int(config["surv_horizon"])
