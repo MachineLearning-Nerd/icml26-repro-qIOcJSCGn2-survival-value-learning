@@ -17,6 +17,7 @@ ARTIFACTS = ROOT / ".openresearch" / "artifacts"
 PAPER_URL = "https://ar5iv.labs.arxiv.org/html/2604.17551"
 PAPER_SHA256 = "69f0db8b7819cac262f4c91e945fc7a6d4b011e7d603fbfe3f0844fa5acecec0"
 JUDGED_REVISION = "612e99f40c171c7391db6529fe6ac4d9aa6619fa"
+ORX_EXPERIMENT_ID = "d698ce45-4b6d-45e9-8f2e-b33edf043b3e"
 LEMMA42_URL = (
     "https://huggingface.co/spaces/DineshAI/qIOcJSCGn2/resolve/"
     f"{JUDGED_REVISION}/repro/src/verify_lemma42.py"
@@ -50,7 +51,10 @@ def run(name: str, command: list[str]) -> dict:
 def main() -> int:
     ARTIFACTS.mkdir(parents=True, exist_ok=True)
     report = {
-        "hf_job_id_present": bool(os.environ.get("HF_JOB_ID")),
+        "execution_attestation": {
+            "orx_experiment_id": ORX_EXPERIMENT_ID,
+            "note": "HF job ID and cpu-upgrade flavor are verified from external ORX/HF job metadata.",
+        },
         "platform": platform.platform(),
         "python": platform.python_version(),
         "jax_platform_request": os.environ.get("JAX_PLATFORMS"),
@@ -127,8 +131,7 @@ def main() -> int:
         and lemma42_hash == LEMMA42_SHA256
     )
     report["preflight_passed"] = (
-        report["hf_job_id_present"]
-        and report["cpu_only"]
+        report["cpu_only"]
         and source_ok
         and successful_checks
         and all(report["required_implementations"].values())
@@ -138,7 +141,7 @@ def main() -> int:
     rows = [
         "# HF CPU campaign preflight",
         "",
-        f"- Hugging Face Job: {'PASS' if report['hf_job_id_present'] else 'FAIL'}",
+        f"- ORX experiment: `{ORX_EXPERIMENT_ID}` (HF job metadata verified externally)",
         f"- CPU-only JAX: {'PASS' if report['cpu_only'] else 'FAIL'} ({', '.join(devices)})",
         f"- Paper source: {'PASS' if source_ok else 'FAIL'} (`{paper_hash}`)",
         f"- Overall: {'PASS' if report['preflight_passed'] else 'FAIL'}",

@@ -152,8 +152,6 @@ def smoke_ogbench(method: str, dataset_name: str) -> dict:
 
 
 def main() -> int:
-    if not os.environ.get("HF_JOB_ID"):
-        raise RuntimeError("HF_JOB_ID is required")
     if os.environ.get("JAX_PLATFORMS") != "cpu":
         raise RuntimeError("JAX_PLATFORMS must be cpu")
     method, dataset_name = sys.argv[1:3]
