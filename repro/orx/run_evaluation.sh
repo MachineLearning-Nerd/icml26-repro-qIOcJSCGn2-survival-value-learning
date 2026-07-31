@@ -20,4 +20,7 @@ export MUJOCO_GL=egl
 
 uv sync --frozen --python 3.10
 uv run --frozen --no-sync python repro/campaign/run_preflight.py
-uv run --frozen --no-sync python repro/campaign/run_throughput.py
+uv run --frozen --no-sync python repro/campaign/train_seed.py
+if [[ "$(uv run --frozen --no-sync python -c 'import json; print(json.load(open("repro/campaign/run_spec.json"))["kind"])')" == "integration" ]]; then
+  uv run --frozen --no-sync python repro/campaign/train_seed.py
+fi
