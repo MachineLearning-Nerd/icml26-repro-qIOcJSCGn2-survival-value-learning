@@ -131,6 +131,15 @@ def dataset_size_jax(dataset: FrozenDict) -> int:
     return int(dataset["valid_idxs"].shape[0])
 
 
+@partial(jax.jit, static_argnames=("padding",))
+def batched_random_crop(images, crop_froms, padding):
+    def crop(image, crop_from):
+        padded = jnp.pad(image, ((padding, padding), (padding, padding), (0, 0)), mode="edge")
+        return jax.lax.dynamic_slice(padded, crop_from, image.shape)
+
+    return jax.vmap(crop)(images, crop_froms)
+
+
 @partial(jax.jit, static_argnames=("batch_size", "dataset_size"))
 def Dataset_sample_idxs(rng, dataset: FrozenDict, batch_size: int, dataset_size: int):
     rng, sample_rng = jax.random.split(rng)
@@ -356,5 +365,24 @@ def HGCDataset_sample(
         "high_actor_targets_state": high_actor_targets_state,
         "number_set_event": jnp.mean(fb_apply & event_set).astype(jnp.float32),
     }
+
+    if float(config.get("p_aug", 0.0)) > 0.0 and obs.ndim == 4:
+        rng, aug_rng, crop_rng = jax.random.split(rng, 3)
+        apply_aug = jax.random.uniform(aug_rng) < float(config["p_aug"])
+        crop_froms = jax.random.randint(crop_rng, (batch_size, 2), 0, 7)
+        crop_froms = jnp.concatenate(
+            [crop_froms, jnp.zeros((batch_size, 1), dtype=crop_froms.dtype)],
+            axis=1,
+        )
+        for key in (
+            "observations",
+            "next_observations",
+            "value_goals",
+            "low_actor_goals",
+            "high_actor_goals",
+            "high_actor_targets",
+        ):
+            cropped = batched_random_crop(batch[key], crop_froms, 3)
+            batch[key] = jnp.where(apply_aug, cropped, batch[key])
 
     return batch, rng
