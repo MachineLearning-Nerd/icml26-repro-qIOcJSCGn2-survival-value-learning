@@ -182,7 +182,10 @@ class HSVL(flax.struct.PyTreeNode):
 
     @classmethod
     def create(cls, seed, ex_observations, ex_actions, config, ex_goals=None):
-        config = dict(config)
+        config = {
+            key: tuple(value) if isinstance(value, list) else value
+            for key, value in dict(config).items()
+        }
 
         rng = jax.random.PRNGKey(seed)
         rng, init_rng = jax.random.split(rng, 2)

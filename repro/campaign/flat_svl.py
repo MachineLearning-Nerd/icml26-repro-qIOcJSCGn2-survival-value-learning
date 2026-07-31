@@ -103,7 +103,10 @@ class FlatSVL(flax.struct.PyTreeNode):
 
     @classmethod
     def create(cls, seed, ex_observations, ex_actions, config):
-        config = dict(config)
+        config = {
+            key: tuple(value) if isinstance(value, list) else value
+            for key, value in dict(config).items()
+        }
         rng = jax.random.PRNGKey(seed)
         rng, init_rng = jax.random.split(rng)
         activation = get_activation_fn(config["activation_fn"])
