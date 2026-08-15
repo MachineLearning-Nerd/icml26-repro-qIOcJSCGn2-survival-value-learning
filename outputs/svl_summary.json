@@ -1,7 +1,7 @@
 {
   "identity": {
     "ok": true,
-    "max_diff": 1.2292389328649733e-12
+    "max_diff": 1.3731238368563936e-12
   },
   "neg_control_nonsparse": {
     "ok": true

@@ -1,0 +1,35 @@
+{
+  "repository_name": "icml26-survival-value-learning",
+  "previous_name": "icml26-repro-qIOcJSCGn2-survival-value-learning",
+  "paper": {
+    "title": "SVL: Goal-Conditioned Reinforcement Learning as Survival Learning",
+    "authors": [
+      "Franki Nguimatsia Tiofack",
+      "Fabian Schramm",
+      "Théotime Le Hellard",
+      "Justin Carpentier"
+    ],
+    "arxiv_id": "2604.17551",
+    "arxiv_url": "https://arxiv.org/abs/2604.17551",
+    "openreview_id": "qIOcJSCGn2",
+    "openreview_url": "https://openreview.net/forum?id=qIOcJSCGn2",
+    "project_url": "https://simple-robotics.github.io/publications/survival-value-learning/"
+  },
+  "official_implementation": {
+    "repository": "Simple-Robotics/hierarchical-survival-value-learning",
+    "url": "https://github.com/Simple-Robotics/hierarchical-survival-value-learning",
+    "commit": "5f13cf22d397be42a87b7d35336db7662879d6db",
+    "local_path": "upstream"
+  },
+  "campaign": {
+    "space": "https://huggingface.co/spaces/DineshAI/qIOcJSCGn2",
+    "artifacts_bucket": "https://huggingface.co/buckets/DineshAI/qIOcJSCGn2-artifacts",
+    "status": "C2 verified; C1 toy/full-scale blocked; C3 route identified; C4-C6 inconclusive or blocked"
+  },
+  "local_clean_room": {
+    "identity_source": "repro/src/svl.py",
+    "runner": "repro/src/run_svl.py",
+    "summary": "outputs/svl_summary.json",
+    "scope": "finite stochastic MDP, sparse per-step penalty, terminate-on-success"
+  }
+}

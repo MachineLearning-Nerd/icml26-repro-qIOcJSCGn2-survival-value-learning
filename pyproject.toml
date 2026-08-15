@@ -1,5 +1,5 @@
 [project]
-name = "icml26-repro-qIOcJSCGn2-survival-value-learning"
+name = "icml26-survival-value-learning"
 version = "0.1.0"
 description = "Clean-room repro of SVL (Goal-Conditioned RL as Survival Learning), ICML 2026, OpenReview qIOcJSCGn2."
 requires-python = ">=3.11,<3.13"

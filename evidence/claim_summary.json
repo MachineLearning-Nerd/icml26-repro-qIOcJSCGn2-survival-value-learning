@@ -1,0 +1,14 @@
+{
+  "paper": "qIOcJSCGn2",
+  "repository": "icml26-survival-value-learning",
+  "claims": {
+    "C1": {"status": "TOY_FULL_SCALE_BLOCKED", "promoted": false},
+    "C2": {"status": "VERIFIED", "promoted": true, "max_diff": 1.3731238368563936e-12},
+    "C3": {"status": "ROUTE_IDENTIFIED_NOT_VERIFIED", "promoted": false},
+    "C4": {"status": "INCONCLUSIVE_BLOCKED", "promoted": false},
+    "C5": {"status": "INCONCLUSIVE_BLOCKED", "promoted": false},
+    "C6": {"status": "INCONCLUSIVE_BLOCKED", "promoted": false}
+  },
+  "score_claim": false,
+  "official_author_endorsement": false
+}
